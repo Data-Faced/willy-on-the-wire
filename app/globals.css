@@ -1,26 +1,161 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #100e0c;
+  --bg-2: #1a1612;
+  --ink: #f3ead8;
+  --muted: #b9ad96;
+  --line: #3a332a;
+  --amp: #e3a03a;
+  --amp-ink: #1a1206;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  margin: 0;
+  min-height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), Helvetica, sans-serif;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.header-mark,
+h1,
+h2 {
+  font-family: var(--font-display), Impact, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.header-mark {
+  font-size: 18px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--amp);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero {
+  padding: 56px 0 28px;
+}
+
+h1 {
+  font-size: clamp(56px, 16vw, 96px);
+  line-height: 0.9;
+  margin: 12px 0 18px;
+}
+
+.lede,
+section p {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+section {
+  padding: 36px 0;
+  border-top: 1px solid var(--line);
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+a {
+  color: var(--ink);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+}
+
+.btn-primary {
+  background: var(--amp);
+  color: var(--amp-ink);
+  border-color: var(--amp);
+}
+
+.btn-ghost {
+  color: var(--ink);
+}
+
+.empty,
+.show-meta,
+.show-note,
+.site-footer {
+  color: var(--muted);
+}
+
+.shows {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.shows li {
+  display: grid;
+  gap: 4px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.show-date {
+  color: var(--amp);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.show-venue {
+  font-size: 20px;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
 }
