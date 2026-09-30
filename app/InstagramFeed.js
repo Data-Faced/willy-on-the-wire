@@ -1,41 +1,45 @@
 "use client";
 
-import { useEffect } from "react";
+import { useState } from "react";
 
 export default function InstagramFeed({ reels }) {
-  useEffect(() => {
-    function process() {
-      if (window.instgrm?.Embeds) {
-        window.instgrm.Embeds.process();
-      }
-    }
+  const [active, setActive] = useState(0);
+  const current = reels[active];
 
-    if (window.instgrm?.Embeds) {
-      process();
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.src = "https://www.instagram.com/embed.js";
-    script.async = true;
-    script.onload = process;
-    document.body.appendChild(script);
-  }, [reels]);
+  if (!current) {
+    return null;
+  }
 
   return (
-    <div className="ig-grid">
-      {reels.map((reel) => (
-        <blockquote
-          key={reel.id}
-          className="instagram-media"
-          data-instgrm-permalink={`https://www.instagram.com/${reel.path}/${reel.id}/`}
-          data-instgrm-version="14"
-        >
-          <a href={`https://www.instagram.com/${reel.path}/${reel.id}/`}>
-            {reel.label}
-          </a>
-        </blockquote>
-      ))}
+    <div className="ig-player">
+      <div className="ig-stage">
+        <iframe
+          key={current.id}
+          src={`https://www.instagram.com/${current.path}/${current.id}/embed`}
+          title={current.label}
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+      <p className="video-caption">{current.label}</p>
+      <div className="ig-thumbs" role="tablist" aria-label="Instagram reels">
+        {reels.map((reel, index) => (
+          <button
+            key={reel.id}
+            type="button"
+            role="tab"
+            aria-selected={index === active}
+            className={index === active ? "is-active" : ""}
+            onClick={() => setActive(index)}
+          >
+            <img
+              src={`https://www.instagram.com/${reel.path}/${reel.id}/media/?size=m`}
+              alt={reel.label}
+            />
+            <span>{reel.label}</span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
