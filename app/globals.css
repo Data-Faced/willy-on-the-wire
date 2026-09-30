@@ -309,14 +309,11 @@ a {
 .show-item.is-featured {
   align-items: start;
   grid-template-columns: 1fr 112px;
-  padding: 22px 12px;
-  border: 1px solid transparent;
-  border-bottom-color: var(--line);
-}
-
-.show-item.is-featured:not(.is-pinned) {
-  border: 1px solid var(--amp);
-  background: rgba(255, 212, 0, 0.04);
+  margin: 28px 0;
+  padding: 28px 10px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: none;
 }
 
 .show-copy {
@@ -577,6 +574,8 @@ a {
   .show-item.is-featured {
     grid-template-columns: 1fr 160px;
     gap: 32px;
+    margin: 36px 0;
+    padding: 32px 10px;
   }
 }
 
