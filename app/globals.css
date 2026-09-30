@@ -75,7 +75,7 @@ h2 {
 .hero {
   display: grid;
   gap: 28px;
-  padding: 24px 0;
+  padding: 40px 0;
   align-items: center;
 }
 
@@ -192,6 +192,28 @@ a {
   color: var(--soft);
 }
 
+.show-tabs {
+  display: flex;
+  gap: 20px;
+  margin: 8px 0 18px;
+}
+
+.show-tabs button {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6f6f6f;
+  cursor: pointer;
+}
+
+.show-tabs button.is-active {
+  color: var(--amp);
+}
+
 .shows {
   list-style: none;
   padding: 0;
@@ -243,7 +265,7 @@ a {
 
 @media (min-width: 768px) {
   .hero {
-    padding: 40px 0;
+    padding: 64px 0;
   }
 }
 
@@ -251,6 +273,6 @@ a {
   .hero {
     grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr);
     gap: 40px;
-    padding: 40px 0;
+    padding: 64px 0;
   }
 }
