@@ -36,8 +36,8 @@ function Flyer({ show }) {
   }
 
   return (
-    <div className="show-flyer" aria-hidden="true">
-      <span>Willy on the Wire</span>
+    <div className="show-flyer">
+      <img src="/wotw-logo-large.png" alt="Willy on the Wire" />
       <strong>{show.venue}</strong>
     </div>
   );
