@@ -156,7 +156,7 @@ export default function ShowsList({ shows }) {
           className={view === "upcoming" ? "is-active" : ""}
           onClick={() => changeView("upcoming")}
         >
-          Upcoming
+          Upcoming Shows
         </button>
         <button
           type="button"
@@ -165,7 +165,7 @@ export default function ShowsList({ shows }) {
           className={view === "past" ? "is-active" : ""}
           onClick={() => changeView("past")}
         >
-          Past
+          Past Shows
         </button>
       </div>
 
