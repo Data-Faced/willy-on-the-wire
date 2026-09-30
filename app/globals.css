@@ -246,34 +246,24 @@ section {
 #shows {
   position: relative;
   overflow: hidden;
-  border-top: 0;
-  background: transparent;
-}
-
-#shows::before {
-  content: "";
-  position: absolute;
-  inset: -8px;
-  z-index: 0;
-  background: url("/shows-bg.jpg") right center / cover no-repeat;
-  filter: blur(10px);
-  transform: scale(1.04);
-  -webkit-mask-image:
-    radial-gradient(ellipse 78% 70% at 62% 48%, #000 28%, rgba(0, 0, 0, 0.55) 58%, transparent 78%);
-  mask-image:
-    radial-gradient(ellipse 78% 70% at 62% 48%, #000 28%, rgba(0, 0, 0, 0.55) 58%, transparent 78%);
+  background-color: #000;
+  background-image: url("/shows-bg.jpg");
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #shows::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
   pointer-events: none;
-  background:
-    linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0) 78%, #000 100%),
-    linear-gradient(to right, #000 0%, rgba(0, 0, 0, 0) 16%, rgba(0, 0, 0, 0) 84%, #000 100%),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.28) 52%, rgba(0, 0, 0, 0.08) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.55) 48%,
+    rgba(0, 0, 0, 0.12) 100%
+  );
 }
 
 #shows > * {
@@ -622,15 +612,12 @@ a {
     font-size: 22px;
   }
 
-  #shows::before {
-    filter: blur(8px);
-  }
-
   #shows::after {
-    background:
-      linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 82%, #000 100%),
-      linear-gradient(to right, #000 0%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 82%, #000 100%),
-      linear-gradient(180deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.42) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.58) 100%
+    );
   }
 }
 
