@@ -245,63 +245,27 @@ a {
   color: var(--ink);
 }
 
-.ig-player {
+.ig-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
   margin: 24px 0;
 }
 
-.ig-stage {
+.ig-card {
   position: relative;
-  width: min(360px, 100%);
-  margin: 0 auto;
   aspect-ratio: 9 / 16;
   background: #111;
   border: 1px solid var(--line);
+  overflow: hidden;
 }
 
-.ig-stage iframe {
+.ig-card iframe {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
-}
-
-.ig-thumbs {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.ig-thumbs button {
-  display: grid;
-  gap: 6px;
-  padding: 0;
-  border: 1px solid var(--line);
-  background: #111;
-  color: var(--soft);
-  cursor: pointer;
-  text-align: left;
-}
-
-.ig-thumbs button.is-active {
-  border-color: var(--amp);
-  color: var(--ink);
-}
-
-.ig-thumbs img {
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
-  display: block;
-  background: #1a1a1a;
-}
-
-.ig-thumbs span {
-  padding: 0 6px 8px;
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
 }
 
 .booking-form {
@@ -376,14 +340,11 @@ a {
   .video-mobile {
     display: block;
   }
+}
 
-  .ig-thumbs {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 6px;
-  }
-
-  .ig-thumbs span {
-    display: none;
+@media (min-width: 700px) {
+  .ig-row {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

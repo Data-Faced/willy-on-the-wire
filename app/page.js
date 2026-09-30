@@ -12,7 +12,6 @@ const REELS = [
   { id: "DctXSx7RVKz", path: "reel", label: "Latest reel" },
   { id: "DbtotEVC6W2", path: "reel", label: "Live reel" },
   { id: "DUYdcGjAo2F", path: "reel", label: "Use Me — Tips Up" },
-  { id: "DHn2cNDRczz", path: "reel", label: "Live reel" },
 ];
 
 const SHOWS = [
