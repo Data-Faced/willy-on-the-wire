@@ -23,6 +23,7 @@ const SHOWS = [
     time: "9PM-11PM",
     doors: "Doors 8PM",
     age: "21+",
+    flyer: "/tune-up-flyer-placeholder.jpg",
     blurb:
       "Halloween night at Tune Up. Rock, blues, soul, and funk for a packed Bozeman floor.",
   },
@@ -56,6 +57,7 @@ const SHOWS = [
     time: "9PM-11PM",
     doors: "Doors 8PM",
     age: "21+",
+    flyer: "/tune-up-flyer-placeholder.jpg",
     blurb:
       "Saturday night at Tune Up. Classic songs with our weight on them and no dead air.",
   },
