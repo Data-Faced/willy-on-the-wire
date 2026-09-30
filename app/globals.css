@@ -27,31 +27,39 @@ body {
 }
 
 main {
-  max-width: 720px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 28px 20px 80px;
+  padding: 20px 24px 80px;
 }
 
 .site-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   gap: 16px;
-  padding-bottom: 20px;
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--line);
 }
 
-.header-mark,
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+
 h1,
 h2 {
   font-family: var(--font-display), Impact, sans-serif;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin: 0;
-}
-
-.header-mark {
-  font-size: 18px;
 }
 
 .eyebrow {
@@ -63,41 +71,31 @@ h2 {
 }
 
 .hero {
-  padding: 56px 0 28px;
+  display: grid;
+  gap: 32px;
+  padding: 36px 0 40px;
+  align-items: center;
 }
 
 h1 {
-  font-size: clamp(56px, 16vw, 96px);
+  font-size: clamp(48px, 8vw, 84px);
   line-height: 0.9;
-  margin: 12px 0 18px;
+  margin: 10px 0 16px;
 }
 
 .lede,
-section p {
+section p,
+.video-caption {
   color: var(--muted);
   font-size: 18px;
   line-height: 1.55;
-}
-
-section {
-  padding: 36px 0;
-  border-top: 1px solid var(--line);
-}
-
-h2 {
-  font-size: 28px;
-  margin-bottom: 12px;
-}
-
-a {
-  color: var(--ink);
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 .btn {
@@ -120,9 +118,43 @@ a {
   color: var(--ink);
 }
 
+.video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid var(--line);
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-caption {
+  margin: 10px 0 0;
+  font-size: 14px;
+}
+
+section {
+  padding: 36px 0;
+  border-top: 1px solid var(--line);
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+a {
+  color: var(--ink);
+}
+
 .empty,
 .show-meta,
-.show-note,
 .site-footer {
   color: var(--muted);
 }
@@ -158,4 +190,13 @@ a {
   padding-top: 28px;
   border-top: 1px solid var(--line);
   font-size: 14px;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr);
+    gap: 48px;
+    min-height: calc(100vh - 110px);
+    padding: 28px 0 36px;
+  }
 }

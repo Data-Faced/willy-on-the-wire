@@ -16,6 +16,9 @@ export const metadata = {
   title: "Willy on the Wire | Bozeman rock, blues, soul, and funk",
   description:
     "Willy on the Wire is a Bozeman four-piece playing rock, blues, soul, and funk. Booking bars, weddings, and rooms across Montana.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 const jsonLd = {
