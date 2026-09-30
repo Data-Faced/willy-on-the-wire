@@ -1,18 +1,11 @@
 import ShowsList from "./ShowsList";
 import BookingForm from "./BookingForm";
-import InstagramFeed from "./InstagramFeed";
 
 const INSTAGRAM = "https://www.instagram.com/willyonthewire/";
 const YOUTUBE = "https://www.youtube.com/@WillyOnTheWire";
 const FACEBOOK = "https://www.facebook.com/p/Willy-on-the-Wire-61577985041444/";
 const YOUTUBE_ID = "tcxPivXSzgY";
 const YOUTUBE_SHORT_ID = "O3XHmIA21yQ";
-
-const REELS = [
-  { id: "DctXSx7RVKz", path: "reel", label: "Latest reel" },
-  { id: "DbtotEVC6W2", path: "reel", label: "Live reel" },
-  { id: "DUYdcGjAo2F", path: "reel", label: "Use Me — Tips Up" },
-];
 
 const SHOWS = [
   {
@@ -204,17 +197,6 @@ export default function HomePage() {
           Montana. The goal is simple. Better nights. Bigger stages. A set
           that does not let people sit down.
         </p>
-      </section>
-
-      <section id="listen">
-        <h2>Listen</h2>
-        <p>
-          Live clips from the floor. Follow @willyonthewire for the newest reels.
-        </p>
-        <InstagramFeed reels={REELS} />
-        <a className="btn btn-primary" href={INSTAGRAM}>
-          Instagram
-        </a>
       </section>
 
       <section id="shows">
