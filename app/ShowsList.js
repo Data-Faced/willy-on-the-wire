@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 const DOT = "\u00b7";
 
@@ -33,76 +33,9 @@ function Flyer({ venue }) {
   );
 }
 
-function ShareMenu({ show, onClose }) {
-  const [copied, setCopied] = useState("");
-  const [canNative, setCanNative] = useState(false);
-  const url = showUrl(show);
-  const text = shareText(show);
-
-  useEffect(() => {
-    setCanNative(typeof navigator !== "undefined" && typeof navigator.share === "function");
-  }, []);
-
-  async function copy(label) {
-    try {
-      await navigator.clipboard.writeText(`${text}\n${url}`);
-      setCopied(label);
-      window.setTimeout(() => setCopied(""), 1600);
-    } catch {
-      setCopied("error");
-    }
-  }
-
-  async function nativeShare() {
-    try {
-      await navigator.share({
-        title: `Willy on the Wire at ${show.venue}`,
-        text,
-        url,
-      });
-      onClose();
-    } catch {
-      /* user canceled */
-    }
-  }
-
-  return (
-    <div className="share-menu" role="dialog" aria-label="Share this show">
-      {canNative ? (
-        <button type="button" onClick={nativeShare}>
-          Device share
-        </button>
-      ) : null}
-      <a
-        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`}
-        target="_blank"
-        rel="noreferrer"
-      >
-        Facebook
-      </a>
-      <button type="button" onClick={() => copy("instagram")}>
-        {copied === "instagram" ? "Copied for Instagram" : "Instagram"}
-      </button>
-      <button type="button" onClick={() => copy("snapchat")}>
-        {copied === "snapchat" ? "Copied for Snapchat" : "Snapchat"}
-      </button>
-      <a href={`sms:?&body=${encodeURIComponent(`${text}\n${url}`)}`}>Messages</a>
-      <a
-        href={`mailto:?subject=${encodeURIComponent(`Willy on the Wire at ${show.venue}`)}&body=${encodeURIComponent(`${text}\n${url}`)}`}
-      >
-        Email
-      </a>
-      <button type="button" onClick={() => copy("link")}>
-        {copied === "link" ? "Link copied" : "Copy link"}
-      </button>
-    </div>
-  );
-}
-
 export default function ShowsList({ shows }) {
   const [view, setView] = useState("upcoming");
   const [open, setOpen] = useState(() => new Set());
-  const [sharing, setSharing] = useState("");
   const today = todayStamp();
 
   const visible = useMemo(() => {
@@ -121,11 +54,9 @@ export default function ShowsList({ shows }) {
   function changeView(next) {
     setView(next);
     setOpen(new Set());
-    setSharing("");
   }
 
   function toggle(id) {
-    setSharing("");
     setOpen((prev) => {
       const next = new Set(prev);
       if (next.has(id)) {
@@ -144,10 +75,31 @@ export default function ShowsList({ shows }) {
     }
   }
 
-  function onShareClick(event, id) {
+  async function shareShow(event, show) {
     event.preventDefault();
     event.stopPropagation();
-    setSharing((current) => (current === id ? "" : id));
+
+    const url = showUrl(show);
+    const text = shareText(show);
+
+    if (typeof navigator !== "undefined" && typeof navigator.share === "function") {
+      try {
+        await navigator.share({
+          title: `Willy on the Wire at ${show.venue}`,
+          text,
+          url,
+        });
+      } catch {
+        /* user canceled */
+      }
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(`${text}\n${url}`);
+    } catch {
+      /* ignore */
+    }
   }
 
   return (
@@ -221,21 +173,12 @@ export default function ShowsList({ shows }) {
                       <button
                         type="button"
                         className="show-toggle show-share"
-                        aria-expanded={sharing === id}
-                        onClick={(event) => onShareClick(event, id)}
+                        onClick={(event) => shareShow(event, show)}
                       >
                         Share
                       </button>
                     ) : null}
                   </div>
-                  {featured && sharing === id ? (
-                    <div
-                      onClick={(event) => event.stopPropagation()}
-                      onKeyDown={(event) => event.stopPropagation()}
-                    >
-                      <ShareMenu show={show} onClose={() => setSharing("")} />
-                    </div>
-                  ) : null}
                 </div>
                 <Flyer venue={show.venue} />
               </li>
