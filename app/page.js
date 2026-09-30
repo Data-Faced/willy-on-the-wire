@@ -216,7 +216,6 @@ export default function HomePage() {
       </section>
 
       <section id="shows">
-        <h2>Shows</h2>
         <ShowsList shows={SHOWS} />
       </section>
 
