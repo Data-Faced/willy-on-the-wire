@@ -434,4 +434,9 @@ a {
     font-size: 64px;
     white-space: nowrap;
   }
+
+  .hero-copy .eyebrow {
+    font-size: 18px;
+    letter-spacing: 0.14em;
+  }
 }
