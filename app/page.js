@@ -1,11 +1,19 @@
 import ShowsList from "./ShowsList";
 import BookingForm from "./BookingForm";
+import InstagramFeed from "./InstagramFeed";
 
 const INSTAGRAM = "https://www.instagram.com/willyonthewire/";
 const YOUTUBE = "https://www.youtube.com/@WillyOnTheWire";
 const FACEBOOK = "https://www.facebook.com/p/Willy-on-the-Wire-61577985041444/";
 const YOUTUBE_ID = "tcxPivXSzgY";
 const YOUTUBE_SHORT_ID = "O3XHmIA21yQ";
+
+const REELS = [
+  { id: "Dc1j0OVTpC7", path: "p", label: "Tune Up — Sept 5" },
+  { id: "DUYdcGjAo2F", path: "reel", label: "Use Me — Tips Up" },
+  { id: "DL3QQ7yibG0", path: "reel", label: "Brandy — live" },
+  { id: "DB1o_O8S2fg", path: "reel", label: "Stealers Wheel — live" },
+];
 
 const SHOWS = [
   {
@@ -168,10 +176,9 @@ export default function HomePage() {
       <section id="listen">
         <h2>Listen</h2>
         <p>
-          That clip is the intro \u2014 filmed live in Big Sky. More recordings
-          land here as we finish them. Until then, follow the floor videos
-          on Instagram.
+          Live clips from the floor. Follow @willyonthewire for the newest reels.
         </p>
+        <InstagramFeed reels={REELS} />
         <a className="btn btn-primary" href={INSTAGRAM}>
           Instagram
         </a>

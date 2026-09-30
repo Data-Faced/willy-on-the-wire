@@ -245,6 +245,21 @@ a {
   color: var(--ink);
 }
 
+.ig-grid {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+  grid-template-columns: 1fr;
+}
+
+.ig-grid .instagram-media {
+  margin: 0 auto !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  background: #111;
+  border: 1px solid var(--line) !important;
+}
+
 .booking-form {
   display: grid;
   gap: 16px;
@@ -316,6 +331,12 @@ a {
 
   .video-mobile {
     display: block;
+  }
+}
+
+@media (min-width: 700px) {
+  .ig-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
