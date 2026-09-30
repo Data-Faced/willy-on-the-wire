@@ -15,18 +15,18 @@ function SocialRow() {
           <circle cx="17.2" cy="6.8" r="1" fill="currentColor" />
         </svg>
       </a>
-      <a href={YOUTUBE} aria-label="YouTube" target="_blank" rel="noreferrer">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="2.5" y="6" width="19" height="12" rx="3" fill="none" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M10.5 9.5v5l5-2.5-5-2.5z" fill="currentColor" />
-        </svg>
-      </a>
       <a href={FACEBOOK} aria-label="Facebook" target="_blank" rel="noreferrer">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
             d="M14 8h2.5V5h-2.5C11.6 5 10 6.6 10 8.5V10H8v3h2v6h3v-6h2.2l.8-3H13V8.5c0-.3.2-.5.5-.5H14z"
             fill="currentColor"
           />
+        </svg>
+      </a>
+      <a href={YOUTUBE} aria-label="YouTube" target="_blank" rel="noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="2.5" y="6" width="19" height="12" rx="3" fill="none" stroke="currentColor" strokeWidth="1.8" />
+          <path d="M10.5 9.5v5l5-2.5-5-2.5z" fill="currentColor" />
         </svg>
       </a>
     </nav>
