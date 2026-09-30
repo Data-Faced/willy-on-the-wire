@@ -20,56 +20,56 @@ const SHOWS = [
     label: "Sat Oct 31, 2026",
     venue: "Tune Up",
     city: "Bozeman, MT",
-    time: "9PM\u201311PM",
+    time: "9PM-11PM",
   },
   {
     date: "2026-09-11",
     label: "Fri Sept 11, 2026",
     venue: "The Grey Dog",
     city: "Bozeman, MT",
-    time: "9PM\u201312AM",
+    time: "9PM-12AM",
   },
   {
     date: "2026-09-10",
     label: "Thu Sept 10, 2026",
     venue: "The Haufbrau",
     city: "Bozeman, MT",
-    time: "10PM\u20131AM",
+    time: "10PM-1AM",
   },
   {
     date: "2026-09-05",
     label: "Sat Sept 5, 2026",
     venue: "Tune Up",
     city: "Bozeman, MT",
-    time: "9PM\u201311PM",
+    time: "9PM-11PM",
   },
   {
     date: "2026-09-04",
     label: "Fri Sept 4, 2026",
     venue: "Mountain Village Plaza",
     city: "Big Sky, MT",
-    time: "3PM\u20136PM",
+    time: "3PM-6PM",
   },
   {
     date: "2026-07-25",
     label: "Sat July 25, 2026",
     venue: "Chico Hot Springs",
     city: "Pray, MT",
-    time: "9PM\u20131AM",
+    time: "9PM-1AM",
   },
   {
     date: "2026-07-24",
     label: "Fri July 24, 2026",
     venue: "Chico Hot Springs",
     city: "Pray, MT",
-    time: "9PM\u20131AM",
+    time: "9PM-1AM",
   },
   {
     date: "2026-05-10",
     label: "Sun May 10, 2026",
     venue: "Bozeman Hot Springs",
     city: "Four Corners, MT",
-    time: "7PM\u201310PM",
+    time: "7PM-10PM",
   },
 ];
 
@@ -117,7 +117,7 @@ export default function HomePage() {
 
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">Rock \u00b7 Blues \u00b7 Soul \u00b7 Funk</p>
+          <p className="eyebrow">Rock {'\u00b7'} Blues {'\u00b7'} Soul {'\u00b7'} Funk</p>
           <h1>Willy on the Wire</h1>
           <p className="lede">
             A four-piece from Bozeman playing our own takes on the songs
@@ -138,7 +138,7 @@ export default function HomePage() {
           <div className="video-frame video-desktop">
             <iframe
               src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_ID}?rel=0&modestbranding=1`}
-              title="Willy on the Wire promo \u2014 live at Tips Up, Big Sky"
+              title="Willy on the Wire promo - live at Tips Up, Big Sky"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
@@ -146,13 +146,13 @@ export default function HomePage() {
           <div className="video-frame video-mobile">
             <iframe
               src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_SHORT_ID}?rel=0&modestbranding=1`}
-              title="Willy on the Wire promo \u2014 vertical"
+              title="Willy on the Wire promo - vertical"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
           </div>
           <p className="video-caption">
-            Live at Tips Up, Big Sky \u00b7 Come and Get Your Love
+            Live at Tips Up, Big Sky {'\u00b7'} Come and Get Your Love
           </p>
         </div>
       </section>
@@ -162,7 +162,7 @@ export default function HomePage() {
         <p>
           Willy on the Wire is a Bozeman rock band built around vocals and
           guitar, lead guitar, bass, and drums. We play rock, blues, soul, and
-          funk \u2014 classic songs with our own weight on them.
+          funk - classic songs with our own weight on them.
         </p>
         <p>
           We are a year into this lineup and playing the rooms that raised us:
@@ -201,7 +201,7 @@ export default function HomePage() {
       </section>
 
       <footer className="site-footer">
-        <p>Willy on the Wire \u00b7 Bozeman, MT</p>
+        <p>Willy on the Wire {'\u00b7'} Bozeman, MT</p>
         <SocialRow />
       </footer>
     </main>
