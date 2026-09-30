@@ -169,89 +169,91 @@ export default function ShowsList({ shows }) {
         </button>
       </div>
 
-      {visible.length === 0 ? (
-        <p className="empty">
-          {view === "upcoming"
-            ? "Next shows will be posted here as they lock."
-            : "Past dates will collect here as we play them."}
-        </p>
-      ) : (
-        <>
-          <ul className="shows">
-            {displayed.map((show, index) => {
-              const id = showId(show);
-              const pinned = index === 0;
-              const featured = pinned || open.has(id);
-              const extras = [show.doors, show.age].filter(Boolean).join(` ${DOT} `);
+      <div className="shows-scroll">
+        {visible.length === 0 ? (
+          <p className="empty">
+            {view === "upcoming"
+              ? "Next shows will be posted here as they lock."
+              : "Past dates will collect here as we play them."}
+          </p>
+        ) : (
+          <>
+            <ul className="shows">
+              {displayed.map((show, index) => {
+                const id = showId(show);
+                const pinned = index === 0;
+                const featured = pinned || open.has(id);
+                const extras = [show.doors, show.age].filter(Boolean).join(` ${DOT} `);
 
-              return (
-                <li
-                  key={id}
-                  id={`show-${show.date}`}
-                  className={`show-item${featured ? " is-featured" : ""}${pinned ? " is-pinned" : ""}`}
-                  onClick={pinned ? undefined : () => toggle(id)}
-                  onKeyDown={pinned ? undefined : (event) => onRowKeyDown(event, id)}
-                  role={pinned ? undefined : "button"}
-                  tabIndex={pinned ? undefined : 0}
-                  aria-expanded={pinned ? undefined : featured}
-                >
-                  <div className="show-copy">
-                    <span className="show-date">{show.label}</span>
-                    <span className="show-venue">{show.venue}</span>
-                    <span className="show-meta">
-                      {show.city}
-                      {show.time ? ` ${DOT} ${show.time}` : ""}
-                    </span>
-                    {featured && extras ? (
-                      <span className="show-extra">{extras}</span>
-                    ) : null}
-                    {featured && show.blurb ? (
-                      <p className="show-blurb">{show.blurb}</p>
-                    ) : null}
-                    <div className="show-actions">
-                      {!pinned ? (
-                        <span className="show-toggle">
-                          {featured ? "Less Info" : "More Info"}
-                        </span>
+                return (
+                  <li
+                    key={id}
+                    id={`show-${show.date}`}
+                    className={`show-item${featured ? " is-featured" : ""}${pinned ? " is-pinned" : ""}`}
+                    onClick={pinned ? undefined : () => toggle(id)}
+                    onKeyDown={pinned ? undefined : (event) => onRowKeyDown(event, id)}
+                    role={pinned ? undefined : "button"}
+                    tabIndex={pinned ? undefined : 0}
+                    aria-expanded={pinned ? undefined : featured}
+                  >
+                    <div className="show-copy">
+                      <span className="show-date">{show.label}</span>
+                      <span className="show-venue">{show.venue}</span>
+                      <span className="show-meta">
+                        {show.city}
+                        {show.time ? ` ${DOT} ${show.time}` : ""}
+                      </span>
+                      {featured && extras ? (
+                        <span className="show-extra">{extras}</span>
                       ) : null}
-                      {featured ? (
-                        <button
-                          type="button"
-                          className="show-toggle show-share"
-                          onClick={(event) => shareShow(event, show)}
-                        >
-                          Share
-                        </button>
+                      {featured && show.blurb ? (
+                        <p className="show-blurb">{show.blurb}</p>
                       ) : null}
+                      <div className="show-actions">
+                        {!pinned ? (
+                          <span className="show-toggle">
+                            {featured ? "Less Info" : "More Info"}
+                          </span>
+                        ) : null}
+                        {featured ? (
+                          <button
+                            type="button"
+                            className="show-toggle show-share"
+                            onClick={(event) => shareShow(event, show)}
+                          >
+                            Share
+                          </button>
+                        ) : null}
+                      </div>
                     </div>
-                  </div>
-                  {featured ? (
-                    <button
-                      type="button"
-                      className="show-flyer-button"
-                      onClick={(event) => openFlyer(event, show)}
-                      aria-label={`View ${show.venue} flyer`}
-                    >
+                    {featured ? (
+                      <button
+                        type="button"
+                        className="show-flyer-button"
+                        onClick={(event) => openFlyer(event, show)}
+                        aria-label={`View ${show.venue} flyer`}
+                      >
+                        <Flyer show={show} />
+                      </button>
+                    ) : (
                       <Flyer show={show} />
-                    </button>
-                  ) : (
-                    <Flyer show={show} />
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-          {canExpandPast ? (
-            <button
-              type="button"
-              className="show-more-past"
-              onClick={() => setShowAllPast(true)}
-            >
-              All past shows
-            </button>
-          ) : null}
-        </>
-      )}
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+            {canExpandPast ? (
+              <button
+                type="button"
+                className="show-more-past"
+                onClick={() => setShowAllPast(true)}
+              >
+                All past shows
+              </button>
+            ) : null}
+          </>
+        )}
+      </div>
 
       {lightbox ? (
         <div
