@@ -21,13 +21,74 @@ body {
   min-height: 100%;
 }
 
+html {
+  background: #000;
+}
+
 body {
-  background: var(--bg);
+  position: relative;
+  isolation: isolate;
+  background: #000;
   color: var(--ink);
   font-family: var(--font-body), Helvetica, sans-serif;
 }
 
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  background:
+    radial-gradient(ellipse 36% 58% at 16% -8%, rgba(255, 212, 0, 0.22), transparent 58%),
+    radial-gradient(ellipse 32% 52% at 84% -10%, rgba(255, 255, 255, 0.1), transparent 56%),
+    radial-gradient(ellipse 28% 46% at 50% -12%, rgba(255, 212, 0, 0.1), transparent 54%);
+  animation: spots-a 18s ease-in-out infinite alternate;
+}
+
+body::after {
+  background:
+    radial-gradient(ellipse 42% 36% at 8% 88%, rgba(255, 212, 0, 0.08), transparent 60%),
+    radial-gradient(ellipse 38% 34% at 92% 92%, rgba(200, 200, 210, 0.08), transparent 62%),
+    radial-gradient(ellipse 24% 30% at 70% 40%, rgba(255, 255, 255, 0.04), transparent 70%);
+  animation: spots-b 22s ease-in-out infinite alternate;
+}
+
+@keyframes spots-a {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.85;
+  }
+  to {
+    transform: translate3d(2%, 1.5%, 0) scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes spots-b {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.75;
+  }
+  to {
+    transform: translate3d(-2.5%, -1%, 0) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none;
+  }
+}
+
 main {
+  position: relative;
   max-width: 1120px;
   margin: 0 auto;
   padding: 16px 24px 80px;
