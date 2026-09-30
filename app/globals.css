@@ -4,7 +4,8 @@
   --bg: #000000;
   --bg-2: #000000;
   --ink: #ffffff;
-  --muted: #c4a574;
+  --muted: #f2eee6;
+  --soft: #c4a574;
   --line: #6b5438;
   --amp: #c9a227;
   --amp-ink: #000000;
@@ -85,10 +86,15 @@ h1 {
 }
 
 .lede,
-section p,
-.video-caption {
+section p {
   color: var(--muted);
   font-size: 18px;
+  line-height: 1.55;
+}
+
+.video-caption {
+  color: var(--soft);
+  font-size: 14px;
   line-height: 1.55;
 }
 
@@ -158,7 +164,7 @@ a {
 .empty,
 .show-meta,
 .site-footer {
-  color: var(--muted);
+  color: var(--soft);
 }
 
 .shows {
