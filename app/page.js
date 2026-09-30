@@ -21,6 +21,10 @@ const SHOWS = [
     venue: "Tune Up",
     city: "Bozeman, MT",
     time: "9PM-11PM",
+    doors: "Doors 8PM",
+    age: "21+",
+    blurb:
+      "Halloween night at Tune Up. Rock, blues, soul, and funk for a packed Bozeman floor.",
   },
   {
     date: "2026-09-11",
@@ -28,6 +32,10 @@ const SHOWS = [
     venue: "The Grey Dog",
     city: "Bozeman, MT",
     time: "9PM-12AM",
+    doors: "Doors 8PM",
+    age: "21+",
+    blurb:
+      "A late Friday set of rock, blues, soul, and funk on Main. Packed floor, loud amps, last call energy.",
   },
   {
     date: "2026-09-10",
@@ -35,6 +43,10 @@ const SHOWS = [
     venue: "The Haufbrau",
     city: "Bozeman, MT",
     time: "10PM-1AM",
+    doors: "Doors 9PM",
+    age: "21+",
+    blurb:
+      "Thirsty Thursday at The Hauf. A late set built to keep the room moving until last call.",
   },
   {
     date: "2026-09-05",
@@ -42,6 +54,10 @@ const SHOWS = [
     venue: "Tune Up",
     city: "Bozeman, MT",
     time: "9PM-11PM",
+    doors: "Doors 8PM",
+    age: "21+",
+    blurb:
+      "Saturday night at Tune Up. Classic songs with our weight on them and no dead air.",
   },
   {
     date: "2026-09-04",
@@ -49,6 +65,10 @@ const SHOWS = [
     venue: "Mountain Village Plaza",
     city: "Big Sky, MT",
     time: "3PM-6PM",
+    doors: "Start 3PM",
+    age: "All ages",
+    blurb:
+      "Afternoon set in the plaza. Open air, Big Sky light, and a set that works in the sun.",
   },
   {
     date: "2026-07-25",
@@ -56,6 +76,10 @@ const SHOWS = [
     venue: "Chico Hot Springs",
     city: "Pray, MT",
     time: "9PM-1AM",
+    doors: "Doors 8PM",
+    age: "21+",
+    blurb:
+      "Saturday at Chico. Lodge room, late set, and a dance floor that does not sit down.",
   },
   {
     date: "2026-07-24",
@@ -63,6 +87,10 @@ const SHOWS = [
     venue: "Chico Hot Springs",
     city: "Pray, MT",
     time: "9PM-1AM",
+    doors: "Doors 8PM",
+    age: "21+",
+    blurb:
+      "Opening night of the Chico weekend. Rock, blues, soul, and funk under the lodge lights.",
   },
   {
     date: "2026-05-10",
@@ -70,6 +98,10 @@ const SHOWS = [
     venue: "Bozeman Hot Springs",
     city: "Four Corners, MT",
     time: "7PM-10PM",
+    doors: "Doors 6PM",
+    age: "All ages",
+    blurb:
+      "Sunday at the springs. A three-hour set for a room that came to stay.",
   },
 ];
 
