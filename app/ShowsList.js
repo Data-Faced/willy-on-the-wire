@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const DOT = "\u00b7";
 
@@ -24,11 +24,21 @@ function shareText(show) {
   return `Willy on the Wire at ${show.venue} \u2014 ${show.label}. ${show.city}${show.time ? ` ${DOT} ${show.time}` : ""}`;
 }
 
-function Flyer({ venue }) {
+function Flyer({ show }) {
+  if (show.flyer) {
+    return (
+      <img
+        className="show-flyer-img"
+        src={show.flyer}
+        alt={`${show.venue} flyer`}
+      />
+    );
+  }
+
   return (
     <div className="show-flyer" aria-hidden="true">
       <span>Willy on the Wire</span>
-      <strong>{venue}</strong>
+      <strong>{show.venue}</strong>
     </div>
   );
 }
@@ -36,6 +46,7 @@ function Flyer({ venue }) {
 export default function ShowsList({ shows }) {
   const [view, setView] = useState("upcoming");
   const [open, setOpen] = useState(() => new Set());
+  const [lightbox, setLightbox] = useState(null);
   const today = todayStamp();
 
   const visible = useMemo(() => {
@@ -51,9 +62,29 @@ export default function ShowsList({ shows }) {
     );
   }, [shows, view, today]);
 
+  useEffect(() => {
+    if (!lightbox) {
+      return undefined;
+    }
+
+    function onKey(event) {
+      if (event.key === "Escape") {
+        setLightbox(null);
+      }
+    }
+
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [lightbox]);
+
   function changeView(next) {
     setView(next);
     setOpen(new Set());
+    setLightbox(null);
   }
 
   function toggle(id) {
@@ -73,6 +104,12 @@ export default function ShowsList({ shows }) {
       event.preventDefault();
       toggle(id);
     }
+  }
+
+  function openFlyer(event, show) {
+    event.preventDefault();
+    event.stopPropagation();
+    setLightbox(show);
   }
 
   async function shareShow(event, show) {
@@ -180,12 +217,47 @@ export default function ShowsList({ shows }) {
                     ) : null}
                   </div>
                 </div>
-                <Flyer venue={show.venue} />
+                {featured ? (
+                  <button
+                    type="button"
+                    className="show-flyer-button"
+                    onClick={(event) => openFlyer(event, show)}
+                    aria-label={`View ${show.venue} flyer`}
+                  >
+                    <Flyer show={show} />
+                  </button>
+                ) : (
+                  <Flyer show={show} />
+                )}
               </li>
             );
           })}
         </ul>
       )}
+
+      {lightbox ? (
+        <div
+          className="flyer-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${lightbox.venue} flyer`}
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            type="button"
+            className="flyer-lightbox-close"
+            onClick={() => setLightbox(null)}
+          >
+            Close
+          </button>
+          <div
+            className="flyer-lightbox-card"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <Flyer show={lightbox} />
+          </div>
+        </div>
+      ) : null}
     </>
   );
 }
