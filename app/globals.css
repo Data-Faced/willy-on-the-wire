@@ -254,6 +254,7 @@ a {
 
 .empty,
 .show-meta,
+.show-extra,
 .site-footer,
 .form-note {
   color: var(--soft);
@@ -287,11 +288,37 @@ a {
   margin: 0;
 }
 
-.shows li {
+.show-item {
+  display: grid;
+  grid-template-columns: 1fr 72px;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 10px;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.show-item:hover {
+  background: rgba(255, 212, 0, 0.06);
+}
+
+.show-item.is-featured {
+  align-items: start;
+  grid-template-columns: 1fr 112px;
+  padding: 22px 12px;
+  border: 1px solid transparent;
+  border-bottom-color: var(--line);
+}
+
+.show-item.is-featured:not(.is-pinned) {
+  border: 1px solid var(--amp);
+  background: rgba(255, 212, 0, 0.04);
+}
+
+.show-copy {
   display: grid;
   gap: 4px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--line);
+  min-width: 0;
 }
 
 .show-date {
@@ -304,6 +331,77 @@ a {
 .show-venue {
   font-size: 20px;
   color: var(--ink);
+}
+
+.show-item.is-featured .show-date {
+  font-size: 13px;
+}
+
+.show-item.is-featured .show-venue {
+  font-size: 28px;
+}
+
+.show-item.is-featured .show-meta,
+.show-item.is-featured .show-extra {
+  font-size: 16px;
+}
+
+.show-blurb {
+  margin: 8px 0 0;
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.show-toggle {
+  justify-self: start;
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--amp);
+  font: inherit;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.show-flyer {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-content: center;
+  gap: 8px;
+  padding: 8px;
+  text-align: center;
+  background: #0a0a0a;
+  border: 1px solid var(--amp);
+  color: var(--amp);
+}
+
+.show-flyer span {
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+.show-flyer strong {
+  font-weight: 500;
+  font-size: 10px;
+  color: var(--ink);
+}
+
+.show-item.is-featured .show-flyer span {
+  font-size: 16px;
+}
+
+.show-item.is-featured .show-flyer strong {
+  font-size: 12px;
 }
 
 .ig-row {
@@ -401,6 +499,10 @@ a {
   .video-mobile {
     display: block;
   }
+
+  .show-item.is-featured .show-venue {
+    font-size: 22px;
+  }
 }
 
 @media (min-width: 700px) {
@@ -420,6 +522,16 @@ a {
 
   .form-row {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .show-item {
+    grid-template-columns: 1fr 88px;
+    gap: 24px;
+  }
+
+  .show-item.is-featured {
+    grid-template-columns: 1fr 160px;
+    gap: 32px;
   }
 }
 
