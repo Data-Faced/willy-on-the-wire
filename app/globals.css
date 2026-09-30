@@ -75,7 +75,7 @@ h2 {
 .hero {
   display: grid;
   gap: 28px;
-  padding: 16px 0 18px;
+  padding: 24px 0;
   align-items: center;
 }
 
@@ -165,6 +165,13 @@ section p {
   border: 0;
 }
 
+.video-mobile {
+  display: none;
+  aspect-ratio: 9 / 16;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
 section {
   padding: 28px 0;
   border-top: 1px solid var(--line);
@@ -224,10 +231,26 @@ a {
   margin-top: 0;
 }
 
+@media (max-width: 767px) {
+  .video-desktop {
+    display: none;
+  }
+
+  .video-mobile {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 40px 0;
+  }
+}
+
 @media (min-width: 900px) {
   .hero {
     grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr);
     gap: 40px;
-    padding: 16px 0 20px;
+    padding: 40px 0;
   }
 }

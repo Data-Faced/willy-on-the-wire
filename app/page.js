@@ -4,6 +4,7 @@ const INSTAGRAM = "https://www.instagram.com/willyonthewire/";
 const YOUTUBE = "https://www.youtube.com/@WillyOnTheWire";
 const FACEBOOK = "https://www.facebook.com/p/Willy-on-the-Wire-61577985041444/";
 const YOUTUBE_ID = "tcxPivXSzgY";
+const YOUTUBE_SHORT_ID = "O3XHmIA21yQ";
 
 function SocialRow() {
   return (
@@ -67,10 +68,18 @@ export default function HomePage() {
         </div>
 
         <div className="hero-media" id="watch">
-          <div className="video-frame">
+          <div className="video-frame video-desktop">
             <iframe
               src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_ID}?rel=0&modestbranding=1`}
               title="Willy on the Wire promo — live at Tips Up, Big Sky"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+          <div className="video-frame video-mobile">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_SHORT_ID}?rel=0&modestbranding=1`}
+              title="Willy on the Wire promo — vertical"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
