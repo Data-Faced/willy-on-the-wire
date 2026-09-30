@@ -601,11 +601,13 @@ a:hover {
 .flyer-lightbox {
   position: fixed;
   inset: 0;
-  z-index: 40;
+  z-index: 80;
   display: grid;
   place-items: center;
   padding: 24px;
-  background: rgba(0, 0, 0, 0.86);
+  background: rgba(8, 8, 8, 0.28);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   animation: fade-in 0.24s var(--ease);
 }
 
