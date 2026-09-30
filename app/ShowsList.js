@@ -196,6 +196,18 @@ export default function ShowsList({ shows }) {
                     tabIndex={pinned ? undefined : 0}
                     aria-expanded={pinned ? undefined : featured}
                   >
+                    {featured ? (
+                      <button
+                        type="button"
+                        className="show-flyer-button"
+                        onClick={(event) => openFlyer(event, show)}
+                        aria-label={`View ${show.venue} flyer`}
+                      >
+                        <Flyer show={show} />
+                      </button>
+                    ) : (
+                      <Flyer show={show} />
+                    )}
                     <div className="show-copy">
                       <span className="show-date">{show.label}</span>
                       <span className="show-venue">{show.venue}</span>
@@ -226,18 +238,6 @@ export default function ShowsList({ shows }) {
                         ) : null}
                       </div>
                     </div>
-                    {featured ? (
-                      <button
-                        type="button"
-                        className="show-flyer-button"
-                        onClick={(event) => openFlyer(event, show)}
-                        aria-label={`View ${show.venue} flyer`}
-                      >
-                        <Flyer show={show} />
-                      </button>
-                    ) : (
-                      <Flyer show={show} />
-                    )}
                   </li>
                 );
               })}

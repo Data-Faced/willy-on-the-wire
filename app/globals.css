@@ -395,6 +395,17 @@ a {
   transition: background 0.2s ease, border-color 0.2s ease;
 }
 
+.show-item > .show-copy {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.show-item > .show-flyer,
+.show-item > .show-flyer-button {
+  grid-column: 2;
+  grid-row: 1;
+}
+
 .show-item:not(.is-pinned) {
   cursor: pointer;
 }
@@ -404,13 +415,28 @@ a {
 }
 
 .show-item.is-featured {
-  align-items: start;
-  grid-template-columns: 1fr 112px;
+  display: block;
   margin: 28px 0;
   padding: 28px 10px;
   border: 0;
   border-bottom: 1px solid var(--line);
   background: none;
+}
+
+.show-item.is-featured::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.show-item.is-featured > .show-flyer-button {
+  float: right;
+  width: 112px;
+  margin: 0 0 16px 20px;
+}
+
+.show-item.is-featured .show-copy {
+  display: block;
 }
 
 .show-copy {
@@ -446,7 +472,6 @@ a {
 
 .show-blurb {
   margin: 8px 0 0;
-  max-width: 42rem;
   color: var(--muted);
   font-size: 16px;
   line-height: 1.5;
@@ -702,10 +727,13 @@ a {
   }
 
   .show-item.is-featured {
-    grid-template-columns: 1fr 160px;
-    gap: 32px;
     margin: 36px 0;
     padding: 32px 10px;
+  }
+
+  .show-item.is-featured > .show-flyer-button {
+    width: 160px;
+    margin: 0 0 20px 28px;
   }
 }
 
