@@ -380,38 +380,17 @@ a {
   cursor: pointer;
 }
 
-.share-menu {
-  display: grid;
-  gap: 2px;
-  margin-top: 10px;
-  max-width: 240px;
-  padding: 8px;
-  background: #0a0a0a;
-  border: 1px solid var(--amp);
-}
-
-.share-menu a,
-.share-menu button {
+.show-flyer-button {
   display: block;
   width: 100%;
-  padding: 8px 10px;
+  padding: 0;
   border: 0;
   background: none;
-  color: var(--ink);
-  font: inherit;
-  font-size: 14px;
-  text-align: left;
-  text-decoration: none;
-  cursor: pointer;
+  cursor: zoom-in;
 }
 
-.share-menu a:hover,
-.share-menu button:hover {
-  color: var(--amp);
-  background: rgba(255, 212, 0, 0.08);
-}
-
-.show-flyer {
+.show-flyer,
+.show-flyer-img {
   width: 100%;
   aspect-ratio: 4 / 5;
   display: grid;
@@ -422,6 +401,7 @@ a {
   background: #0a0a0a;
   border: 1px solid var(--amp);
   color: var(--amp);
+  object-fit: cover;
 }
 
 .show-flyer span {
@@ -444,6 +424,47 @@ a {
 
 .show-item.is-featured .show-flyer strong {
   font-size: 12px;
+}
+
+.flyer-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.86);
+}
+
+.flyer-lightbox-card {
+  width: min(420px, 86vw);
+}
+
+.flyer-lightbox-card .show-flyer,
+.flyer-lightbox-card .show-flyer-img {
+  aspect-ratio: 4 / 5;
+}
+
+.flyer-lightbox-card .show-flyer span {
+  font-size: 36px;
+}
+
+.flyer-lightbox-card .show-flyer strong {
+  font-size: 18px;
+}
+
+.flyer-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  border: 0;
+  background: none;
+  color: var(--amp);
+  font: inherit;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 .ig-row {
