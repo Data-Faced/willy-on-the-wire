@@ -263,12 +263,7 @@ section {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0.22) 48%,
-    rgba(0, 0, 0, 0.06) 100%
-  );
+  background: none;
 }
 
 #shows > * {
@@ -283,21 +278,7 @@ section {
   overscroll-behavior: contain;
   scroll-behavior: smooth;
   padding: 8px 22px 24px 10px;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.08) 0%,
-      rgba(0, 0, 0, 0.42) 10%,
-      rgba(0, 0, 0, 0.42) 88%,
-      rgba(0, 0, 0, 0) 100%
-    ),
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.48) 0%,
-      rgba(0, 0, 0, 0.38) 68%,
-      rgba(0, 0, 0, 0.12) 88%,
-      rgba(0, 0, 0, 0) 100%
-    );
+  background: none;
 }
 
 .shows-scroll::-webkit-scrollbar {
@@ -338,13 +319,7 @@ a {
   margin: 0;
   flex-shrink: 0;
   padding: 10px 22px 8px 10px;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.48) 0%,
-    rgba(0, 0, 0, 0.38) 68%,
-    rgba(0, 0, 0, 0.12) 88%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: none;
 }
 
 .show-tabs button {
@@ -674,6 +649,34 @@ a {
       rgba(0, 0, 0, 0.4) 0%,
       rgba(0, 0, 0, 0.28) 100%
     );
+  }
+
+  .show-tabs {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.48) 0%,
+      rgba(0, 0, 0, 0.38) 68%,
+      rgba(0, 0, 0, 0.12) 88%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .shows-scroll {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.08) 0%,
+        rgba(0, 0, 0, 0.42) 10%,
+        rgba(0, 0, 0, 0.42) 88%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.48) 0%,
+        rgba(0, 0, 0, 0.38) 68%,
+        rgba(0, 0, 0, 0.12) 88%,
+        rgba(0, 0, 0, 0) 100%
+      );
   }
 }
 
