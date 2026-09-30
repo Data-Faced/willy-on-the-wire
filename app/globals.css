@@ -286,16 +286,16 @@ section {
   background:
     linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.15) 0%,
-      rgba(0, 0, 0, 0.78) 10%,
-      rgba(0, 0, 0, 0.78) 88%,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.42) 10%,
+      rgba(0, 0, 0, 0.42) 88%,
       rgba(0, 0, 0, 0) 100%
     ),
     linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.86) 0%,
-      rgba(0, 0, 0, 0.78) 68%,
-      rgba(0, 0, 0, 0.28) 88%,
+      rgba(0, 0, 0, 0.48) 0%,
+      rgba(0, 0, 0, 0.38) 68%,
+      rgba(0, 0, 0, 0.12) 88%,
       rgba(0, 0, 0, 0) 100%
     );
 }
@@ -340,9 +340,9 @@ a {
   padding: 10px 22px 8px 10px;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.86) 0%,
-    rgba(0, 0, 0, 0.78) 68%,
-    rgba(0, 0, 0, 0.28) 88%,
+    rgba(0, 0, 0, 0.48) 0%,
+    rgba(0, 0, 0, 0.38) 68%,
+    rgba(0, 0, 0, 0.12) 88%,
     rgba(0, 0, 0, 0) 100%
   );
 }
