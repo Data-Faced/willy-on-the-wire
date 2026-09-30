@@ -243,6 +243,10 @@ section {
   border-top: 1px solid var(--line);
 }
 
+#shows {
+  position: relative;
+}
+
 h2 {
   font-size: 28px;
   margin-bottom: 12px;
@@ -632,5 +636,12 @@ a {
   .hero-copy .eyebrow {
     font-size: 18px;
     letter-spacing: 0.14em;
+  }
+
+  #shows .show-tabs,
+  #shows .shows,
+  #shows .show-more-past,
+  #shows .empty {
+    max-width: 66.666%;
   }
 }
