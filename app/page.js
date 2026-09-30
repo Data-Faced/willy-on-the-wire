@@ -9,6 +9,13 @@ const YOUTUBE_SHORT_ID = "O3XHmIA21yQ";
 
 const SHOWS = [
   {
+    date: "2026-10-31",
+    label: "Sat Oct 31, 2026",
+    venue: "Tune Up",
+    city: "Bozeman, MT",
+    time: "9PM\u201311PM",
+  },
+  {
     date: "2026-09-11",
     label: "Fri Sept 11, 2026",
     venue: "The Grey Dog",
