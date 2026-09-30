@@ -245,6 +245,30 @@ section {
 
 #shows {
   position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+#shows::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("/shows-bg.jpg") right center / cover no-repeat;
+}
+
+#shows::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.82) 42%,
+    rgba(0, 0, 0, 0.28) 72%,
+    rgba(0, 0, 0, 0.12) 100%
+  );
 }
 
 h2 {
@@ -587,6 +611,14 @@ a {
   .show-tabs button.is-active {
     font-size: 22px;
   }
+
+  #shows::after {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.78) 100%
+    );
+  }
 }
 
 @media (min-width: 700px) {
@@ -642,6 +674,6 @@ a {
   #shows .shows,
   #shows .show-more-past,
   #shows .empty {
-    max-width: 66.666%;
+    max-width: 50%;
   }
 }
