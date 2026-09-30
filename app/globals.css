@@ -247,12 +247,13 @@ section {
   position: relative;
   display: flex;
   flex-direction: column;
+  width: 100%;
   overflow: hidden;
   aspect-ratio: 4 / 3;
   max-height: min(720px, 78vh);
   background-color: transparent;
   background-image: url("/shows-bg.png");
-  background-position: right center;
+  background-position: right bottom;
   background-size: cover;
   background-repeat: no-repeat;
 }
