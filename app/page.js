@@ -1,7 +1,37 @@
 const SHOWS = [];
 
 const INSTAGRAM = "https://www.instagram.com/willyonthewire/";
+const YOUTUBE = "https://www.youtube.com/@WillyOnTheWire";
+const FACEBOOK = "https://www.facebook.com/p/Willy-on-the-Wire-61577985041444/";
 const YOUTUBE_ID = "tcxPivXSzgY";
+
+function SocialRow() {
+  return (
+    <nav className="socials" aria-label="Social links">
+      <a href={INSTAGRAM} aria-label="Instagram" target="_blank" rel="noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" strokeWidth="1.8" />
+          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="1.8" />
+          <circle cx="17.2" cy="6.8" r="1" fill="currentColor" />
+        </svg>
+      </a>
+      <a href={YOUTUBE} aria-label="YouTube" target="_blank" rel="noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="2.5" y="6" width="19" height="12" rx="3" fill="none" stroke="currentColor" strokeWidth="1.8" />
+          <path d="M10.5 9.5v5l5-2.5-5-2.5z" fill="currentColor" />
+        </svg>
+      </a>
+      <a href={FACEBOOK} aria-label="Facebook" target="_blank" rel="noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M14 8h2.5V5h-2.5C11.6 5 10 6.6 10 8.5V10H8v3h2v6h3v-6h2.2l.8-3H13V8.5c0-.3.2-.5.5-.5H14z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+    </nav>
+  );
+}
 
 export default function HomePage() {
   return (
@@ -33,6 +63,7 @@ export default function HomePage() {
               Book the band
             </a>
           </div>
+          <SocialRow />
         </div>
 
         <div className="hero-media" id="watch">
@@ -117,9 +148,7 @@ export default function HomePage() {
 
       <footer className="site-footer">
         <p>Willy on the Wire · Bozeman, MT</p>
-        <p>
-          <a href={INSTAGRAM}>Instagram</a>
-        </p>
+        <SocialRow />
       </footer>
     </main>
   );
