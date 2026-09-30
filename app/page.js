@@ -9,10 +9,10 @@ const YOUTUBE_ID = "tcxPivXSzgY";
 const YOUTUBE_SHORT_ID = "O3XHmIA21yQ";
 
 const REELS = [
-  { id: "Dc1j0OVTpC7", path: "p", label: "Tune Up — Sept 5" },
+  { id: "DctXSx7RVKz", path: "reel", label: "Latest reel" },
+  { id: "DbtotEVC6W2", path: "reel", label: "Live reel" },
   { id: "DUYdcGjAo2F", path: "reel", label: "Use Me — Tips Up" },
-  { id: "DL3QQ7yibG0", path: "reel", label: "Brandy — live" },
-  { id: "DB1o_O8S2fg", path: "reel", label: "Stealers Wheel — live" },
+  { id: "DHn2cNDRczz", path: "reel", label: "Live reel" },
 ];
 
 const SHOWS = [
