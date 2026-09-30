@@ -246,29 +246,29 @@ section {
 #shows {
   position: relative;
   overflow: hidden;
-  isolation: isolate;
-}
-
-#shows::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: url("/shows-bg.jpg") right center / cover no-repeat;
+  background-color: #000;
+  background-image: url("/shows-bg.jpg");
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #shows::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
+  pointer-events: none;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.92) 0%,
-    rgba(0, 0, 0, 0.82) 42%,
-    rgba(0, 0, 0, 0.28) 72%,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.55) 48%,
     rgba(0, 0, 0, 0.12) 100%
   );
+}
+
+#shows > * {
+  position: relative;
+  z-index: 1;
 }
 
 h2 {
@@ -615,8 +615,8 @@ a {
   #shows::after {
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.82) 0%,
-      rgba(0, 0, 0, 0.78) 100%
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.58) 100%
     );
   }
 }
