@@ -298,6 +298,10 @@ a {
   transition: background 0.2s ease, border-color 0.2s ease;
 }
 
+.show-item:not(.is-pinned) {
+  cursor: pointer;
+}
+
 .show-item:not(.is-featured):hover {
   background: rgba(255, 212, 0, 0.06);
 }
@@ -366,7 +370,6 @@ a {
   letter-spacing: 0.04em;
   text-decoration: underline;
   text-underline-offset: 3px;
-  cursor: pointer;
 }
 
 .show-flyer {
