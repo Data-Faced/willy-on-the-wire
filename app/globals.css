@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #100e0c;
-  --bg-2: #1a1612;
-  --ink: #f3ead8;
-  --muted: #b9ad96;
-  --line: #3a332a;
-  --amp: #e3a03a;
-  --amp-ink: #1a1206;
+  --bg: #000000;
+  --bg-2: #000000;
+  --ink: #ffffff;
+  --muted: #c4a574;
+  --line: #6b5438;
+  --amp: #c9a227;
+  --amp-ink: #000000;
 }
 
 * {
@@ -60,6 +60,7 @@ h2 {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin: 0;
+  color: var(--ink);
 }
 
 .eyebrow {
@@ -116,6 +117,7 @@ section p,
 
 .btn-ghost {
   color: var(--ink);
+  border-color: var(--ink);
 }
 
 .video-frame {
@@ -181,6 +183,7 @@ a {
 
 .show-venue {
   font-size: 20px;
+  color: var(--ink);
 }
 
 .site-footer {
