@@ -298,7 +298,7 @@ a {
   transition: background 0.2s ease, border-color 0.2s ease;
 }
 
-.show-item:hover {
+.show-item:not(.is-featured):hover {
   background: rgba(255, 212, 0, 0.06);
 }
 
