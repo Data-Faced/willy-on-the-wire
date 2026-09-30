@@ -288,6 +288,21 @@ a {
   margin: 0;
 }
 
+.show-more-past {
+  margin-top: 20px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--amp);
+  font: inherit;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
 .show-item {
   display: grid;
   grid-template-columns: 1fr 72px;
