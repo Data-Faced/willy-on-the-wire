@@ -1,4 +1,5 @@
 import ShowsList from "./ShowsList";
+import BookingForm from "./BookingForm";
 
 const INSTAGRAM = "https://www.instagram.com/willyonthewire/";
 const YOUTUBE = "https://www.youtube.com/@WillyOnTheWire";
@@ -181,12 +182,9 @@ export default function HomePage() {
           ceremony and cocktail sets when the night calls for it.
         </p>
         <p>
-          DM <a href={INSTAGRAM}>@willyonthewire</a> with the date, room, and
-          what you need the band to cover.
+          Send the form or DM <a href={INSTAGRAM}>@willyonthewire</a>.
         </p>
-        <a className="btn btn-primary" href={INSTAGRAM}>
-          Send a booking note
-        </a>
+        <BookingForm />
       </section>
 
       <footer className="site-footer">

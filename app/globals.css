@@ -138,6 +138,11 @@ section p {
   border: 1px solid var(--line);
 }
 
+button.btn {
+  font: inherit;
+  cursor: pointer;
+}
+
 .btn-primary {
   background: var(--amp);
   color: var(--amp-ink);
@@ -188,7 +193,8 @@ a {
 
 .empty,
 .show-meta,
-.site-footer {
+.site-footer,
+.form-note {
   color: var(--soft);
 }
 
@@ -239,6 +245,56 @@ a {
   color: var(--ink);
 }
 
+.booking-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+  max-width: 640px;
+}
+
+.booking-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--ink);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  background: #111;
+  color: var(--ink);
+  font: inherit;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 16px;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus {
+  outline: 1px solid var(--amp);
+  border-color: var(--amp);
+}
+
+.booking-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-row {
+  display: grid;
+  gap: 16px;
+}
+
+.booking-form .btn {
+  justify-self: start;
+  margin-top: 8px;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -266,6 +322,10 @@ a {
 @media (min-width: 768px) {
   .hero {
     padding: 64px 0;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
