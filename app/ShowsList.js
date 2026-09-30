@@ -178,7 +178,7 @@ export default function ShowsList({ shows }) {
           </p>
         ) : (
           <>
-            <ul className="shows">
+            <ul className="shows" key={view}>
               {displayed.map((show, index) => {
                 const id = showId(show);
                 const pinned = index === 0;
@@ -203,27 +203,22 @@ export default function ShowsList({ shows }) {
                         {show.city}
                         {show.time ? ` ${DOT} ${show.time}` : ""}
                       </span>
-                      {featured && extras ? (
-                        <span className="show-extra">{extras}</span>
-                      ) : null}
-                      {featured && show.blurb ? (
-                        <p className="show-blurb">{show.blurb}</p>
-                      ) : null}
+                      {extras ? <span className="show-extra">{extras}</span> : null}
+                      {show.blurb ? <p className="show-blurb">{show.blurb}</p> : null}
                       <div className="show-actions">
                         {!pinned ? (
                           <span className="show-toggle">
                             {featured ? "Less Info" : "More Info"}
                           </span>
                         ) : null}
-                        {featured ? (
-                          <button
-                            type="button"
-                            className="show-toggle show-share"
-                            onClick={(event) => shareShow(event, show)}
-                          >
-                            Share
-                          </button>
-                        ) : null}
+                        <button
+                          type="button"
+                          className="show-toggle show-share"
+                          tabIndex={featured ? 0 : -1}
+                          onClick={(event) => shareShow(event, show)}
+                        >
+                          Share
+                        </button>
                       </div>
                     </div>
                     {featured ? (

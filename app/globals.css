@@ -9,6 +9,8 @@
   --line: #6a6a6a;
   --amp: #ffd400;
   --amp-ink: #000000;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --t: 0.32s;
 }
 
 * {
@@ -23,6 +25,7 @@ body {
 
 html {
   background: #000;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -80,9 +83,50 @@ body::after {
   }
 }
 
+@keyframes shows-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lift-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   body::before,
   body::after {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .shows,
+  .flyer-lightbox,
+  .flyer-lightbox-card {
     animation: none;
   }
 }
@@ -177,10 +221,12 @@ section p {
 .socials a {
   display: flex;
   color: var(--ink);
+  transition: color var(--t) var(--ease), transform var(--t) var(--ease);
 }
 
 .socials a:hover {
   color: var(--amp);
+  transform: translateY(-1px);
 }
 
 .socials svg {
@@ -197,6 +243,15 @@ section p {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border: 1px solid var(--line);
+  transition:
+    color var(--t) var(--ease),
+    background-color var(--t) var(--ease),
+    border-color var(--t) var(--ease),
+    transform var(--t) var(--ease);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
 }
 
 button.btn {
@@ -213,6 +268,11 @@ button.btn {
 .btn-ghost {
   color: var(--ink);
   border-color: var(--ink);
+}
+
+.btn-ghost:hover {
+  border-color: var(--amp);
+  color: var(--amp);
 }
 
 .video-frame {
@@ -296,6 +356,11 @@ h2 {
 
 a {
   color: var(--ink);
+  transition: color var(--t) var(--ease);
+}
+
+a:hover {
+  color: var(--amp);
 }
 
 .empty,
@@ -327,6 +392,7 @@ a {
   text-transform: uppercase;
   color: #6f6f6f;
   cursor: pointer;
+  transition: color var(--t) var(--ease), font-size var(--t) var(--ease);
 }
 
 .show-tabs button.is-active {
@@ -338,6 +404,7 @@ a {
   list-style: none;
   padding: 0;
   margin: 0;
+  animation: shows-in 0.38s var(--ease);
 }
 
 .show-more-past {
@@ -353,6 +420,7 @@ a {
   text-decoration: underline;
   text-underline-offset: 3px;
   cursor: pointer;
+  transition: color var(--t) var(--ease), opacity var(--t) var(--ease);
 }
 
 .show-item {
@@ -361,8 +429,15 @@ a {
   gap: 16px;
   align-items: center;
   padding: 16px 10px;
+  margin: 0;
   border-bottom: 1px solid var(--line);
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition:
+    background var(--t) var(--ease),
+    border-color var(--t) var(--ease),
+    padding var(--t) var(--ease),
+    margin var(--t) var(--ease),
+    gap var(--t) var(--ease),
+    grid-template-columns var(--t) var(--ease);
 }
 
 .show-item:not(.is-pinned) {
@@ -394,11 +469,13 @@ a {
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  transition: font-size var(--t) var(--ease);
 }
 
 .show-venue {
   font-size: 20px;
   color: var(--ink);
+  transition: font-size var(--t) var(--ease);
 }
 
 .show-item.is-featured .show-date {
@@ -414,12 +491,42 @@ a {
   font-size: 16px;
 }
 
+.show-extra,
+.show-blurb,
+.show-share {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition:
+    max-height 0.4s var(--ease),
+    opacity 0.28s var(--ease),
+    margin 0.4s var(--ease),
+    transform 0.4s var(--ease),
+    font-size var(--t) var(--ease);
+}
+
+.show-item.is-featured .show-extra,
+.show-item.is-featured .show-share {
+  max-height: 3rem;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
 .show-blurb {
-  margin: 8px 0 0;
-  max-width: 42rem;
   color: var(--muted);
   font-size: 16px;
   line-height: 1.5;
+}
+
+.show-item.is-featured .show-blurb {
+  max-height: 12rem;
+  margin-top: 8px;
+  opacity: 1;
+  transform: none;
 }
 
 .show-actions {
@@ -441,6 +548,7 @@ a {
   letter-spacing: 0.04em;
   text-decoration: underline;
   text-underline-offset: 3px;
+  transition: color var(--t) var(--ease);
 }
 
 .show-share {
@@ -469,6 +577,7 @@ a {
   border: 1px solid var(--amp);
   color: var(--amp);
   object-fit: cover;
+  transition: border-color var(--t) var(--ease);
 }
 
 .show-flyer img {
@@ -482,6 +591,7 @@ a {
   font-weight: 500;
   font-size: 10px;
   color: var(--ink);
+  transition: font-size var(--t) var(--ease);
 }
 
 .show-item.is-featured .show-flyer strong {
@@ -496,10 +606,12 @@ a {
   place-items: center;
   padding: 24px;
   background: rgba(0, 0, 0, 0.86);
+  animation: fade-in 0.24s var(--ease);
 }
 
 .flyer-lightbox-card {
   width: min(420px, 86vw);
+  animation: lift-in 0.32s var(--ease);
 }
 
 .flyer-lightbox-card .show-flyer,
@@ -527,6 +639,7 @@ a {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
+  transition: color var(--t) var(--ease);
 }
 
 .ig-row {
@@ -542,6 +655,11 @@ a {
   background: #111;
   border: 1px solid var(--line);
   overflow: hidden;
+  transition: border-color var(--t) var(--ease), transform var(--t) var(--ease);
+}
+
+.ig-card:hover {
+  border-color: var(--amp);
 }
 
 .ig-card iframe {
@@ -579,6 +697,7 @@ a {
   text-transform: none;
   letter-spacing: 0;
   font-size: 16px;
+  transition: border-color var(--t) var(--ease), outline-color var(--t) var(--ease);
 }
 
 .booking-form input:focus,
@@ -731,5 +850,14 @@ a {
     width: 50%;
     max-width: 50%;
     align-self: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }
