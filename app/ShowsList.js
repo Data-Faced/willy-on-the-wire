@@ -56,6 +56,13 @@ export default function ShowsList({ shows }) {
     });
   }
 
+  function onRowKeyDown(event, id) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      toggle(id);
+    }
+  }
+
   return (
     <>
       <div className="show-tabs" role="tablist" aria-label="Show dates">
@@ -97,6 +104,11 @@ export default function ShowsList({ shows }) {
               <li
                 key={id}
                 className={`show-item${featured ? " is-featured" : ""}${pinned ? " is-pinned" : ""}`}
+                onClick={pinned ? undefined : () => toggle(id)}
+                onKeyDown={pinned ? undefined : (event) => onRowKeyDown(event, id)}
+                role={pinned ? undefined : "button"}
+                tabIndex={pinned ? undefined : 0}
+                aria-expanded={pinned ? undefined : featured}
               >
                 <div className="show-copy">
                   <span className="show-date">{show.label}</span>
@@ -112,14 +124,9 @@ export default function ShowsList({ shows }) {
                     <p className="show-blurb">{show.blurb}</p>
                   ) : null}
                   {!pinned ? (
-                    <button
-                      type="button"
-                      className="show-toggle"
-                      aria-expanded={featured}
-                      onClick={() => toggle(id)}
-                    >
+                    <span className="show-toggle">
                       {featured ? "Less Info" : "More Info"}
-                    </button>
+                    </span>
                   ) : null}
                 </div>
                 <Flyer venue={show.venue} />
