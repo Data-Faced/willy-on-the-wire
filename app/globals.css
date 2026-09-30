@@ -80,7 +80,7 @@ h2 {
 }
 
 h1 {
-  font-size: clamp(36px, 8vw, 48px);
+  font-size: 32px;
   line-height: 0.95;
   margin: 10px 0 16px;
 }
@@ -353,6 +353,10 @@ a {
     padding: 64px 0;
   }
 
+  h1 {
+    font-size: 48px;
+  }
+
   .form-row {
     grid-template-columns: 1fr 1fr;
   }
@@ -366,7 +370,7 @@ a {
   }
 
   h1 {
-    font-size: 72px;
+    font-size: 64px;
     white-space: nowrap;
   }
 }
