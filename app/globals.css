@@ -703,9 +703,9 @@ a {
   }
 
   #shows .show-tabs,
-  #shows .shows,
-  #shows .show-more-past,
-  #shows .empty {
+  #shows .shows-scroll {
+    width: 50%;
     max-width: 50%;
+    align-self: flex-start;
   }
 }
