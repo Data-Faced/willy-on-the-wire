@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 
 const DOT = "\u00b7";
 const PAST_PREVIEW = 5;
@@ -49,6 +50,7 @@ export default function ShowsList({ shows }) {
   const [open, setOpen] = useState(() => new Set());
   const [lightbox, setLightbox] = useState(null);
   const [showAllPast, setShowAllPast] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const today = todayStamp();
 
   const visible = useMemo(() => {
@@ -67,6 +69,10 @@ export default function ShowsList({ shows }) {
   const displayed =
     view === "past" && !showAllPast ? visible.slice(0, PAST_PREVIEW) : visible;
   const canExpandPast = view === "past" && visible.length > PAST_PREVIEW && !showAllPast;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!lightbox) {
@@ -145,6 +151,31 @@ export default function ShowsList({ shows }) {
       /* ignore */
     }
   }
+
+  const overlay =
+    mounted && lightbox ? (
+      <div
+        className="flyer-lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label={`${lightbox.venue} flyer`}
+        onClick={() => setLightbox(null)}
+      >
+        <button
+          type="button"
+          className="flyer-lightbox-close"
+          onClick={() => setLightbox(null)}
+        >
+          Close
+        </button>
+        <div
+          className="flyer-lightbox-card"
+          onClick={(event) => event.stopPropagation()}
+        >
+          <Flyer show={lightbox} />
+        </div>
+      </div>
+    ) : null;
 
   return (
     <>
@@ -250,29 +281,7 @@ export default function ShowsList({ shows }) {
         )}
       </div>
 
-      {lightbox ? (
-        <div
-          className="flyer-lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label={`${lightbox.venue} flyer`}
-          onClick={() => setLightbox(null)}
-        >
-          <button
-            type="button"
-            className="flyer-lightbox-close"
-            onClick={() => setLightbox(null)}
-          >
-            Close
-          </button>
-          <div
-            className="flyer-lightbox-card"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <Flyer show={lightbox} />
-          </div>
-        </div>
-      ) : null}
+      {overlay ? createPortal(overlay, document.body) : null}
     </>
   );
 }
