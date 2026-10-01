@@ -478,6 +478,11 @@ a:hover {
   transition: font-size var(--t) var(--ease);
 }
 
+.show-title {
+  color: var(--soft);
+  font-size: 14px;
+}
+
 .show-item.is-featured .show-date {
   font-size: 13px;
 }
@@ -571,13 +576,19 @@ a:hover {
   display: grid;
   place-content: center;
   gap: 6px;
-  padding: 8px;
+  padding: 0;
   text-align: center;
   background: #0a0a0a;
-  border: 1px solid var(--amp);
+  border: 0;
   color: var(--amp);
   object-fit: cover;
-  transition: border-color var(--t) var(--ease);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.58);
+  transition: box-shadow var(--t) var(--ease);
+}
+
+.show-item.is-featured .show-flyer,
+.show-item.is-featured .show-flyer-img {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.66);
 }
 
 .show-flyer img {
@@ -619,6 +630,7 @@ a:hover {
 .flyer-lightbox-card .show-flyer,
 .flyer-lightbox-card .show-flyer-img {
   aspect-ratio: 4 / 5;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
 }
 
 .flyer-lightbox-card .show-flyer img {
