@@ -47,7 +47,7 @@ function Flyer({ show }) {
 
 export default function ShowsList({ shows }) {
   const [view, setView] = useState("upcoming");
-  const [open, setOpen] = useState(() => new Set());
+  const [openId, setOpenId] = useState(null);
   const [lightbox, setLightbox] = useState(null);
   const [showAllPast, setShowAllPast] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -95,21 +95,13 @@ export default function ShowsList({ shows }) {
 
   function changeView(next) {
     setView(next);
-    setOpen(new Set());
+    setOpenId(null);
     setLightbox(null);
     setShowAllPast(false);
   }
 
   function toggle(id) {
-    setOpen((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
-        next.add(id);
-      }
-      return next;
-    });
+    setOpenId((current) => (current === id ? null : id));
   }
 
   function onRowKeyDown(event, id) {
@@ -213,7 +205,7 @@ export default function ShowsList({ shows }) {
               {displayed.map((show, index) => {
                 const id = showId(show);
                 const pinned = index === 0;
-                const featured = pinned || open.has(id);
+                const featured = pinned || openId === id;
                 const extras = [show.doors, show.age].filter(Boolean).join(` ${DOT} `);
 
                 return (
@@ -230,28 +222,35 @@ export default function ShowsList({ shows }) {
                     <div className="show-copy">
                       <span className="show-date">{show.label}</span>
                       <span className="show-venue">{show.venue}</span>
-                      {show.title ? <span className="show-title">{show.title}</span> : null}
+                      {featured && show.title ? (
+                        <span className="show-title">{show.title}</span>
+                      ) : null}
                       <span className="show-meta">
                         {show.city}
                         {show.time ? ` ${DOT} ${show.time}` : ""}
                       </span>
-                      {extras ? <span className="show-extra">{extras}</span> : null}
-                      {show.blurb ? <p className="show-blurb">{show.blurb}</p> : null}
+                      {featured && extras ? (
+                        <span className="show-extra">{extras}</span>
+                      ) : null}
+                      {featured && show.blurb ? (
+                        <p className="show-blurb">{show.blurb}</p>
+                      ) : null}
                       <div className="show-actions">
                         {!pinned ? (
                           <span className="show-toggle">
-                            {featured ? "Less Info" : "More Info"}
+                            {featured ? "Hide Info" : "Show Info"}
                           </span>
                         ) : null}
-                        <button
-                          type="button"
-                          className="show-toggle show-share"
-                          tabIndex={featured ? 0 : -1}
-                          onClick={(event) => shareShow(event, show)}
-                        >
-                          Share
-                        </button>
-                        {show.maps ? (
+                        {featured ? (
+                          <button
+                            type="button"
+                            className="show-toggle show-share"
+                            onClick={(event) => shareShow(event, show)}
+                          >
+                            Share
+                          </button>
+                        ) : null}
+                        {featured && show.maps ? (
                           <a
                             className="show-toggle show-link"
                             href={show.maps}
@@ -262,7 +261,7 @@ export default function ShowsList({ shows }) {
                             Map
                           </a>
                         ) : null}
-                        {show.instagram ? (
+                        {featured && show.instagram ? (
                           <a
                             className="show-toggle show-link"
                             href={show.instagram}
