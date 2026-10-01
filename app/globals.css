@@ -579,11 +579,11 @@ a:hover {
   padding: 0;
   text-align: center;
   background: #0a0a0a;
-  border: 0;
+  border: 1px solid var(--line);
   color: var(--amp);
   object-fit: cover;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.58);
-  transition: box-shadow var(--t) var(--ease);
+  transition: box-shadow var(--t) var(--ease), border-color var(--t) var(--ease);
 }
 
 .show-item.is-featured .show-flyer,
