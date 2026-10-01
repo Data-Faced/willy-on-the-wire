@@ -463,13 +463,24 @@ export default function HomePage() {
           <p>
             Willy on the Wire is a Bozeman rock band built around vocals and
             guitar, lead guitar, bass, and drums. We play rock, blues, soul, and
-            funk - classic songs with our own weight on them.
+            funk. Classic songs, with our own weight on them.
           </p>
           <p>
-            We are a year into this lineup and playing the rooms that raised us:
-            bars, lodges, hot springs, and wedding dance floors across southwest
-            Montana. The goal is simple. Better nights. Bigger stages. A set
-            that does not let people sit down.
+            A year into this lineup, the rooms already know the set. The Hauf on
+            a Thursday. The Eagles on a late weekend. Tune Up under the Armory.
+            Chico when the valley is hot. Big Sky when the plaza or the hall
+            calls for it.
+          </p>
+          <p>
+            The job is the same in every room. Get the floor moving and keep it
+            there. A four-piece that can hold a bar, a lodge, a hot spring, or a
+            wedding dance floor. Keys come in for ceremony and cocktail sets
+            when the night asks for them.
+          </p>
+          <p>
+            We are still climbing. Better nights. Bigger stages. A set that does
+            not let people sit down. If you have been in the room, you already
+            know. If you have not, the next one is on the list.
           </p>
         </div>
       </section>
