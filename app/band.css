@@ -1,8 +1,16 @@
+h2 {
+  font-size: 40px;
+}
+
+.show-tabs button.is-active {
+  font-size: 40px;
+}
+
 #about {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   overflow: hidden;
   aspect-ratio: 4 / 3;
@@ -19,6 +27,7 @@
   position: relative;
   z-index: 1;
   width: 100%;
+  align-self: stretch;
   padding: 28px 22px 32px 18px;
   text-align: right;
   background: linear-gradient(
@@ -36,23 +45,41 @@
 }
 
 #about h2 {
-  margin-bottom: 12px;
+  margin: 0 0 16px;
+}
+
+#about p {
+  margin: 0 0 16px;
+}
+
+#about p:last-child {
+  margin-bottom: 0;
 }
 
 @media (max-width: 767px) {
+  h2,
+  .show-tabs button.is-active {
+    font-size: 32px;
+  }
+
   #about {
     aspect-ratio: auto;
     max-height: none;
-    min-height: 420px;
+    min-height: 520px;
   }
 }
 
 @media (min-width: 900px) {
+  h2,
+  .show-tabs button.is-active {
+    font-size: 48px;
+  }
+
   #about .band-copy {
     width: 50%;
     max-width: 50%;
     margin-left: auto;
-    padding: 36px 28px 40px 24px;
+    padding: 32px 8px 40px 24px;
     background: none;
   }
 }
