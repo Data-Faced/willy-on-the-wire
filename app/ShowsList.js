@@ -230,6 +230,7 @@ export default function ShowsList({ shows }) {
                     <div className="show-copy">
                       <span className="show-date">{show.label}</span>
                       <span className="show-venue">{show.venue}</span>
+                      {show.title ? <span className="show-title">{show.title}</span> : null}
                       <span className="show-meta">
                         {show.city}
                         {show.time ? ` ${DOT} ${show.time}` : ""}
@@ -250,6 +251,28 @@ export default function ShowsList({ shows }) {
                         >
                           Share
                         </button>
+                        {show.maps ? (
+                          <a
+                            className="show-toggle show-link"
+                            href={show.maps}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(event) => event.stopPropagation()}
+                          >
+                            Map
+                          </a>
+                        ) : null}
+                        {show.instagram ? (
+                          <a
+                            className="show-toggle show-link"
+                            href={show.instagram}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(event) => event.stopPropagation()}
+                          >
+                            Instagram
+                          </a>
+                        ) : null}
                       </div>
                     </div>
                     {featured ? (
