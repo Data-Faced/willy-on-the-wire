@@ -1,6 +1,7 @@
 import { Bebas_Neue, Karla } from "next/font/google";
 import "./globals.css";
 import "./band.css";
+import "./mobile.css";
 
 const display = Bebas_Neue({
   weight: "400",
@@ -16,7 +17,7 @@ const body = Karla({
 export const metadata = {
   title: "Willy on the Wire | Bozeman rock, blues, soul, and funk",
   description:
-    "Willy on the Wire is a Bozeman four-piece playing rock, blues, soul, and funk. Booking bars, weddings, and rooms across Montana.",
+    "Willy on the Wire is a Bozeman five-piece playing rock, blues, soul, and funk. Booking bars, weddings, and rooms across Montana.",
   icons: {
     icon: "/icon.png",
   },
