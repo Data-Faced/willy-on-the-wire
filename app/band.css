@@ -32,10 +32,10 @@ h2 {
   text-align: right;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.18) 0%,
-    rgba(0, 0, 0, 0.46) 18%,
-    rgba(0, 0, 0, 0.46) 82%,
-    rgba(0, 0, 0, 0.16) 100%
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.82) 16%,
+    rgba(0, 0, 0, 0.82) 84%,
+    rgba(0, 0, 0, 0.68) 100%
   );
 }
 
