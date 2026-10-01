@@ -1,0 +1,63 @@
+html,
+body,
+main {
+  overflow-x: clip;
+}
+
+.booking-form,
+.form-row,
+.booking-form label,
+.booking-form input,
+.booking-form textarea {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.booking-form input[type="date"],
+.booking-form input[type="time"] {
+  display: block;
+  width: 100%;
+  color-scheme: dark;
+}
+
+.booking-form input[type="date"]::-webkit-calendar-picker-indicator,
+.booking-form input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.9;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 42px;
+  }
+
+  h2,
+  .show-tabs button.is-active {
+    font-size: 40px;
+  }
+
+  .show-tabs button {
+    font-size: 22px;
+  }
+
+  .socials svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .socials {
+    gap: 18px;
+  }
+
+  .video-mobile {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  #shows {
+    aspect-ratio: auto;
+    max-height: min(92vh, 860px);
+  }
+}
