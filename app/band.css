@@ -29,7 +29,7 @@ h2 {
   width: 100%;
   align-self: stretch;
   padding: 28px 22px 32px 18px;
-  text-align: right;
+  text-align: left;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.72) 0%,
@@ -41,7 +41,7 @@ h2 {
 
 #about h2,
 #about p {
-  text-align: right;
+  text-align: left;
 }
 
 #about h2 {
@@ -73,6 +73,12 @@ h2 {
   h2,
   .show-tabs button.is-active {
     font-size: 48px;
+  }
+
+  #about .band-copy,
+  #about h2,
+  #about p {
+    text-align: right;
   }
 
   #about .band-copy {
