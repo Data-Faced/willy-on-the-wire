@@ -31,7 +31,7 @@ const SHOWS = [
     time: "9PM-11PM",
     doors: "Doors 8PM",
     age: "21+",
-    flyer: "/tune-up-flyer-1.png",
+    flyer: "/tune-up-flyer-placeholder.jpg",
     maps: MAPS.tuneUp,
     blurb:
       "Halloween night at Tune Up, under the Armory Hotel. Classic grooves and a packed basement floor.",
