@@ -1,5 +1,6 @@
 import { Bebas_Neue, Karla } from "next/font/google";
 import "./globals.css";
+import "./band.css";
 
 const display = Bebas_Neue({
   weight: "400",
