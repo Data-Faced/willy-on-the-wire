@@ -458,18 +458,20 @@ export default function HomePage() {
       </section>
 
       <section id="about">
-        <h2>The band</h2>
-        <p>
-          Willy on the Wire is a Bozeman rock band built around vocals and
-          guitar, lead guitar, bass, and drums. We play rock, blues, soul, and
-          funk - classic songs with our own weight on them.
-        </p>
-        <p>
-          We are a year into this lineup and playing the rooms that raised us:
-          bars, lodges, hot springs, and wedding dance floors across southwest
-          Montana. The goal is simple. Better nights. Bigger stages. A set
-          that does not let people sit down.
-        </p>
+        <div className="band-copy">
+          <h2>The band</h2>
+          <p>
+            Willy on the Wire is a Bozeman rock band built around vocals and
+            guitar, lead guitar, bass, and drums. We play rock, blues, soul, and
+            funk - classic songs with our own weight on them.
+          </p>
+          <p>
+            We are a year into this lineup and playing the rooms that raised us:
+            bars, lodges, hot springs, and wedding dance floors across southwest
+            Montana. The goal is simple. Better nights. Bigger stages. A set
+            that does not let people sit down.
+          </p>
+        </div>
       </section>
 
       <section id="shows">
