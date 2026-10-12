@@ -445,28 +445,31 @@ export default function HomePage() {
 
       <section id="about">
         <div className="band-copy">
-          <h2>The band</h2>
-          <p>
-            Willy on the Wire is a Bozeman five-piece. Vocals and guitar, lead guitar,
-            bass, and drums. We play rock, blues, soul, and funk. Classic
-            songs, with our own weight on them.
-          </p>
-          <p>
-            A year into this lineup, the rooms already know the set. The Hauf on
-            a Thursday. The Eagles on a late weekend. Tune Up under the Armory.
-            Chico when the valley is hot. Big Sky when the plaza or the hall
-            calls for it.
-          </p>
-          <p>
-            The job is the same in every room. Get the floor moving and keep it
-            there. A five-piece for a bar, a lodge, a hot spring, or a wedding
-            dance floor.
-          </p>
-          <p>
-            We are still climbing. Better nights. Bigger stages. A set that does
-            not let people sit down. If you have been in the room, you already
-            know. If you have not, the next one is on the list.
-          </p>
+          <div className="band-block">
+            <h3>Who we are</h3>
+            <p>
+              Willy on the Wire is a Bozeman band playing rock, blues, soul, and
+              funk. High-energy takes on the classics. Bozeman-made.
+              Montana-tested.
+            </p>
+            <p>
+              The Hauf on a Thursday. The Eagles on a late weekend. Tune Up under
+              the Armory. Chico when the valley is hot. The job is the same in
+              every room. Get the floor moving and keep it there.
+            </p>
+          </div>
+          <div className="band-block">
+            <h3>What we offer</h3>
+            <p>
+              Solo, duo, trio, four-piece, five-piece, and beyond. A bar, a
+              lodge, a festival, or a private party.
+            </p>
+            <p>
+              Wedding packages for the ceremony, the cocktail hour, and the
+              dance floor. Message us and we will build the lineup to fit the
+              night.
+            </p>
+          </div>
         </div>
         <div className="band-photo" aria-hidden="true" />
       </section>
