@@ -57,7 +57,7 @@ export const metadata = {
     description: DESCRIPTION,
     images: [
       {
-        url: "/wotw-logo-large.png",
+        url: "/wotw-web-preview.png",
         alt: "Willy on the Wire, a Bozeman live band",
       },
     ],
@@ -66,7 +66,7 @@ export const metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/wotw-logo-large.png"],
+    images: ["/wotw-web-preview.png"],
   },
   robots: {
     index: true,
