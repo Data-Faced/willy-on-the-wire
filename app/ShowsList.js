@@ -24,12 +24,17 @@ function flyerTone(show) {
   return FLYER_TONES[hash % FLYER_TONES.length];
 }
 
+function showSlug(show) {
+  return `${show.date}-${show.venue}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
 function showUrl(show) {
   const origin =
-    typeof window === "undefined"
-      ? "https://willyonthewire.com"
-      : window.location.origin + window.location.pathname;
-  return `${origin}#show-${show.date}`;
+    typeof window === "undefined" ? "https://willyonthewire.com" : window.location.origin;
+  return `${origin}/shows/${showSlug(show)}`;
 }
 
 
