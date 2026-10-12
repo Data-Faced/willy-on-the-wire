@@ -105,17 +105,6 @@ export default function BookingForm() {
       </div>
       <div className="form-row">
         <label>
-          Event location
-          <input
-            name="location"
-            type="text"
-            required
-            placeholder="Venue or address"
-            value={fields.location}
-            onChange={update}
-          />
-        </label>
-        <label>
           Start time
           <input
             name="time"
@@ -125,8 +114,6 @@ export default function BookingForm() {
             onChange={update}
           />
         </label>
-      </div>
-      <div className="form-row">
         <label>
           End time
           <input
@@ -134,6 +121,19 @@ export default function BookingForm() {
             type="time"
             required
             value={fields.endTime}
+            onChange={update}
+          />
+        </label>
+      </div>
+      <div className="form-row">
+        <label>
+          Event location
+          <input
+            name="location"
+            type="text"
+            required
+            placeholder="Venue or address"
+            value={fields.location}
             onChange={update}
           />
         </label>
