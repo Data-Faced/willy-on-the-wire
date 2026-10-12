@@ -572,21 +572,27 @@ export default function HomePage() {
       </section>
 
       <section id="booking">
-        <div className="booking-copy">
+        <div className="booking-intro">
           <h2>Booking</h2>
           <p>
-            Book Willy on the Wire for a Bozeman bar, a Big Sky event, a private
-            party, or a Montana wedding. Tell us the date, the room, and the
-            lineup you want.
+            Book Willy on the Wire for your music venue, community event, private
+            party, or wedding celebration! Tell us exactly what you're looking
+            for or trust our expert opinion.
           </p>
           <p>
-            We play solo through five-piece and beyond, and our wedding packages
-            cover the ceremony, cocktail hour, and reception. Send the form and
-            we will follow up. You can also DM <a href={INSTAGRAM}>@willyonthewire</a>.
+            We offer small acoustic performances all the way up through
+            five-piece rock bands and beyond. Our wedding packages cover the
+            ceremony, cocktail hour, and reception. Complete the form below and
+            we will follow up as soon as possible. You can also DM{" "}
+            <a href={INSTAGRAM}>@willyonthewire</a> on Instagram to get in touch!
           </p>
-          <BookingForm />
         </div>
-        <div className="booking-photo" aria-hidden="true" />
+        <div className="booking-stage">
+          <div className="booking-copy">
+            <BookingForm />
+          </div>
+          <div className="booking-photo" aria-hidden="true" />
+        </div>
       </section>
 
       <footer className="site-footer">
