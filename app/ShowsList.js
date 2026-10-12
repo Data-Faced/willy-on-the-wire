@@ -103,7 +103,83 @@ function calendarEvent(show) {
   return lines.join("\r\n");
 }
 
-function addToCalendar(event, show) {
+function calendarDetails(show) {
+  const title = show.title
+    ? `Willy on the Wire: ${show.title}`
+    : `Willy on the Wire at ${show.venue}`;
+  const location = [show.venue, show.city].filter(Boolean).join(", ");
+  const description = [show.blurb, "https://willyonthewire.com"].filter(Boolean).join("\n");
+  const match = String(show.time || "").match(
+    /^(\d{1,2})(?::(\d{2}))?(AM|PM)-(\d{1,2})(?::(\d{2}))?(AM|PM)$/i
+  );
+
+  if (!match) {
+    const start = show.date.replace(/-/g, "");
+    const endDate = new Date(`${show.date}T00:00:00`);
+    endDate.setDate(endDate.getDate() + 1);
+    const end = `${endDate.getFullYear()}${String(endDate.getMonth() + 1).padStart(2, "0")}${String(endDate.getDate()).padStart(2, "0")}`;
+    return { title, location, description, start, end, allDay: true };
+  }
+
+  const open = toHour(match[1], match[2], match[3]);
+  const close = toHour(match[4], match[5], match[6]);
+  const start = stamp(show.date, open.hour, open.minutes);
+  const endDate = new Date(`${show.date}T00:00:00`);
+  if (close.hour < open.hour || (close.hour === open.hour && close.minutes <= open.minutes)) {
+    endDate.setDate(endDate.getDate() + 1);
+  }
+  const next = `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, "0")}-${String(endDate.getDate()).padStart(2, "0")}`;
+  const end = stamp(next, close.hour, close.minutes);
+  return { title, location, description, start, end, allDay: false };
+}
+
+function googleCalendarUrl(show) {
+  const event = calendarDetails(show);
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: event.title,
+    dates: `${event.start}/${event.end}`,
+    details: event.description,
+    location: event.location,
+    ctz: "America/Denver",
+  });
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
+function outlookCalendarUrl(show) {
+  const event = calendarDetails(show);
+  const toIso = (value, allDay) => {
+    if (allDay) {
+      return `${value.slice(0, 4)}-${value.slice(4, 6)}-${value.slice(6, 8)}`;
+    }
+    return `${value.slice(0, 4)}-${value.slice(4, 6)}-${value.slice(6, 8)}T${value.slice(9, 11)}:${value.slice(11, 13)}:00`;
+  };
+  const params = new URLSearchParams({
+    rru: "addevent",
+    subject: event.title,
+    startdt: toIso(event.start, event.allDay),
+    enddt: toIso(event.end, event.allDay),
+    body: event.description,
+    location: event.location,
+    allday: event.allDay ? "true" : "false",
+  });
+  return `https://outlook.live.com/calendar/0/action/compose?${params.toString()}`;
+}
+
+function yahooCalendarUrl(show) {
+  const event = calendarDetails(show);
+  const params = new URLSearchParams({
+    v: "60",
+    title: event.title,
+    st: event.start,
+    et: event.end,
+    desc: event.description,
+    in_loc: event.location,
+  });
+  return `https://calendar.yahoo.com/?${params.toString()}`;
+}
+
+function downloadCalendar(event, show) {
   event.preventDefault();
   event.stopPropagation();
   const file = new Blob([calendarEvent(show)], { type: "text/calendar;charset=utf-8" });
@@ -144,6 +220,7 @@ export default function ShowsList({ shows }) {
   const [view, setView] = useState("upcoming");
   const [openId, setOpenId] = useState(null);
   const [lightbox, setLightbox] = useState(null);
+  const [calendarId, setCalendarId] = useState(null);
   const [pastCount, setPastCount] = useState(PAST_STEP);
   const [mounted, setMounted] = useState(false);
   const today = todayStamp();
@@ -191,11 +268,13 @@ export default function ShowsList({ shows }) {
     setView(next);
     setOpenId(null);
     setLightbox(null);
+    setCalendarId(null);
     setPastCount(PAST_STEP);
   }
 
   function toggle(id) {
     setOpenId((current) => (current === id ? null : id));
+    setCalendarId(null);
   }
 
   function onRowKeyDown(event, id) {
@@ -345,13 +424,36 @@ export default function ShowsList({ shows }) {
                           </button>
                         ) : null}
                         {featured ? (
-                          <button
-                            type="button"
-                            className="show-toggle show-share"
-                            onClick={(event) => addToCalendar(event, show)}
-                          >
-                            Add to calendar
-                          </button>
+                          <div className="calendar-menu-wrap">
+                            <button
+                              type="button"
+                              className="show-toggle show-share"
+                              aria-expanded={calendarId === id}
+                              onClick={(event) => {
+                                event.preventDefault();
+                                event.stopPropagation();
+                                setCalendarId((current) => (current === id ? null : id));
+                              }}
+                            >
+                              Add to calendar
+                            </button>
+                            {calendarId === id ? (
+                              <div className="calendar-menu" onClick={(event) => event.stopPropagation()}>
+                                <a href={googleCalendarUrl(show)} target="_blank" rel="noreferrer">
+                                  Google Calendar
+                                </a>
+                                <button type="button" onClick={(event) => downloadCalendar(event, show)}>
+                                  Apple Calendar
+                                </button>
+                                <a href={outlookCalendarUrl(show)} target="_blank" rel="noreferrer">
+                                  Outlook
+                                </a>
+                                <a href={yahooCalendarUrl(show)} target="_blank" rel="noreferrer">
+                                  Yahoo
+                                </a>
+                              </div>
+                            ) : null}
+                          </div>
                         ) : null}
                       </div>
                     </div>
