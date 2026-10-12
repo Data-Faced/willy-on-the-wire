@@ -589,6 +589,18 @@ a:hover {
 .show-share {
   cursor: pointer;
 }
+.show-share {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.show-action-icon {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+
 
 .show-flyer-button {
   display: block;
