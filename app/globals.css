@@ -723,6 +723,7 @@ a:hover {
   border: 1px solid var(--line);
   background: #111;
   color: var(--ink);
+  color-scheme: dark;
   font: inherit;
   text-transform: none;
   letter-spacing: 0;
