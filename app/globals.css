@@ -958,3 +958,12 @@ a:hover {
   background: rgba(255, 212, 0, 0.12);
   color: var(--amp);
 }
+
+.shows.is-switching .show-item,
+.shows.is-switching .show-extra,
+.shows.is-switching .show-blurb,
+.shows.is-switching .show-share,
+.shows.is-switching .show-flyer,
+.shows.is-switching .show-flyer-img {
+  transition: none;
+}
