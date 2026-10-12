@@ -48,7 +48,7 @@ export default function BookingForm() {
   if (status === "sent") {
     return (
       <p className="form-note">
-        Request received. We will follow up. If you need a faster answer, DM
+        Request received. We will get back to you. If you need a faster answer, DM
         @willyonthewire.
       </p>
     );
