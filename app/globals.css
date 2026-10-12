@@ -586,6 +586,18 @@ a:hover {
   transition: box-shadow var(--t) var(--ease), border-color var(--t) var(--ease);
 }
 
+.show-flyer.tone-red {
+  background: #4a1414;
+}
+
+.show-flyer.tone-blue {
+  background: #14283f;
+}
+
+.show-flyer.tone-green {
+  background: #14301c;
+}
+
 .show-item.is-featured .show-flyer,
 .show-item.is-featured .show-flyer-img {
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.66);
