@@ -313,12 +313,13 @@ export default function ShowsList({ shows }) {
     if (!item) return;
     const parent = scrollParent(item);
     const before = item.getBoundingClientRect().top;
+    const list = item.closest(".shows");
     const root = document.documentElement;
     const previous = root.style.scrollBehavior;
     root.style.scrollBehavior = "auto";
-    const start = performance.now();
+    list?.classList.add("is-switching");
 
-    function step() {
+    requestAnimationFrame(() => {
       const delta = item.getBoundingClientRect().top - before;
       if (Math.abs(delta) > 0.5) {
         if (parent === window) {
@@ -327,14 +328,11 @@ export default function ShowsList({ shows }) {
           parent.scrollTop += delta;
         }
       }
-      if (performance.now() - start < 480) {
-        requestAnimationFrame(step);
-      } else {
+      requestAnimationFrame(() => {
+        list?.classList.remove("is-switching");
         root.style.scrollBehavior = previous;
-      }
-    }
-
-    requestAnimationFrame(step);
+      });
+    });
   }
 
   function toggle(id, event) {
