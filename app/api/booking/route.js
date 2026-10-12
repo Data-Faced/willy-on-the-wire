@@ -13,7 +13,7 @@ export async function POST(request) {
     return Response.json({ error: "Invalid request" }, { status: 400 });
   }
 
-  const required = ["name", "email", "phone", "event", "date", "time", "attendees"];
+  const required = ["name", "email", "phone", "event", "date", "time", "endTime", "attendees"];
   const missing = required.filter((key) => !String(body?.[key] || "").trim());
 
   if (missing.length) {
@@ -33,8 +33,9 @@ export async function POST(request) {
     line("Phone", body.phone),
     line("Event", body.event),
     line("Date", body.date),
-    line("Time", body.time),
-    line("Attendees", body.attendees),
+    line("Start time", body.time),
+    line("End time", body.endTime),
+    line("Expected attendance", body.attendees),
     line("Details", body.details),
   ].join("\n");
 
