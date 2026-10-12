@@ -55,6 +55,7 @@ h2 {
 
 #about p {
   margin: 0 0 16px;
+  text-align: left;
 }
 
 #about p:last-child {
@@ -96,9 +97,12 @@ h2 {
   }
 
   #about .band-copy,
-  #about h2,
-  #about p {
+  #about h2 {
     text-align: right;
+  }
+
+  #about p {
+    text-align: left;
   }
 
   #about .band-copy {
