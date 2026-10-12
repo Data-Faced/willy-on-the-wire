@@ -6,9 +6,10 @@ const empty = {
   name: "",
   email: "",
   phone: "",
-  event: "",
   date: "",
+  location: "",
   time: "",
+  endTime: "",
   attendees: "",
   details: "",
 };
@@ -47,7 +48,7 @@ export default function BookingForm() {
   if (status === "sent") {
     return (
       <p className="form-note">
-        Request received. We will follow up. If you need a faster answer, DM
+        Request received. We will get back to you. If you need a faster answer, DM
         @willyonthewire.
       </p>
     );
@@ -55,66 +56,44 @@ export default function BookingForm() {
 
   return (
     <form className="booking-form" onSubmit={submit}>
-      <label>
-        Name
-        <input
-          name="name"
-          type="text"
-          required
-          autoComplete="name"
-          value={fields.name}
-          onChange={update}
-        />
-      </label>
-      <label>
-        Email
-        <input
-          name="email"
-          type="email"
-          required
-          autoComplete="email"
-          value={fields.email}
-          onChange={update}
-        />
-      </label>
-      <label>
-        Phone
-        <input
-          name="phone"
-          type="tel"
-          required
-          autoComplete="tel"
-          value={fields.phone}
-          onChange={update}
-        />
-      </label>
       <div className="form-row">
         <label>
-          Event
+          Name
           <input
-            name="event"
+            name="name"
             type="text"
             required
-            placeholder="Bar, wedding, private party"
-            value={fields.event}
+            autoComplete="name"
+            value={fields.name}
             onChange={update}
           />
         </label>
         <label>
-          Estimated attendance
+          Email
           <input
-            name="attendees"
-            type="number"
-            min="1"
+            name="email"
+            type="email"
             required
-            value={fields.attendees}
+            autoComplete="email"
+            value={fields.email}
             onChange={update}
           />
         </label>
       </div>
       <div className="form-row">
         <label>
-          Date
+          Phone
+          <input
+            name="phone"
+            type="tel"
+            required
+            autoComplete="tel"
+            value={fields.phone}
+            onChange={update}
+          />
+        </label>
+        <label>
+          Event date
           <input
             name="date"
             type="date"
@@ -123,13 +102,49 @@ export default function BookingForm() {
             onChange={update}
           />
         </label>
+      </div>
+      <div className="form-row">
         <label>
-          Time
+          Start time
           <input
             name="time"
             type="time"
             required
             value={fields.time}
+            onChange={update}
+          />
+        </label>
+        <label>
+          End time
+          <input
+            name="endTime"
+            type="time"
+            required
+            value={fields.endTime}
+            onChange={update}
+          />
+        </label>
+      </div>
+      <div className="form-row">
+        <label>
+          Event location
+          <input
+            name="location"
+            type="text"
+            required
+            placeholder="Venue or address"
+            value={fields.location}
+            onChange={update}
+          />
+        </label>
+        <label>
+          Expected attendance
+          <input
+            name="attendees"
+            type="number"
+            min="1"
+            required
+            value={fields.attendees}
             onChange={update}
           />
         </label>

@@ -29,6 +29,17 @@ const FILLER_FLYER = "/filling-station-flyer-default.png";
 
 const SHOWS = [
   {
+    date: "2026-12-31",
+    label: "Thu Dec 31, 2026",
+    venue: "Tune Up",
+    title: "New Year's Eve",
+    city: "Bozeman, MT",
+    flyer: "/tune-up-flyer-placeholder.jpg",
+    maps: MAPS.tuneUp,
+    blurb:
+      "We play New Year's Eve at Tune Up, under the Armory Hotel in Bozeman. Ring in the year in the basement.",
+  },
+  {
     date: "2026-10-31",
     label: "Sat Oct 31, 2026",
     venue: "Tune Up",
@@ -583,7 +594,7 @@ export default function HomePage() {
             We offer small acoustic performances all the way up through
             five-piece rock bands and beyond. Our wedding packages cover the
             ceremony, cocktail hour, and reception. Complete the form below and
-            we will follow up as soon as possible. You can also DM{" "}
+            we will get back to you as soon as possible. You can also DM{" "}
             <a href={INSTAGRAM}>@willyonthewire</a> on Instagram to get in touch!
           </p>
         </div>

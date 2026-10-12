@@ -213,7 +213,7 @@ export default function ShowsList({ shows }) {
             <ul className="shows" key={view}>
               {displayed.map((show, index) => {
                 const id = showId(show);
-                const pinned = index === 0;
+                const pinned = view === "upcoming" && index === 0;
                 const featured = pinned || openId === id;
                 const extras = [show.doors].filter(Boolean).join(` ${DOT} `);
 

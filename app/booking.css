@@ -26,6 +26,7 @@
 }
 
 #booking .booking-intro p {
+  max-width: 768px;
   margin: 0 0 16px;
 }
 

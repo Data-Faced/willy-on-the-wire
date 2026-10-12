@@ -13,7 +13,7 @@ export async function POST(request) {
     return Response.json({ error: "Invalid request" }, { status: 400 });
   }
 
-  const required = ["name", "email", "phone", "event", "date", "time", "attendees"];
+  const required = ["name", "email", "phone", "date", "location", "time", "endTime", "attendees"];
   const missing = required.filter((key) => !String(body?.[key] || "").trim());
 
   if (missing.length) {
@@ -31,11 +31,12 @@ export async function POST(request) {
     line("Name", body.name),
     line("Email", body.email),
     line("Phone", body.phone),
-    line("Event", body.event),
-    line("Date", body.date),
-    line("Time", body.time),
-    line("Attendees", body.attendees),
-    line("Details", body.details),
+    line("Event date", body.date),
+    line("Event location", body.location),
+    line("Start time", body.time),
+    line("End time", body.endTime),
+    line("Expected attendance", body.attendees),
+    line("Additional details", body.details),
   ].join("\n");
 
   const response = await fetch("https://api.resend.com/emails", {
@@ -48,7 +49,7 @@ export async function POST(request) {
       from: "Willy on the Wire <onboarding@resend.dev>",
       to: [TO],
       reply_to: String(body.email).trim(),
-      subject: `Booking: ${String(body.event).trim()} — ${String(body.name).trim()}`,
+      subject: `Booking: ${String(body.location).trim()} — ${String(body.name).trim()}`,
       text,
     }),
   });
