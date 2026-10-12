@@ -51,11 +51,11 @@
   }
 
   #shows .show-tabs button {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   #shows .show-tabs button.is-active {
-    font-size: 26px;
+    font-size: 30px;
   }
 }
 
