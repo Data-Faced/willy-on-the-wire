@@ -420,7 +420,7 @@ export default function HomePage() {
           <p className="eyebrow">Rock {'\u00b7'} Blues {'\u00b7'} Soul {'\u00b7'} Funk</p>
           <h1>Willy on the Wire</h1>
           <p className="lede">
-            A five-piece from Bozeman, with keys, playing our own takes on the songs
+            A five-piece from Bozeman playing our own takes on the songs
             that make a room move.
           </p>
           <div className="actions">
@@ -462,7 +462,7 @@ export default function HomePage() {
           <h2>The band</h2>
           <p>
             Willy on the Wire is a Bozeman five-piece. Vocals and guitar, lead guitar,
-            bass, drums, and keys. We play rock, blues, soul, and funk. Classic
+            bass, and drums. We play rock, blues, soul, and funk. Classic
             songs, with our own weight on them.
           </p>
           <p>
@@ -473,8 +473,8 @@ export default function HomePage() {
           </p>
           <p>
             The job is the same in every room. Get the floor moving and keep it
-            there. Five pieces, keys included, for a bar, a lodge, a hot spring,
-            or a wedding dance floor.
+            there. A five-piece for a bar, a lodge, a hot spring, or a wedding
+            dance floor.
           </p>
           <p>
             We are still climbing. Better nights. Bigger stages. A set that does
@@ -494,7 +494,7 @@ export default function HomePage() {
         <div className="booking-copy">
           <h2>Booking</h2>
           <p>
-            Bars, private events, and weddings. Five-piece with keys.
+            Bars, private events, and weddings. Five-piece.
           </p>
           <p>
             Send the form or DM <a href={INSTAGRAM}>@willyonthewire</a>.
