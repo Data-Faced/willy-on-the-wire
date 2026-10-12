@@ -29,6 +29,17 @@ const FILLER_FLYER = "/filling-station-flyer-default.png";
 
 const SHOWS = [
   {
+    date: "2026-12-31",
+    label: "Thu Dec 31, 2026",
+    venue: "Tune Up",
+    title: "New Year's Eve",
+    city: "Bozeman, MT",
+    flyer: "/tune-up-flyer-placeholder.jpg",
+    maps: MAPS.tuneUp,
+    blurb:
+      "We play New Year's Eve at Tune Up, under the Armory Hotel in Bozeman. Ring in the year in the basement.",
+  },
+  {
     date: "2026-10-31",
     label: "Sat Oct 31, 2026",
     venue: "Tune Up",
