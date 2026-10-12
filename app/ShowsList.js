@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 
 const DOT = "\u00b7";
-const PAST_STEP = 5;
+const PAST_STEP = 8;
 
 function todayStamp() {
   return new Date().toISOString().slice(0, 10);
