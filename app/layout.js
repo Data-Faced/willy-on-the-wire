@@ -81,8 +81,8 @@ export const metadata = {
     },
   },
   icons: {
-    icon: "/icon.png",
-    apple: "/icon.png",
+    icon: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   other: {
     "geo.region": "US-MT",
