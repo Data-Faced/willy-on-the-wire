@@ -482,6 +482,7 @@ export default function HomePage() {
             know. If you have not, the next one is on the list.
           </p>
         </div>
+        <div className="band-photo" aria-hidden="true" />
       </section>
 
       <section id="shows">
