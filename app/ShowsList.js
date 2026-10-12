@@ -261,17 +261,6 @@ export default function ShowsList({ shows }) {
                             Map
                           </a>
                         ) : null}
-                        {featured && show.instagram ? (
-                          <a
-                            className="show-toggle show-link"
-                            href={show.instagram}
-                            target="_blank"
-                            rel="noreferrer"
-                            onClick={(event) => event.stopPropagation()}
-                          >
-                            Instagram
-                          </a>
-                        ) : null}
                       </div>
                     </div>
                     {featured ? (
