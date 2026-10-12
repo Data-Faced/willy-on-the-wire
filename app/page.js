@@ -584,7 +584,7 @@ export default function HomePage() {
 
       <section id="booking">
         <div className="booking-intro">
-          <h2>Booking</h2>
+          <h2>Booking Willy on the Wire</h2>
           <p>
             Book Willy on the Wire for your music venue, community event, private
             party, or wedding celebration! Tell us exactly what you're looking
