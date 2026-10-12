@@ -64,6 +64,13 @@ h2 {
   }
 }
 
+@media (max-width: 600px) {
+  #about .band-photo {
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+}
+
 @media (min-width: 900px) {
   h2,
   .show-tabs button.is-active {
