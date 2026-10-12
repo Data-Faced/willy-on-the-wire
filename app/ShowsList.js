@@ -297,7 +297,48 @@ export default function ShowsList({ shows }) {
     setPastCount(PAST_STEP);
   }
 
-  function toggle(id) {
+  function scrollParent(node) {
+    let el = node?.parentElement;
+    while (el && el !== document.body) {
+      const style = window.getComputedStyle(el);
+      if (/(auto|scroll)/.test(style.overflowY) && el.scrollHeight > el.clientHeight) {
+        return el;
+      }
+      el = el.parentElement;
+    }
+    return window;
+  }
+
+  function holdItemStill(item) {
+    if (!item) return;
+    const parent = scrollParent(item);
+    const before = item.getBoundingClientRect().top;
+    const root = document.documentElement;
+    const previous = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+    const start = performance.now();
+
+    function step() {
+      const delta = item.getBoundingClientRect().top - before;
+      if (Math.abs(delta) > 0.5) {
+        if (parent === window) {
+          window.scrollBy(0, delta);
+        } else {
+          parent.scrollTop += delta;
+        }
+      }
+      if (performance.now() - start < 480) {
+        requestAnimationFrame(step);
+      } else {
+        root.style.scrollBehavior = previous;
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  function toggle(id, event) {
+    holdItemStill(event?.currentTarget);
     setOpenId((current) => (current === id ? null : id));
     setCalendarId(null);
   }
@@ -305,7 +346,7 @@ export default function ShowsList({ shows }) {
   function onRowKeyDown(event, id) {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-      toggle(id);
+      toggle(id, event);
     }
   }
 
@@ -411,7 +452,7 @@ export default function ShowsList({ shows }) {
                     key={id}
                     id={`show-${show.date}`}
                     className={`show-item${featured ? " is-featured" : ""}${pinned ? " is-pinned" : ""}`}
-                    onClick={pinned ? undefined : () => toggle(id)}
+                    onClick={pinned ? undefined : (event) => toggle(id, event)}
                     onKeyDown={pinned ? undefined : (event) => onRowKeyDown(event, id)}
                     role={pinned ? undefined : "button"}
                     tabIndex={pinned ? undefined : 0}

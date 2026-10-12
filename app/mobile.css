@@ -18,6 +18,11 @@ main {
   min-width: 0;
 }
 
+.booking-form input,
+.booking-form textarea {
+  color-scheme: dark;
+}
+
 .booking-form input[type="date"],
 .booking-form input[type="time"] {
   display: block;
@@ -26,8 +31,6 @@ main {
   min-width: 0;
   box-sizing: border-box;
   color-scheme: dark;
-  -webkit-appearance: none;
-  appearance: none;
 }
 
 .booking-form input[type="date"]::-webkit-date-and-time-value,
@@ -38,6 +41,12 @@ main {
 
 .booking-form input[type="date"]::-webkit-calendar-picker-indicator,
 .booking-form input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}
+
+.booking-form input[type="number"]::-webkit-inner-spin-button,
+.booking-form input[type="number"]::-webkit-outer-spin-button {
   filter: invert(1);
   opacity: 0.9;
 }
