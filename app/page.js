@@ -491,14 +491,17 @@ export default function HomePage() {
       </section>
 
       <section id="booking">
-        <h2>Booking</h2>
-        <p>
-          Bars, private events, and weddings. Five-piece with keys.
-        </p>
-        <p>
-          Send the form or DM <a href={INSTAGRAM}>@willyonthewire</a>.
-        </p>
-        <BookingForm />
+        <div className="booking-copy">
+          <h2>Booking</h2>
+          <p>
+            Bars, private events, and weddings. Five-piece with keys.
+          </p>
+          <p>
+            Send the form or DM <a href={INSTAGRAM}>@willyonthewire</a>.
+          </p>
+          <BookingForm />
+        </div>
+        <div className="booking-photo" aria-hidden="true" />
       </section>
 
       <footer className="site-footer">
