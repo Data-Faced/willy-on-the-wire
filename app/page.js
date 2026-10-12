@@ -446,7 +446,7 @@ export default function HomePage() {
       <section id="about">
         <div className="band-copy">
           <div className="band-block">
-            <h3>Who we are</h3>
+            <h2>Who we are</h2>
             <p>
               Willy on the Wire is a Bozeman band playing rock, blues, soul, and
               funk. High-energy takes on the classics. Bozeman-made.
@@ -459,7 +459,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="band-block">
-            <h3>What we offer</h3>
+            <h2>What we offer</h2>
             <p>
               Solo, duo, trio, four-piece, five-piece, and beyond. A bar, a
               lodge, a festival, or a private party.
