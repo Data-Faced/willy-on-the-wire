@@ -246,6 +246,31 @@ export default function ShowsList({ shows }) {
   }, []);
 
   useEffect(() => {
+    if (!calendarId) {
+      return undefined;
+    }
+
+    function onPointerDown(event) {
+      if (!event.target.closest(".calendar-menu-wrap")) {
+        setCalendarId(null);
+      }
+    }
+
+    function onKey(event) {
+      if (event.key === "Escape") {
+        setCalendarId(null);
+      }
+    }
+
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [calendarId]);
+
+  useEffect(() => {
     if (!lightbox) {
       return undefined;
     }
