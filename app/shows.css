@@ -45,6 +45,20 @@
   }
 }
 
+@media (max-width: 430px) {
+  #shows .show-tabs {
+    gap: 12px;
+  }
+
+  #shows .show-tabs button {
+    font-size: 16px;
+  }
+
+  #shows .show-tabs button.is-active {
+    font-size: 26px;
+  }
+}
+
 @media (min-width: 900px) {
   #shows .shows-photo {
     display: none;
