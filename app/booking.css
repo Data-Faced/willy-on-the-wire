@@ -16,8 +16,8 @@
   max-width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background-image: url("/booking-bg.png");
-  background-position: left center;
+  background-image: url("/booking-bg-mobile.png");
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -34,7 +34,7 @@
 @media (max-width: 600px) {
   #booking .booking-photo {
     height: auto;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 3 / 4;
   }
 }
 
