@@ -41,7 +41,6 @@ h2 {
 }
 
 #about h2,
-#about h3,
 #about p {
   text-align: left;
 }
@@ -50,17 +49,8 @@ h2 {
   margin: 0 0 16px;
 }
 
-#about h3 {
-  margin: 22px 0 8px;
-  font-family: var(--font-display), Impact, sans-serif;
-  font-size: 22px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-#about .band-block:first-child h3 {
-  margin-top: 0;
+#about .band-block + .band-block h2 {
+  margin-top: 28px;
 }
 
 #about p {
@@ -107,7 +97,6 @@ h2 {
 
   #about .band-copy,
   #about h2,
-  #about h3,
   #about p {
     text-align: right;
   }
@@ -118,9 +107,5 @@ h2 {
     margin-left: auto;
     padding: 32px 8px 40px 24px;
     background: none;
-  }
-
-  #about h3 {
-    font-size: 26px;
   }
 }
