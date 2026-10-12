@@ -6,6 +6,7 @@ const YOUTUBE = "https://www.youtube.com/@WillyOnTheWire";
 const FACEBOOK = "https://www.facebook.com/p/Willy-on-the-Wire-61577985041444/";
 const YOUTUBE_ID = "tcxPivXSzgY";
 const YOUTUBE_SHORT_ID = "O3XHmIA21yQ";
+const SITE = "https://willyonthewire.com";
 
 const MAPS = {
   eagles: "https://maps.google.com/?q=Eagles+Bar+316+E+Main+Street+Bozeman+MT",
@@ -368,6 +369,83 @@ const SHOWS = [
   },
 ];
 
+function todayStamp() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function eventTimes(show) {
+  const match = show.time ? show.time.match(/(\d{1,2})(AM|PM)/i) : null;
+  if (!match) {
+    return { startDate: show.date };
+  }
+
+  let hour = Number(match[1]);
+  const period = match[2].toUpperCase();
+  if (period === "PM" && hour < 12) hour += 12;
+  if (period === "AM" && hour === 12) hour = 0;
+  const start = `${show.date}T${String(hour).padStart(2, "0")}:00:00-06:00`;
+
+  const endMatch = show.time.match(/-(\d{1,2})(AM|PM)/i);
+  if (!endMatch) {
+    return { startDate: start };
+  }
+
+  let endHour = Number(endMatch[1]);
+  const endPeriod = endMatch[2].toUpperCase();
+  if (endPeriod === "PM" && endHour < 12) endHour += 12;
+  if (endPeriod === "AM" && endHour === 12) endHour = 0;
+  const endDate = endHour < hour ? nextDay(show.date) : show.date;
+  return {
+    startDate: start,
+    endDate: `${endDate}T${String(endHour).padStart(2, "0")}:00:00-06:00`,
+  };
+}
+
+function nextDay(date) {
+  const next = new Date(`${date}T12:00:00Z`);
+  next.setUTCDate(next.getUTCDate() + 1);
+  return next.toISOString().slice(0, 10);
+}
+
+function showsJsonLd(shows) {
+  const today = todayStamp();
+  const upcoming = shows.filter((show) => show.date >= today);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Upcoming Willy on the Wire shows",
+    itemListElement: upcoming.map((show, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "MusicEvent",
+        name: show.title
+          ? `${show.title} with Willy on the Wire at ${show.venue}`
+          : `Willy on the Wire at ${show.venue}`,
+        description: show.blurb,
+        startDate: eventTimes(show).startDate,
+        endDate: eventTimes(show).endDate,
+        eventStatus: "https://schema.org/EventScheduled",
+        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+        url: `${SITE}/#show-${show.date}`,
+        image: show.flyer ? `${SITE}${show.flyer}` : `${SITE}/wotw-logo-large.png`,
+        performer: {
+          "@type": "MusicGroup",
+          name: "Willy on the Wire",
+          url: SITE,
+        },
+        location: {
+          "@type": "Place",
+          name: show.venue,
+          address: show.city,
+          hasMap: show.maps,
+        },
+      },
+    })),
+  };
+}
+
 function SocialRow() {
   return (
     <nav className="socials" aria-label="Social links">
@@ -399,6 +477,10 @@ function SocialRow() {
 export default function HomePage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(showsJsonLd(SHOWS)) }}
+      />
       <header className="site-header">
         <a className="brand" href="/">
           <img
