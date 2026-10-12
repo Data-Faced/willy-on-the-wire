@@ -24,6 +24,7 @@ const MAPS = {
 
 const BIG_SKY_FLYER = "/big-sky-flyer-default.png";
 const EAGLES_FLYER = "/eagles-flyer-default.png";
+const FILLER_FLYER = "/filling-station-flyer-default.png";
 
 const SHOWS = [
   {
@@ -233,6 +234,7 @@ const SHOWS = [
     title: "Classic Rock Night",
     city: "Bozeman, MT",
     time: "8PM",
+    flyer: FILLER_FLYER,
     maps: MAPS.filler,
     instagram: "https://www.instagram.com/p/DXxEW2Ej6US/",
     blurb:
