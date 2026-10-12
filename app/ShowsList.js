@@ -485,7 +485,10 @@ export default function ShowsList({ shows }) {
                             onClick={(event) => shareShow(event, show)}
                           >
                             <svg className="show-action-icon" viewBox="0 0 24 24" aria-hidden="true">
-                              <path d="M15 8a3 3 0 1 0-2.8-4H12a3 3 0 0 0 .2 4m0 0-6 3.5m6-3.5 6 3.5M9 12a3 3 0 1 0-2.8 4H6a3 3 0 0 0 .2-4m0 0 6 3.5M15 16a3 3 0 1 0 2.8 4H18a3 3 0 0 0-.2-4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                              <circle cx="18" cy="5" r="2.4" fill="none" stroke="currentColor" strokeWidth="1.8" />
+                              <circle cx="6" cy="12" r="2.4" fill="none" stroke="currentColor" strokeWidth="1.8" />
+                              <circle cx="18" cy="19" r="2.4" fill="none" stroke="currentColor" strokeWidth="1.8" />
+                              <path d="M8.2 10.8 15.7 6.4M8.2 13.2l7.5 4.4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                             </svg>
                             Share
                           </button>
