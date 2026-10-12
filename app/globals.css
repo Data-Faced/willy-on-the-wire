@@ -332,6 +332,8 @@ section {
 }
 
 .shows-scroll {
+  container-type: inline-size;
+  container-name: shows;
   flex: 1;
   min-height: 0;
   overflow-y: auto;
@@ -876,6 +878,26 @@ a:hover {
     width: 50%;
     max-width: 50%;
     align-self: flex-start;
+  }
+}
+
+@container shows (max-width: 550px) {
+  .show-item.is-featured,
+  .show-item.is-pinned.is-featured {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .show-item.is-featured .show-flyer-button,
+  .show-item.is-featured .show-flyer,
+  .show-item.is-featured .show-flyer-img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .show-item.is-featured .show-flyer,
+  .show-item.is-featured .show-flyer-img {
+    aspect-ratio: 4 / 5;
   }
 }
 
