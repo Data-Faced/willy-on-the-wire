@@ -540,9 +540,35 @@ a:hover {
 
 .show-actions {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 16px;
   margin-top: 8px;
+}
+
+.show-details {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+.show-details-icon {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+}
+
+.show-details.is-hide {
+  color: var(--muted);
+  margin-left: auto;
+}
+
+.show-details.is-hide .show-details-icon {
+  border-top: 0;
+  border-bottom: 5px solid currentColor;
 }
 
 .show-toggle {

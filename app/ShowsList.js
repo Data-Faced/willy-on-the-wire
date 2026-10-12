@@ -478,11 +478,6 @@ export default function ShowsList({ shows }) {
                         <p className="show-blurb">{show.blurb}</p>
                       ) : null}
                       <div className="show-actions">
-                        {!pinned ? (
-                          <span className="show-toggle">
-                            {featured ? "Hide Info" : "Show Info"}
-                          </span>
-                        ) : null}
                         {featured ? (
                           <button
                             type="button"
@@ -523,6 +518,12 @@ export default function ShowsList({ shows }) {
                               </div>
                             ) : null}
                           </div>
+                        ) : null}
+                        {!pinned ? (
+                          <span className={`show-toggle show-details${featured ? " is-hide" : ""}`}>
+                            <span className="show-details-icon" aria-hidden="true" />
+                            {featured ? "Hide details" : "Show details"}
+                          </span>
                         ) : null}
                       </div>
                     </div>
