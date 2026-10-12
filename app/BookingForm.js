@@ -6,8 +6,8 @@ const empty = {
   name: "",
   email: "",
   phone: "",
-  event: "",
   date: "",
+  location: "",
   time: "",
   endTime: "",
   attendees: "",
@@ -93,25 +93,25 @@ export default function BookingForm() {
           />
         </label>
         <label>
-          Event
+          Event date
           <input
-            name="event"
-            type="text"
+            name="date"
+            type="date"
             required
-            placeholder="Bar, wedding, private party"
-            value={fields.event}
+            value={fields.date}
             onChange={update}
           />
         </label>
       </div>
       <div className="form-row">
         <label>
-          Date
+          Event location
           <input
-            name="date"
-            type="date"
+            name="location"
+            type="text"
             required
-            value={fields.date}
+            placeholder="Venue or address"
+            value={fields.location}
             onChange={update}
           />
         </label>
@@ -150,7 +150,7 @@ export default function BookingForm() {
         </label>
       </div>
       <label>
-        Tell us more!
+        Additional details
         <textarea
           name="details"
           rows="4"
