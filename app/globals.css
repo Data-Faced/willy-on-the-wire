@@ -332,8 +332,6 @@ section {
 }
 
 .shows-scroll {
-  container-type: inline-size;
-  container-name: shows;
   flex: 1;
   min-height: 0;
   overflow-y: auto;
@@ -403,6 +401,8 @@ a:hover {
 }
 
 .shows {
+  container-type: inline-size;
+  container-name: shows;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -881,7 +881,7 @@ a:hover {
   }
 }
 
-@container shows (max-width: 550px) {
+@container shows (max-width: 500px) {
   .show-item.is-featured,
   .show-item.is-pinned.is-featured {
     grid-template-columns: 1fr;
