@@ -484,6 +484,9 @@ export default function ShowsList({ shows }) {
                             className="show-toggle show-share"
                             onClick={(event) => shareShow(event, show)}
                           >
+                            <svg className="show-action-icon" viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M15 8a3 3 0 1 0-2.8-4H12a3 3 0 0 0 .2 4m0 0-6 3.5m6-3.5 6 3.5M9 12a3 3 0 1 0-2.8 4H6a3 3 0 0 0 .2-4m0 0 6 3.5M15 16a3 3 0 1 0 2.8 4H18a3 3 0 0 0-.2-4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
                             Share
                           </button>
                         ) : null}
@@ -499,6 +502,10 @@ export default function ShowsList({ shows }) {
                                 setCalendarId((current) => (current === id ? null : id));
                               }}
                             >
+                              <svg className="show-action-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3.5" y="5" width="17" height="15.5" rx="2" fill="none" stroke="currentColor" strokeWidth="1.8" />
+                                <path d="M3.5 10h17M8 3.5v4M16 3.5v4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                              </svg>
                               Add to calendar
                             </button>
                             {calendarId === id ? (
