@@ -32,6 +32,91 @@ function showUrl(show) {
   return `${origin}#show-${show.date}`;
 }
 
+
+function toHour(hour, minutes, ampm) {
+  let value = Number(hour);
+  const mins = Number(minutes || 0);
+  const mark = ampm.toUpperCase();
+  if (mark === "PM" && value !== 12) value += 12;
+  if (mark === "AM" && value === 12) value = 0;
+  return { hour: value, minutes: mins };
+}
+
+function stamp(date, hour, minutes) {
+  const [year, month, day] = date.split("-").map(Number);
+  const next = new Date(Date.UTC(year, month - 1, day, hour, minutes));
+  const pad = (part) => String(part).padStart(2, "0");
+  return `${next.getUTCFullYear()}${pad(next.getUTCMonth() + 1)}${pad(next.getUTCDate())}T${pad(next.getUTCHours())}${pad(next.getUTCMinutes())}00`;
+}
+
+function calendarEvent(show) {
+  const title = show.title
+    ? `Willy on the Wire: ${show.title}`
+    : `Willy on the Wire at ${show.venue}`;
+  const location = [show.venue, show.city].filter(Boolean).join(", ");
+  const description = [show.blurb, "https://willyonthewire.com"].filter(Boolean).join("\n");
+  const match = String(show.time || "").match(
+    /^(\d{1,2})(?::(\d{2}))?(AM|PM)-(\d{1,2})(?::(\d{2}))?(AM|PM)$/i
+  );
+
+  let start;
+  let end;
+  let allDay = false;
+
+  if (match) {
+    const open = toHour(match[1], match[2], match[3]);
+    const close = toHour(match[4], match[5], match[6]);
+    start = stamp(show.date, open.hour, open.minutes);
+    const endDate = new Date(`${show.date}T00:00:00`);
+    if (close.hour < open.hour || (close.hour === open.hour && close.minutes <= open.minutes)) {
+      endDate.setDate(endDate.getDate() + 1);
+    }
+    const next = `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, "0")}-${String(endDate.getDate()).padStart(2, "0")}`;
+    end = stamp(next, close.hour, close.minutes);
+  } else {
+    allDay = true;
+    start = show.date.replace(/-/g, "");
+    const endDate = new Date(`${show.date}T00:00:00`);
+    endDate.setDate(endDate.getDate() + 1);
+    end = `${endDate.getFullYear()}${String(endDate.getMonth() + 1).padStart(2, "0")}${String(endDate.getDate()).padStart(2, "0")}`;
+  }
+
+  const uid = `${show.date}-${show.venue}`.replace(/\s+/g, "-") + "@willyonthewire.com";
+  const now = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+  const lines = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//Willy on the Wire//Shows//EN",
+    "CALSCALE:GREGORIAN",
+    "METHOD:PUBLISH",
+    "BEGIN:VEVENT",
+    `UID:${uid}`,
+    `DTSTAMP:${now}`,
+    allDay ? `DTSTART;VALUE=DATE:${start}` : `DTSTART;TZID=America/Denver:${start}`,
+    allDay ? `DTEND;VALUE=DATE:${end}` : `DTEND;TZID=America/Denver:${end}`,
+    `SUMMARY:${title}`,
+    `LOCATION:${location}`,
+    `DESCRIPTION:${description.replace(/\n/g, "\\n")}`,
+    "END:VEVENT",
+    "END:VCALENDAR",
+  ];
+  return lines.join("\r\n");
+}
+
+function addToCalendar(event, show) {
+  event.preventDefault();
+  event.stopPropagation();
+  const file = new Blob([calendarEvent(show)], { type: "text/calendar;charset=utf-8" });
+  const url = URL.createObjectURL(file);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `willy-on-the-wire-${show.date}.ics`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
 function shareText(show) {
   return `Willy on the Wire at ${show.venue} \u2014 ${show.label}. ${show.city}${show.time ? ` ${DOT} ${show.time}` : ""}`;
 }
@@ -259,16 +344,14 @@ export default function ShowsList({ shows }) {
                             Share
                           </button>
                         ) : null}
-                        {featured && show.maps ? (
-                          <a
-                            className="show-toggle show-link"
-                            href={show.maps}
-                            target="_blank"
-                            rel="noreferrer"
-                            onClick={(event) => event.stopPropagation()}
+                        {featured ? (
+                          <button
+                            type="button"
+                            className="show-toggle show-share"
+                            onClick={(event) => addToCalendar(event, show)}
                           >
-                            Map
-                          </a>
+                            Add to calendar
+                          </button>
                         ) : null}
                       </div>
                     </div>
