@@ -23,6 +23,7 @@ const MAPS = {
 };
 
 const BIG_SKY_FLYER = "/big-sky-flyer-default.png";
+const EAGLES_FLYER = "/eagles-flyer-default.png";
 
 const SHOWS = [
   {
@@ -44,6 +45,7 @@ const SHOWS = [
     title: "Weekend at Eagles!",
     city: "Bozeman, MT",
     time: "9PM-1AM",
+    flyer: EAGLES_FLYER,
     maps: MAPS.eagles,
     blurb: "Night two at the Eagles. Downtown Main, late set, dance floor that does not sit down.",
   },
@@ -54,6 +56,7 @@ const SHOWS = [
     title: "Weekend at Eagles!",
     city: "Bozeman, MT",
     time: "9PM-1AM",
+    flyer: EAGLES_FLYER,
     maps: MAPS.eagles,
     blurb: "Friday at the Eagles. Rock, blues, soul, and funk on Main Street.",
   },
@@ -139,6 +142,7 @@ const SHOWS = [
     title: "Weekend at Eagles!",
     city: "Bozeman, MT",
     time: "9PM-1AM",
+    flyer: EAGLES_FLYER,
     maps: MAPS.eagles,
     blurb: "Saturday night of the August Eagles weekend.",
   },
@@ -149,6 +153,7 @@ const SHOWS = [
     title: "Weekend at Eagles!",
     city: "Bozeman, MT",
     time: "9PM-1AM",
+    flyer: EAGLES_FLYER,
     maps: MAPS.eagles,
     blurb: "Friday night of the August Eagles weekend.",
   },
@@ -182,6 +187,7 @@ const SHOWS = [
     title: "Weekend at Eagles!",
     city: "Bozeman, MT",
     time: "9PM-1AM",
+    flyer: EAGLES_FLYER,
     maps: MAPS.eagles,
     blurb: "Saturday of the June Eagles weekend on Main.",
   },
@@ -192,6 +198,7 @@ const SHOWS = [
     title: "Weekend at Eagles!",
     city: "Bozeman, MT",
     time: "9PM-1AM",
+    flyer: EAGLES_FLYER,
     maps: MAPS.eagles,
     blurb: "Friday of the June Eagles weekend on Main.",
   },
