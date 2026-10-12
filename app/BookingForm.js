@@ -88,17 +88,30 @@ export default function BookingForm() {
           onChange={update}
         />
       </label>
-      <label>
-        Event
-        <input
-          name="event"
-          type="text"
-          required
-          placeholder="Bar, wedding, private party"
-          value={fields.event}
-          onChange={update}
-        />
-      </label>
+      <div className="form-row">
+        <label>
+          Event
+          <input
+            name="event"
+            type="text"
+            required
+            placeholder="Bar, wedding, private party"
+            value={fields.event}
+            onChange={update}
+          />
+        </label>
+        <label>
+          Estimated attendance
+          <input
+            name="attendees"
+            type="number"
+            min="1"
+            required
+            value={fields.attendees}
+            onChange={update}
+          />
+        </label>
+      </div>
       <div className="form-row">
         <label>
           Date
@@ -122,21 +135,10 @@ export default function BookingForm() {
         </label>
       </div>
       <label>
-        Total attendees
-        <input
-          name="attendees"
-          type="number"
-          min="1"
-          required
-          value={fields.attendees}
-          onChange={update}
-        />
-      </label>
-      <label>
         Additional details
         <textarea
           name="details"
-          rows="5"
+          rows="4"
           value={fields.details}
           onChange={update}
         />
