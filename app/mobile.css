@@ -23,6 +23,13 @@ main {
   color-scheme: dark;
 }
 
+.booking-form,
+.form-row,
+.booking-form label {
+  width: 100%;
+  overflow: hidden;
+}
+
 .booking-form input[type="date"],
 .booking-form input[type="time"] {
   display: block;
@@ -31,6 +38,8 @@ main {
   min-width: 0;
   box-sizing: border-box;
   color-scheme: dark;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .booking-form input[type="date"]::-webkit-date-and-time-value,
