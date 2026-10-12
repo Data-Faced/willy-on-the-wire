@@ -22,6 +22,8 @@ const MAPS = {
   taproom: "https://maps.google.com/?q=Bozeman+Taproom+Bozeman+MT",
 };
 
+const BIG_SKY_FLYER = "/big-sky-flyer-default.png";
+
 const SHOWS = [
   {
     date: "2026-10-31",
@@ -97,6 +99,7 @@ const SHOWS = [
     venue: "Mountain Village Plaza",
     city: "Big Sky, MT",
     time: "3PM-6PM",
+    flyer: BIG_SKY_FLYER,
     maps: MAPS.plaza,
     blurb: "Afternoon set in the plaza. Open air, Big Sky light, and a set that works in the sun.",
   },
@@ -125,6 +128,7 @@ const SHOWS = [
     venue: "Mountain Village Plaza",
     city: "Big Sky, MT",
     time: "3PM-6PM",
+    flyer: BIG_SKY_FLYER,
     maps: MAPS.plaza,
     blurb: "Friday afternoon in the plaza at Big Sky Resort.",
   },
@@ -294,7 +298,7 @@ const SHOWS = [
     title: "Valentine's Weekend",
     city: "Big Sky, MT",
     time: "6PM-9PM",
-    flyer: "/big-sky-resort-flyer.png",
+    flyer: BIG_SKY_FLYER,
     maps: MAPS.vista,
     instagram: "https://www.instagram.com/p/DUjtEjmgj1J/",
     blurb: "Saturday at Vista Hall. Bring your valentine, your crew, and Big Sky energy.",
@@ -306,7 +310,7 @@ const SHOWS = [
     title: "Valentine's Weekend",
     city: "Big Sky, MT",
     time: "6PM-9PM",
-    flyer: "/big-sky-resort-flyer.png",
+    flyer: BIG_SKY_FLYER,
     maps: MAPS.vista,
     instagram: "https://www.instagram.com/p/DUjtEjmgj1J/",
     blurb: "Friday at Vista Hall. Back-to-back nights at Big Sky Resort, 6 to 9.",
@@ -316,6 +320,7 @@ const SHOWS = [
     label: "Fri Feb 6, 2026",
     venue: "Vista Hall",
     city: "Big Sky, MT",
+    flyer: BIG_SKY_FLYER,
     maps: MAPS.vista,
     blurb: "Vista Hall at Big Sky Resort. Time still to confirm if you have the flyer.",
   },
