@@ -918,3 +918,42 @@ a:hover {
     transition: none !important;
   }
 }
+
+.calendar-menu-wrap {
+  position: relative;
+}
+
+.calendar-menu {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 8px);
+  z-index: 4;
+  min-width: 168px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(8, 8, 8, 0.96);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.calendar-menu a,
+.calendar-menu button {
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 7px;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.calendar-menu a:hover,
+.calendar-menu button:hover {
+  background: rgba(255, 212, 0, 0.12);
+  color: var(--amp);
+}
