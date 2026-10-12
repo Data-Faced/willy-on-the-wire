@@ -13,11 +13,27 @@ main {
   max-width: 100%;
 }
 
+.form-row > *,
+.booking-form > * {
+  min-width: 0;
+}
+
 .booking-form input[type="date"],
 .booking-form input[type="time"] {
   display: block;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   color-scheme: dark;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.booking-form input[type="date"]::-webkit-date-and-time-value,
+.booking-form input[type="time"]::-webkit-date-and-time-value {
+  min-width: 0;
+  text-align: left;
 }
 
 .booking-form input[type="date"]::-webkit-calendar-picker-indicator,
@@ -58,6 +74,10 @@ main {
 
   #shows {
     aspect-ratio: auto;
-    max-height: min(92vh, 860px);
+    max-height: none;
+  }
+
+  .form-row {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
