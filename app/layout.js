@@ -3,6 +3,7 @@ import "./globals.css";
 import "./band.css";
 import "./mobile.css";
 import "./shows.css";
+import "./booking.css";
 
 const display = Bebas_Neue({
   weight: "400",
