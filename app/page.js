@@ -37,7 +37,7 @@ const SHOWS = [
     flyer: "/tune-up-flyer-placeholder.jpg",
     maps: MAPS.tuneUp,
     blurb:
-      "Halloween night at Tune Up, under the Armory Hotel. Classic grooves and a packed basement floor.",
+      "We play Halloween night at Tune Up, under the Armory Hotel in Bozeman. Expect classic grooves and a packed basement floor.",
   },
   {
     date: "2026-09-19",
@@ -48,7 +48,8 @@ const SHOWS = [
     time: "9PM-1AM",
     flyer: EAGLES_FLYER,
     maps: MAPS.eagles,
-    blurb: "Night two at the Eagles. Downtown Main, late set, dance floor that does not sit down.",
+    blurb:
+      "This is night two at the Eagles Club on Main Street. It is a late set, and the dance floor does not sit down.",
   },
   {
     date: "2026-09-18",
@@ -59,7 +60,8 @@ const SHOWS = [
     time: "9PM-1AM",
     flyer: EAGLES_FLYER,
     maps: MAPS.eagles,
-    blurb: "Friday at the Eagles. Rock, blues, soul, and funk on Main Street.",
+    blurb:
+      "We play Friday night at the Eagles Club in downtown Bozeman. The set is rock, blues, soul, and funk on Main Street.",
   },
   {
     date: "2026-09-11",
@@ -71,7 +73,7 @@ const SHOWS = [
     maps: MAPS.greyDog,
     instagram: "https://www.instagram.com/p/DdDQxTii94T/",
     blurb:
-      "Return to The Grey Dog with a bigger band. Billiards in the back, bar in the middle, bangers up front.",
+      "We return to The Grey Dog in Bozeman with a bigger band. There are billiards in the back, a bar in the middle, and bangers up front.",
   },
   {
     date: "2026-09-10",
@@ -83,7 +85,7 @@ const SHOWS = [
     maps: MAPS.hauf,
     instagram: "https://www.instagram.com/p/DdCT8Fei69z/",
     blurb:
-      "Thirsty Thursday at The Hauf. A full night of rock, blues, soul, and funk to start the weekend early.",
+      "This is Thirsty Thursday at The Haufbrau. We play a full night of rock, blues, soul, and funk to start the weekend early.",
   },
   {
     date: "2026-09-05",
@@ -95,7 +97,7 @@ const SHOWS = [
     maps: MAPS.tuneUp,
     instagram: "https://www.instagram.com/p/Dc1j0OVTpC7/",
     blurb:
-      "Debut at Tune Up under the Armory. Your Teacher opens at 6PM. We take the basement from 9 to 11.",
+      "We make our debut at Tune Up under the Armory in Bozeman. Your Teacher opens at 6PM, and we take the basement from 9 to 11.",
   },
   {
     date: "2026-09-04",
@@ -105,7 +107,8 @@ const SHOWS = [
     time: "3PM-6PM",
     flyer: BIG_SKY_FLYER,
     maps: MAPS.plaza,
-    blurb: "Afternoon set in the plaza. Open air, Big Sky light, and a set that works in the sun.",
+    blurb:
+      "We play an afternoon set in the plaza at Big Sky. It is open air, with a set that works in the sun.",
   },
   {
     date: "2026-08-21",
@@ -117,14 +120,15 @@ const SHOWS = [
     maps: MAPS.bandWagon,
     instagram: "https://www.instagram.com/p/DbhaifMjT_g/",
     blurb:
-      "Free party at 2320 W Babcock. Food, bar, yard games, then live music after a vinyl DJ set.",
+      "We play a free party at 2320 W Babcock in Bozeman. There is food, a bar, yard games, and live music after a vinyl DJ set.",
   },
   {
     date: "2026-08-15",
     label: "Sat Aug 15, 2026",
     venue: "Nash Fest",
     city: "Bozeman, MT",
-    blurb: "Festival set. Exact stage time still to lock if you have the flyer.",
+    blurb:
+      "We play a festival set at Nash Fest in Bozeman. The exact stage time is still to lock.",
   },
   {
     date: "2026-08-14",
@@ -134,7 +138,7 @@ const SHOWS = [
     time: "3PM-6PM",
     flyer: BIG_SKY_FLYER,
     maps: MAPS.plaza,
-    blurb: "Friday afternoon in the plaza at Big Sky Resort.",
+    blurb: "We play Friday afternoon in the plaza at Big Sky Resort.",
   },
   {
     date: "2026-08-08",
@@ -145,7 +149,7 @@ const SHOWS = [
     time: "9PM-1AM",
     flyer: EAGLES_FLYER,
     maps: MAPS.eagles,
-    blurb: "Saturday night of the August Eagles weekend.",
+    blurb: "We play Saturday night of the August weekend at the Eagles Club in Bozeman.",
   },
   {
     date: "2026-08-07",
@@ -156,7 +160,7 @@ const SHOWS = [
     time: "9PM-1AM",
     flyer: EAGLES_FLYER,
     maps: MAPS.eagles,
-    blurb: "Friday night of the August Eagles weekend.",
+    blurb: "We play Friday night of the August weekend at the Eagles Club in Bozeman.",
   },
   {
     date: "2026-07-25",
@@ -168,7 +172,7 @@ const SHOWS = [
     maps: MAPS.chico,
     instagram: "https://www.instagram.com/p/DbEkRy-hfE6/",
     blurb:
-      "Night two in Paradise Valley. Soak, sip, and a late set where the water is hot and the drinks are cold.",
+      "This is night two in Paradise Valley. Come soak and sip, then stay for a late set where the water is hot and the drinks are cold.",
   },
   {
     date: "2026-07-24",
@@ -179,7 +183,7 @@ const SHOWS = [
     flyer: "/chico-flyer.png",
     maps: MAPS.chico,
     instagram: "https://www.instagram.com/p/DbEkRy-hfE6/",
-    blurb: "Opening night of the Chico weekend. Two nights in Paradise Valley.",
+    blurb: "This is opening night of the Chico weekend. We play two nights in Paradise Valley.",
   },
   {
     date: "2026-06-27",
@@ -190,7 +194,7 @@ const SHOWS = [
     time: "9PM-1AM",
     flyer: EAGLES_FLYER,
     maps: MAPS.eagles,
-    blurb: "Saturday of the June Eagles weekend on Main.",
+    blurb: "We play Saturday of the June weekend at the Eagles Club on Main Street in Bozeman.",
   },
   {
     date: "2026-06-26",
@@ -201,7 +205,7 @@ const SHOWS = [
     time: "9PM-1AM",
     flyer: EAGLES_FLYER,
     maps: MAPS.eagles,
-    blurb: "Friday of the June Eagles weekend on Main.",
+    blurb: "We play Friday of the June weekend at the Eagles Club on Main Street in Bozeman.",
   },
   {
     date: "2026-05-23",
@@ -213,7 +217,8 @@ const SHOWS = [
     flyer: "/eagles-flyer-1.png",
     maps: MAPS.eagles,
     instagram: "https://www.instagram.com/p/DYiYke_Bnzn/",
-    blurb: "Memorial Day weekend, night two. Blues, rock, soul, and funk at the Eagles.",
+    blurb:
+      "This is Memorial Day weekend, night two. We play blues, rock, soul, and funk at the Eagles Club in Bozeman.",
   },
   {
     date: "2026-05-22",
@@ -225,7 +230,7 @@ const SHOWS = [
     flyer: "/eagles-flyer-1.png",
     maps: MAPS.eagles,
     instagram: "https://www.instagram.com/p/DYiYke_Bnzn/",
-    blurb: "Memorial Day weekend kickoff at the Eagles. Two full nights.",
+    blurb: "This is the Memorial Day weekend kickoff at the Eagles Club. We play two full nights in Bozeman.",
   },
   {
     date: "2026-05-14",
@@ -238,7 +243,7 @@ const SHOWS = [
     maps: MAPS.filler,
     instagram: "https://www.instagram.com/p/DXxEW2Ej6US/",
     blurb:
-      "Classic Rock Night at the Filler with Fritz Road and Damion Wilde. Music starts at 8PM.",
+      "We play Classic Rock Night at the Filling Station with Fritz Road and Damion Wilde. Music starts at 8PM in Bozeman.",
   },
   {
     date: "2026-05-10",
@@ -250,7 +255,8 @@ const SHOWS = [
     flyer: "/bozeman-hot-springs-flyer.png",
     maps: MAPS.hotSprings,
     instagram: "https://www.instagram.com/p/DYIfaAYkh9A/",
-    blurb: "Mother's Day at the springs. Steamy jams from 7 to 10. Everyone and their mother.",
+    blurb:
+      "We play Mother's Day at Bozeman Hot Springs. The set runs from 7 to 10, and everyone and their mother is invited.",
   },
   {
     date: "2026-04-11",
@@ -262,7 +268,7 @@ const SHOWS = [
     maps: MAPS.filler,
     instagram: "https://www.instagram.com/p/DXLfCQfFYY9/",
     blurb:
-      "Saturday at the Filler with Logan and the Light Blue kicking off at 8PM. Confirm this April Saturday if the flyer shows another date.",
+      "We play Saturday at the Filling Station in Bozeman, with Logan and the Light Blue kicking off at 8PM.",
   },
   {
     date: "2026-03-28",
@@ -274,7 +280,7 @@ const SHOWS = [
     flyer: "/eagles-flyer-2.png",
     maps: MAPS.eagles,
     instagram: "https://www.instagram.com/p/DWSP-THAUpY/",
-    blurb: "Spring weekend at the Eagles, night two.",
+    blurb: "This is night two of our spring weekend at the Eagles Club in Bozeman.",
   },
   {
     date: "2026-03-27",
@@ -286,7 +292,7 @@ const SHOWS = [
     flyer: "/eagles-flyer-2.png",
     maps: MAPS.eagles,
     instagram: "https://www.instagram.com/p/DWSP-THAUpY/",
-    blurb: "Spring return to the Eagles. Two nights on Main.",
+    blurb: "We return to the Eagles Club for two nights on Main Street in Bozeman.",
   },
   {
     date: "2026-03-17",
@@ -298,7 +304,8 @@ const SHOWS = [
     flyer: "/haufbrau-flyer-2.png",
     maps: MAPS.hauf,
     instagram: "https://www.instagram.com/p/DV_9YdhkoFb/",
-    blurb: "Surprise St. Patrick's night at The Hauf. Jigging starts at 10PM, maybe earlier.",
+    blurb:
+      "We play a surprise St. Patrick's night at The Haufbrau in Bozeman. The set starts at 10PM, maybe earlier.",
   },
   {
     date: "2026-02-14",
@@ -310,7 +317,8 @@ const SHOWS = [
     flyer: BIG_SKY_FLYER,
     maps: MAPS.vista,
     instagram: "https://www.instagram.com/p/DUjtEjmgj1J/",
-    blurb: "Saturday at Vista Hall. Bring your valentine, your crew, and Big Sky energy.",
+    blurb:
+      "We play Saturday at Vista Hall in Big Sky. Bring your valentine, your crew, and the energy.",
   },
   {
     date: "2026-02-13",
@@ -322,7 +330,7 @@ const SHOWS = [
     flyer: BIG_SKY_FLYER,
     maps: MAPS.vista,
     instagram: "https://www.instagram.com/p/DUjtEjmgj1J/",
-    blurb: "Friday at Vista Hall. Back-to-back nights at Big Sky Resort, 6 to 9.",
+    blurb: "We play Friday at Vista Hall. These are back-to-back nights at Big Sky Resort, from 6 to 9.",
   },
   {
     date: "2026-02-06",
@@ -331,7 +339,7 @@ const SHOWS = [
     city: "Big Sky, MT",
     flyer: BIG_SKY_FLYER,
     maps: MAPS.vista,
-    blurb: "Vista Hall at Big Sky Resort. Time still to confirm if you have the flyer.",
+    blurb: "We play Vista Hall at Big Sky Resort. The time is still to confirm.",
   },
   {
     date: "2026-01-29",
@@ -343,7 +351,7 @@ const SHOWS = [
     maps: MAPS.tipsUp,
     instagram: "https://www.instagram.com/reel/DT_TS4oE1xS/",
     blurb:
-      "Thursday night at Tips Up. Start the weekend early in Big Sky from 9 to midnight.",
+      "We play Thursday night at Tips Up. It is a chance to start the weekend early in Big Sky, from 9 to midnight.",
   },
   {
     date: "2025-11-14",
@@ -356,7 +364,7 @@ const SHOWS = [
     maps: MAPS.taproom,
     instagram: "https://www.instagram.com/p/DQr23O7kUFz/",
     blurb:
-      "Pregame at the Taproom before the Bobcats hosted UC Davis. Classic rock, blues, soul, and funk from 5PM.",
+      "We play a pregame at the Bozeman Taproom before the Bobcats host UC Davis. The set is classic rock, blues, soul, and funk from 5PM.",
   },
 ];
 
@@ -396,7 +404,7 @@ export default function HomePage() {
           <img
             className="logo"
             src="/wotw-logo-large.png"
-            alt="Willy on the Wire"
+            alt="Willy on the Wire, a Bozeman live band"
           />
         </a>
         <p className="eyebrow">Bozeman, Montana</p>
@@ -407,7 +415,7 @@ export default function HomePage() {
           <p className="eyebrow">Rock {'\u00b7'} Blues {'\u00b7'} Soul {'\u00b7'} Funk</p>
           <h1>Willy on the Wire</h1>
           <p className="lede">
-            Bozeman’s soundtrack for a good time.
+            Willy on the Wire is a Bozeman live band and Montana’s soundtrack for a good time.
           </p>
           <div className="actions">
             <a className="btn btn-primary" href="#booking">
@@ -438,7 +446,7 @@ export default function HomePage() {
             />
           </div>
           <p className="video-caption">
-            Live at Tips Up, Big Sky {'\u00b7'} Come and Get Your Love
+            Live at Tips Up in Big Sky. Come and Get Your Love.
           </p>
         </div>
       </section>
@@ -448,26 +456,28 @@ export default function HomePage() {
           <div className="band-block">
             <h2>Who we are</h2>
             <p>
-              Willy on the Wire is a Bozeman band playing rock, blues, soul, and
-              funk. High-energy takes on the classics. Bozeman-made.
-              Montana-tested.
+              Willy on the Wire is a live band from Bozeman, Montana. We play
+              rock, blues, soul, and funk, and we put our own weight on the
+              classics. The set is built to get a room moving and keep it there.
             </p>
             <p>
-              The Hauf on a Thursday. The Eagles on a late weekend. Tune Up under
-              the Armory. Chico when the valley is hot. The job is the same in
-              every room. Get the floor moving and keep it there.
+              You can find us at The Haufbrau on a Thursday, the Eagles Club on
+              a late weekend, and Tune Up under the Armory. We also play Chico
+              Hot Springs when the valley is hot, and Big Sky when the plaza or
+              the hall calls for it.
             </p>
           </div>
           <div className="band-block">
             <h2>What we offer</h2>
             <p>
-              Solo, duo, trio, four-piece, five-piece, and beyond. A bar, a
-              lodge, a festival, or a private party.
+              We book as a solo, duo, trio, four-piece, five-piece, and beyond.
+              That covers a Bozeman bar, a Big Sky lodge, a festival, or a
+              private party.
             </p>
             <p>
-              Wedding packages for the ceremony, the cocktail hour, and the
-              dance floor. Message us and we will build the lineup to fit the
-              night.
+              Our wedding packages cover the ceremony, the cocktail hour, and
+              the dance floor. Send the booking form and we will build the
+              lineup for your night.
             </p>
           </div>
         </div>
@@ -483,10 +493,14 @@ export default function HomePage() {
         <div className="booking-copy">
           <h2>Booking</h2>
           <p>
-            Bars, private events, and weddings. Five-piece.
+            Book Willy on the Wire for a Bozeman bar, a Big Sky event, a private
+            party, or a Montana wedding. Tell us the date, the room, and the
+            lineup you want.
           </p>
           <p>
-            Send the form or DM <a href={INSTAGRAM}>@willyonthewire</a>.
+            We play solo through five-piece and beyond, and our wedding packages
+            cover the ceremony, cocktail hour, and reception. Send the form and
+            we will follow up. You can also DM <a href={INSTAGRAM}>@willyonthewire</a>.
           </p>
           <BookingForm />
         </div>
@@ -494,7 +508,7 @@ export default function HomePage() {
       </section>
 
       <footer className="site-footer">
-        <p>Willy on the Wire {'\u00b7'} Bozeman, MT</p>
+        <p>Willy on the Wire {'\u00b7'} Live band in Bozeman, Montana</p>
         <SocialRow />
       </footer>
     </main>
