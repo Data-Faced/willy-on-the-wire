@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 
 const DOT = "\u00b7";
 const PAST_STEP = 8;
+const FLYER_TONES = ["tone-red", "tone-blue", "tone-green"];
 
 function todayStamp() {
   return new Date().toISOString().slice(0, 10);
@@ -12,6 +13,15 @@ function todayStamp() {
 
 function showId(show) {
   return `${show.date}-${show.venue}`;
+}
+
+function flyerTone(show) {
+  const key = showId(show);
+  let hash = 0;
+  for (let i = 0; i < key.length; i += 1) {
+    hash = (hash + key.charCodeAt(i) * (i + 1)) % 997;
+  }
+  return FLYER_TONES[hash % FLYER_TONES.length];
 }
 
 function showUrl(show) {
@@ -38,7 +48,7 @@ function Flyer({ show }) {
   }
 
   return (
-    <div className="show-flyer">
+    <div className={`show-flyer ${flyerTone(show)}`}>
       <img src="/wotw-logo-large.png" alt="Willy on the Wire" />
       <strong>{show.venue}</strong>
     </div>
