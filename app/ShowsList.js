@@ -205,7 +205,7 @@ export default function ShowsList({ shows }) {
                 const id = showId(show);
                 const pinned = index === 0;
                 const featured = pinned || openId === id;
-                const extras = [show.doors, show.age].filter(Boolean).join(` ${DOT} `);
+                const extras = [show.doors].filter(Boolean).join(` ${DOT} `);
 
                 return (
                   <li
