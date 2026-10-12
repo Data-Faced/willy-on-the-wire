@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 
 const DOT = "\u00b7";
-const PAST_PREVIEW = 5;
+const PAST_STEP = 5;
 
 function todayStamp() {
   return new Date().toISOString().slice(0, 10);
@@ -49,7 +49,7 @@ export default function ShowsList({ shows }) {
   const [view, setView] = useState("upcoming");
   const [openId, setOpenId] = useState(null);
   const [lightbox, setLightbox] = useState(null);
-  const [showAllPast, setShowAllPast] = useState(false);
+  const [pastCount, setPastCount] = useState(PAST_STEP);
   const [mounted, setMounted] = useState(false);
   const today = todayStamp();
 
@@ -66,9 +66,8 @@ export default function ShowsList({ shows }) {
     );
   }, [shows, view, today]);
 
-  const displayed =
-    view === "past" && !showAllPast ? visible.slice(0, PAST_PREVIEW) : visible;
-  const canExpandPast = view === "past" && visible.length > PAST_PREVIEW && !showAllPast;
+  const displayed = view === "past" ? visible.slice(0, pastCount) : visible;
+  const canLoadMorePast = view === "past" && displayed.length < visible.length;
 
   useEffect(() => {
     setMounted(true);
@@ -97,7 +96,7 @@ export default function ShowsList({ shows }) {
     setView(next);
     setOpenId(null);
     setLightbox(null);
-    setShowAllPast(false);
+    setPastCount(PAST_STEP);
   }
 
   function toggle(id) {
@@ -279,13 +278,13 @@ export default function ShowsList({ shows }) {
                 );
               })}
             </ul>
-            {canExpandPast ? (
+            {canLoadMorePast ? (
               <button
                 type="button"
                 className="show-more-past"
-                onClick={() => setShowAllPast(true)}
+                onClick={() => setPastCount((count) => count + PAST_STEP)}
               >
-                All past shows
+                More past shows
               </button>
             ) : null}
           </>
