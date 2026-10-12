@@ -583,7 +583,7 @@ export default function HomePage() {
             We offer small acoustic performances all the way up through
             five-piece rock bands and beyond. Our wedding packages cover the
             ceremony, cocktail hour, and reception. Complete the form below and
-            we will follow up as soon as possible. You can also DM{" "}
+            we will get back to you as soon as possible. You can also DM{" "}
             <a href={INSTAGRAM}>@willyonthewire</a> on Instagram to get in touch!
           </p>
         </div>
