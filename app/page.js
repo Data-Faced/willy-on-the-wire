@@ -407,8 +407,7 @@ export default function HomePage() {
           <p className="eyebrow">Rock {'\u00b7'} Blues {'\u00b7'} Soul {'\u00b7'} Funk</p>
           <h1>Willy on the Wire</h1>
           <p className="lede">
-            A five-piece from Bozeman playing our own takes on the songs
-            that make a room move.
+            Bozeman’s soundtrack for a good time.
           </p>
           <div className="actions">
             <a className="btn btn-primary" href="#booking">
