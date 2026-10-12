@@ -1,0 +1,52 @@
+@media (max-width: 899px) {
+  #shows {
+    overflow: visible;
+    aspect-ratio: auto;
+    max-height: none;
+    background-image: none;
+  }
+
+  #shows::after {
+    display: none;
+  }
+
+  #shows .show-tabs,
+  #shows .shows-scroll {
+    width: 100%;
+    max-width: 100%;
+    align-self: stretch;
+    background: none;
+  }
+
+  #shows .shows-scroll {
+    overflow: visible;
+    flex: none;
+    min-height: 0;
+  }
+
+  #shows .shows-photo {
+    display: block;
+    height: 700px;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background-image: url("/shows-bg.png");
+    background-position: right bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 600px) {
+  #shows .shows-photo {
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+}
+
+@media (min-width: 900px) {
+  #shows .shows-photo {
+    display: none;
+  }
+}
