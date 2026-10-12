@@ -487,6 +487,7 @@ export default function HomePage() {
 
       <section id="shows">
         <ShowsList shows={SHOWS} />
+        <div className="shows-photo" aria-hidden="true" />
       </section>
 
       <section id="booking">
