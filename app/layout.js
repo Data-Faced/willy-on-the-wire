@@ -17,9 +17,9 @@ const body = Karla({
 });
 
 export const metadata = {
-  title: "Willy on the Wire | Bozeman rock, blues, soul, and funk",
+  title: "Willy on the Wire | Live band in Bozeman, Montana",
   description:
-    "Willy on the Wire is a Bozeman five-piece playing rock, blues, soul, and funk. Booking bars, weddings, and rooms across Montana.",
+    "Book Willy on the Wire, a Bozeman live band playing rock, blues, soul, and funk. Solo through five-piece for bars, private events, and weddings in Bozeman, Big Sky, and Montana.",
   icons: {
     icon: "/icon.png",
   },
@@ -30,11 +30,14 @@ const jsonLd = {
   "@type": "MusicGroup",
   name: "Willy on the Wire",
   genre: ["Rock", "Blues", "Soul", "Funk"],
+  description:
+    "Willy on the Wire is a Bozeman live band playing rock, blues, soul, and funk for bars, private events, and weddings across Montana.",
   foundingLocation: {
     "@type": "City",
     name: "Bozeman",
     containedInPlace: { "@type": "State", name: "Montana" },
   },
+  areaServed: ["Bozeman", "Big Sky", "Montana"],
   url: "https://willyonthewire.com",
   sameAs: ["https://www.instagram.com/willyonthewire/"],
 };
