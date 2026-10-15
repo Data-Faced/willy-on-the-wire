@@ -13,7 +13,7 @@ export async function POST(request) {
     return Response.json({ error: "Invalid request" }, { status: 400 });
   }
 
-  const required = ["name", "email", "phone", "date", "location", "time", "endTime", "attendees"];
+  const required = ["name", "email"];
   const missing = required.filter((key) => !String(body?.[key] || "").trim());
 
   if (missing.length) {
