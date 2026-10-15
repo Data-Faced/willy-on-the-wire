@@ -86,7 +86,6 @@ export default function BookingForm() {
           <input
             name="phone"
             type="tel"
-            required
             autoComplete="tel"
             value={fields.phone}
             onChange={update}
@@ -97,7 +96,6 @@ export default function BookingForm() {
           <input
             name="date"
             type="date"
-            required
             value={fields.date}
             onChange={update}
           />
@@ -109,7 +107,6 @@ export default function BookingForm() {
           <input
             name="time"
             type="time"
-            required
             value={fields.time}
             onChange={update}
           />
@@ -119,7 +116,6 @@ export default function BookingForm() {
           <input
             name="endTime"
             type="time"
-            required
             value={fields.endTime}
             onChange={update}
           />
@@ -131,7 +127,6 @@ export default function BookingForm() {
           <input
             name="location"
             type="text"
-            required
             placeholder="Venue or address"
             value={fields.location}
             onChange={update}
@@ -143,7 +138,6 @@ export default function BookingForm() {
             name="attendees"
             type="number"
             min="1"
-            required
             value={fields.attendees}
             onChange={update}
           />
