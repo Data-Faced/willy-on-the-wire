@@ -8,6 +8,7 @@ const YOUTUBE = "https://www.youtube.com/@WillyOnTheWire";
 const FACEBOOK = "https://www.facebook.com/p/Willy-on-the-Wire-61577985041444/";
 const YOUTUBE_ID = "tcxPivXSzgY";
 const YOUTUBE_SHORT_ID = "O3XHmIA21yQ";
+const BOOKING_EMAIL = "booking@willyonthewire.com";
 
 function todayStamp() {
   return new Date().toISOString().slice(0, 10);
@@ -223,8 +224,9 @@ export default function HomePage() {
             We offer small acoustic performances all the way up through
             five-piece rock bands and beyond. Our wedding packages cover the
             ceremony, cocktail hour, and reception. Complete the form below and
-            we will get back to you as soon as possible. You can also DM{" "}
-            <a href={INSTAGRAM}>@willyonthewire</a> on Instagram to get in touch!
+            we will get back to you as soon as possible. You can also email{" "}
+            <a href={`mailto:${BOOKING_EMAIL}`}>{BOOKING_EMAIL}</a> or DM{" "}
+            <a href={INSTAGRAM}>@willyonthewire</a> on Instagram.
           </p>
         </div>
         <div className="booking-stage">
@@ -237,6 +239,10 @@ export default function HomePage() {
 
       <footer className="site-footer">
         <p>Willy on the Wire {'\u00b7'} Live band in Bozeman, Montana</p>
+        <p>
+          Booking:{" "}
+          <a href={`mailto:${BOOKING_EMAIL}`}>{BOOKING_EMAIL}</a>
+        </p>
         <SocialRow />
       </footer>
     </main>
