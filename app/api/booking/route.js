@@ -1,4 +1,4 @@
-const TO = "wsandish@gmail.com";
+const TO = "booking@willyonthewire.com";
 
 function line(label, value) {
   return `${label}: ${String(value || "").trim() || "—"}`;
