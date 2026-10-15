@@ -238,7 +238,13 @@ export default function HomePage() {
       </section>
 
       <footer className="site-footer">
-        <p>Willy on the Wire {'\u00b7'} Live band in Bozeman, Montana</p>
+        <a className="footer-brand" href="/">
+          <img
+            className="footer-logo"
+            src="/wotw-logo-large.png"
+            alt="Willy on the Wire"
+          />
+        </a>
         <p>
           Booking:{" "}
           <a href={`mailto:${BOOKING_EMAIL}`}>{BOOKING_EMAIL}</a>
