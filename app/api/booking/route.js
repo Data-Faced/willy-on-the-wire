@@ -46,7 +46,7 @@ export async function POST(request) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Willy on the Wire <onboarding@resend.dev>",
+      from: "Willy on the Wire <booking@mail.willyonthewire.com>",
       to: [TO],
       reply_to: String(body.email).trim(),
       subject: `Booking: ${String(body.location).trim()} — ${String(body.name).trim()}`,
