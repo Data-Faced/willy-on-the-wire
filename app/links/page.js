@@ -30,7 +30,7 @@ export const metadata = {
 
 export default function LinksPage() {
   return (
-    <main className="links-page">
+    <main className="max-w-xl mx-auto px-6 pb-20">
       <header className="site-header">
         <Link className="brand" href="/">
           <img
@@ -42,22 +42,24 @@ export default function LinksPage() {
         <p className="eyebrow">Bozeman, Montana</p>
       </header>
 
-      <section className="links-hero">
+      <section className="text-center py-10">
         <p className="eyebrow">Rock · Blues · Soul · Funk</p>
-        <h1>Willy on the Wire</h1>
+        <h1 className="text-5xl md:text-6xl my-2">Willy on the Wire</h1>
         <p className="lede">
           Montana’s soundtrack for a good time. Vote before Nov 1, then book us or catch a show.
         </p>
       </section>
 
-      <section className="links-section voting">
-        <h2>Vote Now — Bozeman’s Choice</h2>
-        <p className="section-note">Voting ends November 1. Tap a category and vote for Willy on the Wire.</p>
-        <div className="link-buttons">
+      <section className="links-section py-7 border-t border-[var(--line)]">
+        <h2 className="text-[var(--amp)]">Vote Now — Bozeman’s Choice</h2>
+        <p className="text-[var(--soft)] text-sm mb-4">
+          Voting ends November 1. Tap a category and vote for Willy on the Wire.
+        </p>
+        <div className="grid gap-3">
           {VOTING_LINKS.map((link) => (
             <a
               key={link.href}
-              className="btn btn-primary link-btn"
+              className="btn btn-primary text-center w-full py-4 text-base"
               href={link.href}
               target="_blank"
               rel="noreferrer"
@@ -68,17 +70,17 @@ export default function LinksPage() {
         </div>
       </section>
 
-      <section className="links-section">
+      <section className="py-7 border-t border-[var(--line)]">
         <h2>Book the Band</h2>
-        <div className="link-buttons">
-          <Link className="btn btn-ghost link-btn" href="/#booking">
+        <div className="grid gap-3 mt-4">
+          <Link className="btn btn-ghost text-center w-full py-4" href="/#booking">
             Booking Form
           </Link>
-          <a className="btn btn-ghost link-btn" href="mailto:booking@willyonthewire.com">
+          <a className="btn btn-ghost text-center w-full py-4" href="mailto:booking@willyonthewire.com">
             Email booking@willyonthewire.com
           </a>
           <a
-            className="btn btn-ghost link-btn"
+            className="btn btn-ghost text-center w-full py-4"
             href="https://www.instagram.com/willyonthewire/"
             target="_blank"
             rel="noreferrer"
@@ -88,23 +90,23 @@ export default function LinksPage() {
         </div>
       </section>
 
-      <section className="links-section">
+      <section className="py-7 border-t border-[var(--line)]">
         <h2>Upcoming Shows</h2>
-        <div className="link-buttons">
-          <Link className="btn btn-ghost link-btn" href="/#shows">
+        <div className="grid gap-3 mt-4">
+          <Link className="btn btn-ghost text-center w-full py-4" href="/#shows">
             Full Show List
           </Link>
-          <Link className="btn btn-ghost link-btn" href="/">
+          <Link className="btn btn-ghost text-center w-full py-4" href="/">
             Website Home
           </Link>
         </div>
       </section>
 
-      <section className="links-section">
+      <section className="py-7 border-t border-[var(--line)]">
         <h2>Listen & Watch</h2>
-        <div className="link-buttons">
+        <div className="grid gap-3 mt-4">
           <a
-            className="btn btn-ghost link-btn"
+            className="btn btn-ghost text-center w-full py-4"
             href="https://www.youtube.com/@WillyOnTheWire"
             target="_blank"
             rel="noreferrer"
@@ -112,7 +114,7 @@ export default function LinksPage() {
             YouTube
           </a>
           <a
-            className="btn btn-ghost link-btn"
+            className="btn btn-ghost text-center w-full py-4"
             href="https://www.instagram.com/willyonthewire/"
             target="_blank"
             rel="noreferrer"
@@ -135,55 +137,6 @@ export default function LinksPage() {
           <a href="mailto:booking@willyonthewire.com">booking@willyonthewire.com</a>
         </p>
       </footer>
-
-      <style jsx>{`
-        .links-page {
-          max-width: 640px;
-        }
-
-        .links-hero {
-          padding: 40px 0 24px;
-          text-align: center;
-        }
-
-        .links-hero h1 {
-          font-size: 42px;
-          margin: 8px 0 12px;
-        }
-
-        .links-section {
-          padding: 28px 0;
-          border-top: 1px solid var(--line);
-        }
-
-        .links-section.voting h2 {
-          color: var(--amp);
-        }
-
-        .section-note {
-          color: var(--soft);
-          font-size: 15px;
-          margin: 0 0 16px;
-        }
-
-        .link-buttons {
-          display: grid;
-          gap: 12px;
-        }
-
-        .link-btn {
-          text-align: center;
-          width: 100%;
-          padding: 16px 18px;
-          font-size: 15px;
-        }
-
-        @media (min-width: 768px) {
-          .links-hero h1 {
-            font-size: 56px;
-          }
-        }
-      `}</style>
     </main>
   );
 }
