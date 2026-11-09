@@ -19,7 +19,7 @@ const body = Karla({
 const SITE = "https://willyonthewire.com";
 const TITLE = "Willy on the Wire | Live band in Bozeman, Montana";
 const DESCRIPTION =
-  "Book Willy on the Wire, a Bozeman live band playing rock, blues, soul, and funk. Solo through four-piece for bars, private events, and weddings in Bozeman, Big Sky, and Montana.";
+  "Book Willy on the Wire, a Bozeman live band playing rock, blues, soul, and funk. Solo through four-piece for bars, private events, and weddings across Montana.";
 
 export const metadata = {
   metadataBase: new URL(SITE),
@@ -165,7 +165,7 @@ const jsonLd = {
           "@type": "Offer",
           name: "Wedding packages",
           description:
-            "Wedding packages for the ceremony, the cocktail hour, and the dance floor in Bozeman, Big Sky, and Montana.",
+            "Wedding packages for the ceremony, cocktail hour, and dance floor in Bozeman, Big Sky, and across Montana.",
           areaServed: "Montana",
           url: `${SITE}/#booking`,
           seller: { "@id": `${SITE}/#band` },
@@ -197,7 +197,7 @@ const jsonLd = {
           name: "Does Willy on the Wire play weddings?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. Our wedding packages cover the ceremony, the cocktail hour, and the dance floor. Send the booking form and we will build the lineup for the night.",
+            text: "Yes. Our wedding packages cover the ceremony, cocktail hour, and the dance floor. Send the booking form and we will build the lineup for the night.",
           },
         },
         {
