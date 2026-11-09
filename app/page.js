@@ -193,8 +193,7 @@ export default function HomePage() {
           <div className="band-block">
             <h2>What we offer</h2>
             <p>
-              We book as a solo, duo, trio, four-piece, five-piece, and beyond.
-              That covers a Bozeman bar, a Big Sky lodge, a festival, or a
+              We book as a solo, duo, trio, or four-piece. That covers a Bozeman bar, a Big Sky lodge, a festival, or a
               private party.
             </p>
             <p>
@@ -222,7 +221,7 @@ export default function HomePage() {
           </p>
           <p>
             We offer small acoustic performances all the way up through
-            five-piece rock bands and beyond. Our wedding packages cover the
+            four-piece rock bands. Our wedding packages cover the
             ceremony, cocktail hour, and reception. Complete the form below and
             we will get back to you as soon as possible. You can also email{" "}
             <a href={`mailto:${BOOKING_EMAIL}`}>{BOOKING_EMAIL}</a> or DM{" "}

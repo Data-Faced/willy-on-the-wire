@@ -19,7 +19,7 @@ const body = Karla({
 const SITE = "https://willyonthewire.com";
 const TITLE = "Willy on the Wire | Live band in Bozeman, Montana";
 const DESCRIPTION =
-  "Book Willy on the Wire, a Bozeman live band playing rock, blues, soul, and funk. Solo through five-piece for bars, private events, and weddings in Bozeman, Big Sky, and Montana.";
+  "Book Willy on the Wire, a Bozeman live band playing rock, blues, soul, and funk. Solo through four-piece for bars, private events, and weddings in Bozeman, Big Sky, and Montana.";
 
 export const metadata = {
   metadataBase: new URL(SITE),
@@ -113,7 +113,7 @@ const jsonLd = {
       image: `${SITE}/wotw-logo-large.png`,
       logo: `${SITE}/wotw-logo-large.png`,
       description:
-        "Willy on the Wire is a live band from Bozeman, Montana. We play rock, blues, soul, and funk for bars, private events, and weddings across Montana. We book as a solo, duo, trio, four-piece, five-piece, and beyond.",
+        "Willy on the Wire is a live band from Bozeman, Montana. We play rock, blues, soul, and funk for bars, private events, and weddings across Montana. We book as a solo, duo, trio, or four-piece.",
       genre: ["Rock", "Blues", "Soul", "Funk"],
       foundingLocation: {
         "@type": "City",
@@ -156,7 +156,7 @@ const jsonLd = {
           "@type": "Offer",
           name: "Live band booking",
           description:
-            "Solo, duo, trio, four-piece, five-piece, and beyond for a Bozeman bar, a Big Sky lodge, a festival, or a private party.",
+            "Solo, duo, trio, or four-piece for a Bozeman bar, a Big Sky lodge, a festival, or a private party.",
           areaServed: "Montana",
           url: `${SITE}/#booking`,
           seller: { "@id": `${SITE}/#band` },
@@ -189,7 +189,7 @@ const jsonLd = {
           name: "What lineup sizes can Willy on the Wire book?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "We book as a solo, duo, trio, four-piece, five-piece, and beyond for bars, lodges, festivals, and private parties.",
+            text: "We book as a solo, duo, trio, or four-piece for bars, lodges, festivals, and private parties.",
           },
         },
         {
