@@ -4,6 +4,7 @@ import "./band.css";
 import "./mobile.css";
 import "./shows.css";
 import "./booking.css";
+import SpotlightController from "./SpotlightController";
 
 const display = Bebas_Neue({
   weight: "400",
@@ -229,6 +230,7 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <SpotlightController />
         {children}
       </body>
     </html>
