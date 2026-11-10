@@ -15,6 +15,7 @@ const MAPS = {
   tipsUp: "https://maps.google.com/?q=Tips+Up+Big+Sky+MT",
   taproom: "https://maps.google.com/?q=Bozeman+Taproom+Bozeman+MT",
   montanaJack: "https://maps.google.com/?q=Montana+Jack+52+Big+Sky+Resort+Rd+Big+Sky+MT",
+  bigSkyResort: "https://maps.google.com/?q=Big+Sky+Resort+MT",
 };
 
 const BIG_SKY_FLYER = "/big-sky-flyer-default.png";
@@ -25,14 +26,14 @@ export const SHOWS = [
   {
     date: "2026-12-31",
     label: "Thu Dec 31, 2026",
-    venue: "Montana Jack",
+    venue: "Big Sky Resort",
     title: "New Year's Eve",
     city: "Big Sky, MT",
     time: "9PM-12AM",
     flyer: BIG_SKY_FLYER,
     maps: MAPS.montanaJack,
     blurb:
-      "We play New Year's Eve at Montana Jack at Big Sky Resort. Ring in the year from 9PM to midnight with rock, blues, soul, and funk.",
+      "We play New Year's Eve at Montana Jack inside Big Sky Resort. Ring in the year from 9PM to midnight with rock, blues, soul, and funk.",
   },
   {
     date: "2026-10-31",
