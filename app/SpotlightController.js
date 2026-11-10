@@ -6,10 +6,11 @@ export default function SpotlightController() {
   useEffect(() => {
     const root = document.documentElement;
 
+    // Dark blue + white palette that matches the content
     const colors = [
-      { a: "rgba(255, 212, 0, 0.22)", b: "rgba(255, 255, 255, 0.08)" }, // yellow
-      { a: "rgba(255, 255, 255, 0.18)", b: "rgba(192, 192, 192, 0.12)" }, // white / silver
-      { a: "rgba(192, 192, 192, 0.16)", b: "rgba(255, 212, 0, 0.14)" }, // silver / yellow mix
+      { a: "rgba(18, 48, 120, 0.32)", b: "rgba(255, 255, 255, 0.10)" }, // deep blue + white
+      { a: "rgba(255, 255, 255, 0.16)", b: "rgba(30, 70, 150, 0.22)" }, // white + mid blue
+      { a: "rgba(12, 36, 90, 0.28)", b: "rgba(255, 255, 255, 0.12)" }, // darker blue + white
     ];
 
     function update() {
@@ -20,13 +21,13 @@ export default function SpotlightController() {
       );
       const progress = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
 
-      // 3 zones across the page, with soft crossfades near the boundaries
+      // 3 zones across the full page length
       const zone = progress * 3;
       const index = Math.min(Math.floor(zone), 2);
-      const local = zone - index; // 0-1 within current zone
+      const local = zone - index;
 
-      // Fade window near edges of each zone for smooth light changes
-      const fade = 0.28;
+      // Soft crossfade near zone edges so the lights fade in/out
+      const fade = 0.32;
       let mix = 0;
       if (local < fade) mix = local / fade;
       else if (local > 1 - fade) mix = (1 - local) / fade;
@@ -35,14 +36,8 @@ export default function SpotlightController() {
       const current = colors[index];
       const next = colors[Math.min(index + 1, 2)];
 
-      const blend = (c1, c2, t) => {
-        // simple opacity-style blend by interpolating alpha roughly via mix
-        return t > 0.5 ? c1 : c2;
-      };
-
-      // Crossfade by setting both and letting CSS transition handle it,
-      // or set a single active set. Here we set the active pair.
-      const active = mix > 0.45 ? current : next;
+      // Prefer the current set in the middle of the zone, blend toward next near the edge
+      const active = mix > 0.4 ? current : next;
 
       root.style.setProperty("--spot-a", active.a);
       root.style.setProperty("--spot-b", active.b);
