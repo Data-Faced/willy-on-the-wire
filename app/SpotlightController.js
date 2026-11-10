@@ -2,9 +2,9 @@
 
 import { useEffect } from "react";
 
-const BLUE = { r: 18, g: 48, b: 120, a: 0.38 };
-const WHITE = { r: 255, g: 255, b: 255, a: 0.12 };
-const DEEP = { r: 10, g: 32, b: 85, a: 0.34 };
+const BLUE = { r: 18, g: 48, b: 120, a: 0.42 };
+const WHITE = { r: 255, g: 255, b: 255, a: 0.18 };
+const DEEP = { r: 10, g: 32, b: 85, a: 0.36 };
 
 function lerp(a, b, t) {
   return a + (b - a) * t;
@@ -41,27 +41,26 @@ export default function SpotlightController() {
       const progress = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
 
       // Slow wave across the page
-      const wave = Math.sin(progress * Math.PI * 1.4);
+      const wave = Math.sin(progress * Math.PI * 1.3);
       const t = ease((wave + 1) / 2);
 
-      // At the top (progress near 0) keep the lighting predominantly blue.
-      // As the user scrolls, introduce alternating white/blue so they never all match.
-      const topBias = Math.max(0, 1 - progress * 2.2); // strong blue bias in the hero
-      const blueStrength = 0.55 + topBias * 0.45;
+      // Strong blue bias near the top / hero
+      const topBias = Math.max(0, 1 - progress * 1.8);
 
-      // Pair A stays blue-leaning at the top, eases toward white later
-      const pairA = mix(BLUE, WHITE, t * (1 - topBias * 0.6));
-      // Pair B starts deeper blue at the top, then eases toward white
-      const pairB = mix(DEEP, WHITE, t * 0.75 + (1 - topBias) * 0.25);
+      // Keep the middle from going too dark — boost alpha around the middle of the page
+      const midBoost = 1 + Math.sin(progress * Math.PI) * 0.35;
 
-      // Secondary spots: one stays blue-dominant longer, one introduces white earlier
-      const pairA2 = mix(DEEP, WHITE, t * 0.5 * (1 - topBias * 0.4));
-      const pairB2 = mix(BLUE, WHITE, t * 0.9);
+      // Pair A: blue-leaning at top, eases toward white
+      const pairA = mix(BLUE, WHITE, t * (1 - topBias * 0.5));
+      // Pair B: deeper blue at top, eases toward white later
+      const pairB = mix(DEEP, WHITE, t * 0.7 + (1 - topBias) * 0.2);
 
-      // Boost blue alpha slightly while parked at the top
+      const pairA2 = mix(DEEP, WHITE, t * 0.45 * (1 - topBias * 0.3));
+      const pairB2 = mix(BLUE, WHITE, t * 0.8);
+
       const boost = (c) => ({
         ...c,
-        a: Math.min(0.45, c.a * blueStrength),
+        a: Math.min(0.55, c.a * midBoost * (0.75 + topBias * 0.4)),
       });
 
       root.style.setProperty("--spot-1", toRgba(boost(pairA)));
