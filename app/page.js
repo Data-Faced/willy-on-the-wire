@@ -138,7 +138,7 @@ export default function HomePage() {
           <p className="eyebrow">Rock {'\u00b7'} Blues {'\u00b7'} Soul {'\u00b7'} Funk</p>
           <h1>Willy on the Wire</h1>
           <p className="lede">
-            Willy on the Wire is a Bozeman live band and Montana’s soundtrack for a good time.
+            Montana’s soundtrack for a good time. A Bozeman live band playing rock, blues, soul, and funk that gets the room moving.
           </p>
           <div className="actions">
             <a className="btn btn-primary" href="#booking">
@@ -179,28 +179,19 @@ export default function HomePage() {
           <div className="band-block">
             <h2>Who we are</h2>
             <p>
-              Willy on the Wire is a live band from Bozeman, Montana. We play
-              rock, blues, soul, and funk, and we put our own weight on the
-              classics. The set is built to get a room moving and keep it there.
+              Willy on the Wire is a live band from Bozeman, Montana. We play rock, blues, soul, and funk with our own spin on the classics. The goal is simple: get a room moving and keep it there.
             </p>
             <p>
-              You can find us at The Haufbrau on a Thursday, the Eagles Club on
-              a late weekend, and Tune Up under the Armory. We also play Chico
-              Hot Springs when the valley is hot, and Big Sky when the plaza or
-              the hall calls for it.
+              You will find us at The Haufbrau on a Thursday, the Eagles Club on a late weekend, and Tune Up under the Armory. We also play Chico Hot Springs when the valley heats up, and Big Sky when the plaza or the hall calls.
             </p>
           </div>
           <div className="band-block">
             <h2>What we offer</h2>
             <p>
-              We book as a solo, duo, trio, four-piece, five-piece, and beyond.
-              That covers a Bozeman bar, a Big Sky lodge, a festival, or a
-              private party.
+              We book as a solo, duo, trio, or four-piece. That covers a Bozeman bar night, a Big Sky lodge, a festival stage, or a private party.
             </p>
             <p>
-              Our wedding packages cover the ceremony, the cocktail hour, and
-              the dance floor. Send the booking form and we will build the
-              lineup for your night.
+              Our wedding packages handle the ceremony, cocktail hour, and the dance floor. Send the booking form and we will put the right lineup together for your night.
             </p>
           </div>
         </div>
@@ -216,15 +207,10 @@ export default function HomePage() {
         <div className="booking-intro">
           <h2>Booking Willy on the Wire</h2>
           <p>
-            Book Willy on the Wire for your music venue, community event, private
-            party, or wedding celebration! Tell us exactly what you're looking
-            for or trust our expert opinion.
+            Book Willy on the Wire for a music venue, community event, private party, or wedding. Tell us what you have in mind, or let us help shape the night.
           </p>
           <p>
-            We offer small acoustic performances all the way up through
-            five-piece rock bands and beyond. Our wedding packages cover the
-            ceremony, cocktail hour, and reception. Complete the form below and
-            we will get back to you as soon as possible. You can also email{" "}
+            We handle everything from small acoustic sets to a full four-piece rock band. Wedding packages cover the ceremony, cocktail hour, and reception. Fill out the form and we will get back to you soon. You can also email{" "}
             <a href={`mailto:${BOOKING_EMAIL}`}>{BOOKING_EMAIL}</a> or DM{" "}
             <a href={INSTAGRAM}>@willyonthewire</a> on Instagram.
           </p>

@@ -11,6 +11,11 @@
   --amp-ink: #000000;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --t: 0.32s;
+  --show-t: 0.62s;
+  --spot-1: rgba(16, 42, 110, 0.42);
+  --spot-2: rgba(8, 28, 78, 0.38);
+  --spot-3: rgba(12, 36, 95, 0.36);
+  --spot-4: rgba(18, 48, 120, 0.34);
 }
 
 * {
@@ -21,6 +26,7 @@ html,
 body {
   margin: 0;
   min-height: 100%;
+  min-height: 100dvh;
 }
 
 html {
@@ -34,39 +40,51 @@ body {
   background: #000;
   color: var(--ink);
   font-family: var(--font-body), Helvetica, sans-serif;
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
 }
 
 body::before,
 body::after {
   content: "";
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
   pointer-events: none;
   z-index: -1;
+  will-change: transform;
 }
 
 body::before {
   background:
-    radial-gradient(ellipse 42% 64% at 12% 8%, rgba(18, 48, 120, 0.28), transparent 62%),
-    radial-gradient(ellipse 38% 58% at 88% 6%, rgba(255, 255, 255, 0.1), transparent 60%),
-    radial-gradient(ellipse 34% 48% at 22% 58%, rgba(255, 255, 255, 0.07), transparent 64%),
-    radial-gradient(ellipse 36% 52% at 78% 46%, rgba(18, 48, 120, 0.2), transparent 60%);
+    radial-gradient(ellipse 55% 75% at 10% 6%, var(--spot-1), transparent 68%),
+    radial-gradient(ellipse 50% 65% at 90% 5%, var(--spot-2), transparent 65%),
+    radial-gradient(ellipse 45% 60% at 20% 48%, var(--spot-3), transparent 68%),
+    radial-gradient(ellipse 48% 62% at 80% 46%, var(--spot-4), transparent 65%);
   animation: spots-a 18s ease-in-out infinite alternate;
 }
 
 body::after {
   background:
-    radial-gradient(ellipse 46% 40% at 8% 92%, rgba(255, 255, 255, 0.07), transparent 64%),
-    radial-gradient(ellipse 44% 40% at 92% 88%, rgba(18, 48, 120, 0.22), transparent 62%),
-    radial-gradient(ellipse 30% 34% at 48% 38%, rgba(255, 255, 255, 0.05), transparent 72%),
-    radial-gradient(ellipse 32% 36% at 62% 78%, rgba(18, 48, 120, 0.14), transparent 66%);
+    radial-gradient(ellipse 52% 50% at 6% 88%, var(--spot-2), transparent 68%),
+    radial-gradient(ellipse 50% 48% at 94% 84%, var(--spot-1), transparent 66%),
+    radial-gradient(ellipse 40% 44% at 46% 42%, var(--spot-4), transparent 72%),
+    radial-gradient(ellipse 42% 46% at 64% 74%, var(--spot-3), transparent 70%);
   animation: spots-b 22s ease-in-out infinite alternate;
 }
 
 @keyframes spots-a {
   from {
     transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.78;
+    opacity: 0.9;
   }
   to {
     transform: translate3d(2%, 1.5%, 0) scale(1.06);
@@ -77,7 +95,7 @@ body::after {
 @keyframes spots-b {
   from {
     transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.74;
+    opacity: 0.88;
   }
   to {
     transform: translate3d(-2.5%, -1%, 0) scale(1.08);
@@ -436,12 +454,12 @@ a:hover {
   margin: 0;
   border-bottom: 1px solid var(--line);
   transition:
-    background var(--t) var(--ease),
-    border-color var(--t) var(--ease),
-    padding var(--t) var(--ease),
-    margin var(--t) var(--ease),
-    gap var(--t) var(--ease),
-    grid-template-columns var(--t) var(--ease);
+    background var(--show-t) var(--ease),
+    border-color var(--show-t) var(--ease),
+    padding var(--show-t) var(--ease),
+    margin var(--show-t) var(--ease),
+    gap var(--show-t) var(--ease),
+    grid-template-columns var(--show-t) var(--ease);
 }
 
 .show-item:not(.is-pinned) {
@@ -473,13 +491,13 @@ a:hover {
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  transition: font-size var(--t) var(--ease);
+  transition: font-size var(--show-t) var(--ease);
 }
 
 .show-venue {
   font-size: 20px;
   color: var(--ink);
-  transition: font-size var(--t) var(--ease);
+  transition: font-size var(--show-t) var(--ease);
 }
 
 .show-title {
@@ -510,11 +528,11 @@ a:hover {
   transform: translateY(-6px);
   pointer-events: none;
   transition:
-    max-height 0.4s var(--ease),
-    opacity 0.28s var(--ease),
-    margin 0.4s var(--ease),
-    transform 0.4s var(--ease),
-    font-size var(--t) var(--ease);
+    max-height var(--show-t) var(--ease),
+    opacity 0.48s var(--ease),
+    margin var(--show-t) var(--ease),
+    transform var(--show-t) var(--ease),
+    font-size var(--show-t) var(--ease);
 }
 
 .show-item.is-featured .show-extra,
@@ -625,7 +643,7 @@ a:hover {
   color: var(--amp);
   object-fit: cover;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.58);
-  transition: box-shadow var(--t) var(--ease), border-color var(--t) var(--ease);
+  transition: box-shadow var(--show-t) var(--ease), border-color var(--show-t) var(--ease), transform var(--show-t) var(--ease);
 }
 
 .show-flyer.tone-red {
@@ -656,7 +674,7 @@ a:hover {
   font-weight: 500;
   font-size: 10px;
   color: var(--ink);
-  transition: font-size var(--t) var(--ease);
+  transition: font-size var(--show-t) var(--ease);
 }
 
 .show-item.is-featured .show-flyer strong {
@@ -829,6 +847,19 @@ a:hover {
   .footer-logo {
     height: 32px;
   }
+
+  html,
+  body {
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
+  }
+
+  body::before,
+  body::after {
+    min-height: 100dvh;
+    height: 100dvh;
+    min-height: -webkit-fill-available;
+  }
 }
 
 @media (max-width: 899px) {
@@ -842,17 +873,17 @@ a:hover {
   #shows::after {
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.28) 100%
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.22) 100%
     );
   }
 
   .show-tabs {
     background: linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.48) 0%,
-      rgba(0, 0, 0, 0.38) 68%,
-      rgba(0, 0, 0, 0.12) 88%,
+      rgba(0, 0, 0, 0.42) 0%,
+      rgba(0, 0, 0, 0.32) 68%,
+      rgba(0, 0, 0, 0.1) 88%,
       rgba(0, 0, 0, 0) 100%
     );
   }
@@ -862,15 +893,15 @@ a:hover {
       linear-gradient(
         180deg,
         rgba(0, 0, 0, 0.08) 0%,
-        rgba(0, 0, 0, 0.42) 10%,
-        rgba(0, 0, 0, 0.42) 88%,
+        rgba(0, 0, 0, 0.38) 10%,
+        rgba(0, 0, 0, 0.38) 88%,
         rgba(0, 0, 0, 0) 100%
       ),
       linear-gradient(
         90deg,
-        rgba(0, 0, 0, 0.48) 0%,
-        rgba(0, 0, 0, 0.38) 68%,
-        rgba(0, 0, 0, 0.12) 88%,
+        rgba(0, 0, 0, 0.42) 0%,
+        rgba(0, 0, 0, 0.32) 68%,
+        rgba(0, 0, 0, 0.1) 88%,
         rgba(0, 0, 0, 0) 100%
       );
   }

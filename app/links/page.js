@@ -46,14 +46,14 @@ export default function LinksPage() {
         <p className="eyebrow">Rock · Blues · Soul · Funk</p>
         <h1 className="text-5xl md:text-6xl my-2">Willy on the Wire</h1>
         <p className="lede">
-          Montana’s soundtrack for a good time. Vote before Nov 1, then book us or catch a show.
+          Montana’s soundtrack for a good time. Vote, book us, or catch a show.
         </p>
       </section>
 
       <section className="links-section py-7 border-t border-[var(--line)]">
         <h2 className="text-[var(--amp)]">Vote Now — Bozeman’s Choice</h2>
         <p className="text-[var(--soft)] text-sm mb-4">
-          Voting ends November 1. Tap a category and vote for Willy on the Wire.
+          Voting ends November 1. Pick a category and vote for Willy on the Wire.
         </p>
         <div className="grid gap-3">
           {VOTING_LINKS.map((link) => (
