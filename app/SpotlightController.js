@@ -2,16 +2,45 @@
 
 import { useEffect } from "react";
 
+// Dark blue + white stops. Each spotlight lerps through these independently.
+const STOPS = [
+  { r: 18, g: 48, b: 120, a: 0.32 },   // deep blue
+  { r: 255, g: 255, b: 255, a: 0.14 }, // white
+  { r: 12, g: 36, b: 90, a: 0.28 },    // darker blue
+];
+
+function lerp(a, b, t) {
+  return a + (b - a) * t;
+}
+
+function ease(t) {
+  // smoothstep
+  return t * t * (3 - 2 * t);
+}
+
+function colorAt(progress) {
+  // Map 0-1 progress across the 3 stops (2 intervals)
+  const scaled = Math.min(Math.max(progress, 0), 1) * (STOPS.length - 1);
+  const i = Math.min(Math.floor(scaled), STOPS.length - 2);
+  const local = ease(scaled - i);
+  const c1 = STOPS[i];
+  const c2 = STOPS[i + 1];
+  return {
+    r: Math.round(lerp(c1.r, c2.r, local)),
+    g: Math.round(lerp(c1.g, c2.g, local)),
+    b: Math.round(lerp(c1.b, c2.b, local)),
+    a: lerp(c1.a, c2.a, local),
+  };
+}
+
+function toRgba(c) {
+  return `rgba(${c.r}, ${c.g}, ${c.b}, ${c.a.toFixed(3)})`;
+}
+
 export default function SpotlightController() {
   useEffect(() => {
     const root = document.documentElement;
-
-    // Dark blue + white palette that matches the content
-    const colors = [
-      { a: "rgba(18, 48, 120, 0.32)", b: "rgba(255, 255, 255, 0.10)" }, // deep blue + white
-      { a: "rgba(255, 255, 255, 0.16)", b: "rgba(30, 70, 150, 0.22)" }, // white + mid blue
-      { a: "rgba(12, 36, 90, 0.28)", b: "rgba(255, 255, 255, 0.12)" }, // darker blue + white
-    ];
+    let ticking = false;
 
     function update() {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -21,35 +50,34 @@ export default function SpotlightController() {
       );
       const progress = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
 
-      // 3 zones across the full page length
-      const zone = progress * 3;
-      const index = Math.min(Math.floor(zone), 2);
-      const local = zone - index;
+      // Four independent spotlights, each offset so they fade to new colors at different times
+      const offsets = [0, 0.12, 0.24, 0.08];
+      const names = ["--spot-1", "--spot-2", "--spot-3", "--spot-4"];
 
-      // Soft crossfade near zone edges so the lights fade in/out
-      const fade = 0.32;
-      let mix = 0;
-      if (local < fade) mix = local / fade;
-      else if (local > 1 - fade) mix = (1 - local) / fade;
-      else mix = 1;
+      names.forEach((name, idx) => {
+        const p = (progress + offsets[idx]) % 1;
+        // Stretch so the full cycle still covers the page with only ~3 color shifts
+        const stretched = Math.min(p * 0.92 + 0.04, 1);
+        root.style.setProperty(name, toRgba(colorAt(stretched)));
+      });
 
-      const current = colors[index];
-      const next = colors[Math.min(index + 1, 2)];
+      ticking = false;
+    }
 
-      // Prefer the current set in the middle of the zone, blend toward next near the edge
-      const active = mix > 0.4 ? current : next;
-
-      root.style.setProperty("--spot-a", active.a);
-      root.style.setProperty("--spot-b", active.b);
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
     }
 
     update();
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
 
     return () => {
-      window.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
     };
   }, []);
 
