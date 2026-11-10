@@ -11,8 +11,10 @@
   --amp-ink: #000000;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --t: 0.32s;
-  --spot-a: rgba(18, 48, 120, 0.32);
-  --spot-b: rgba(255, 255, 255, 0.10);
+  --spot-1: rgba(18, 48, 120, 0.32);
+  --spot-2: rgba(255, 255, 255, 0.12);
+  --spot-3: rgba(12, 36, 90, 0.26);
+  --spot-4: rgba(30, 70, 150, 0.18);
 }
 
 * {
@@ -45,24 +47,23 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: -1;
-  transition: background 1.4s ease-in-out;
 }
 
 body::before {
   background:
-    radial-gradient(ellipse 42% 64% at 12% 8%, var(--spot-a), transparent 62%),
-    radial-gradient(ellipse 38% 58% at 88% 6%, var(--spot-b), transparent 60%),
-    radial-gradient(ellipse 34% 48% at 22% 58%, var(--spot-b), transparent 64%),
-    radial-gradient(ellipse 36% 52% at 78% 46%, var(--spot-a), transparent 60%);
+    radial-gradient(ellipse 42% 64% at 12% 8%, var(--spot-1), transparent 62%),
+    radial-gradient(ellipse 38% 58% at 88% 6%, var(--spot-2), transparent 60%),
+    radial-gradient(ellipse 34% 48% at 22% 58%, var(--spot-3), transparent 64%),
+    radial-gradient(ellipse 36% 52% at 78% 46%, var(--spot-4), transparent 60%);
   animation: spots-a 18s ease-in-out infinite alternate;
 }
 
 body::after {
   background:
-    radial-gradient(ellipse 46% 40% at 8% 92%, var(--spot-b), transparent 64%),
-    radial-gradient(ellipse 44% 40% at 92% 88%, var(--spot-a), transparent 62%),
-    radial-gradient(ellipse 30% 34% at 48% 38%, var(--spot-b), transparent 72%),
-    radial-gradient(ellipse 32% 36% at 62% 78%, var(--spot-a), transparent 66%);
+    radial-gradient(ellipse 46% 40% at 8% 92%, var(--spot-2), transparent 64%),
+    radial-gradient(ellipse 44% 40% at 92% 88%, var(--spot-1), transparent 62%),
+    radial-gradient(ellipse 30% 34% at 48% 38%, var(--spot-4), transparent 72%),
+    radial-gradient(ellipse 32% 36% at 62% 78%, var(--spot-3), transparent 66%);
   animation: spots-b 22s ease-in-out infinite alternate;
 }
 
@@ -123,7 +124,6 @@ body::after {
   body::before,
   body::after {
     animation: none;
-    transition: none;
   }
 
   html {
