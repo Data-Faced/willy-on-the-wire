@@ -12,10 +12,10 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --t: 0.32s;
   --show-t: 0.62s;
-  --spot-1: rgba(16, 42, 110, 0.52);
-  --spot-2: rgba(8, 28, 78, 0.48);
-  --spot-3: rgba(12, 36, 95, 0.46);
-  --spot-4: rgba(16, 42, 110, 0.44);
+  --spot-1: rgba(16, 42, 110, 0.42);
+  --spot-2: rgba(8, 28, 78, 0.38);
+  --spot-3: rgba(12, 36, 95, 0.36);
+  --spot-4: rgba(18, 48, 120, 0.34);
 }
 
 * {
@@ -60,6 +60,7 @@ body::after {
   min-height: -webkit-fill-available;
   pointer-events: none;
   z-index: -1;
+  will-change: transform;
 }
 
 body::before {
