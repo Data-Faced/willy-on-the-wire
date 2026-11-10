@@ -2,9 +2,9 @@
 
 import { useEffect } from "react";
 
-const BLUE = { r: 18, g: 48, b: 120, a: 0.32 };
-const WHITE = { r: 255, g: 255, b: 255, a: 0.14 };
-const DEEP = { r: 12, g: 36, b: 90, a: 0.28 };
+const BLUE = { r: 18, g: 48, b: 120, a: 0.38 };
+const WHITE = { r: 255, g: 255, b: 255, a: 0.12 };
+const DEEP = { r: 10, g: 32, b: 85, a: 0.34 };
 
 function lerp(a, b, t) {
   return a + (b - a) * t;
@@ -40,24 +40,34 @@ export default function SpotlightController() {
       );
       const progress = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
 
-      // Slow sine so colors ease across the full page (~3 gentle shifts)
-      const wave = Math.sin(progress * Math.PI * 1.5); // -1 to 1
-      const t = ease((wave + 1) / 2); // 0 to 1, eased
+      // Slow wave across the page
+      const wave = Math.sin(progress * Math.PI * 1.4);
+      const t = ease((wave + 1) / 2);
 
-      // Pair A starts blue, fades toward white
-      // Pair B starts white, fades toward blue
-      // They are always opposite, so the background never goes all one color
-      const pairA = mix(BLUE, WHITE, t);
-      const pairB = mix(WHITE, DEEP, t);
+      // At the top (progress near 0) keep the lighting predominantly blue.
+      // As the user scrolls, introduce alternating white/blue so they never all match.
+      const topBias = Math.max(0, 1 - progress * 2.2); // strong blue bias in the hero
+      const blueStrength = 0.55 + topBias * 0.45;
 
-      // Slight secondary variation so the four lights are not identical within a pair
-      const pairA2 = mix(DEEP, WHITE, t * 0.85);
-      const pairB2 = mix(WHITE, BLUE, t * 0.9);
+      // Pair A stays blue-leaning at the top, eases toward white later
+      const pairA = mix(BLUE, WHITE, t * (1 - topBias * 0.6));
+      // Pair B starts deeper blue at the top, then eases toward white
+      const pairB = mix(DEEP, WHITE, t * 0.75 + (1 - topBias) * 0.25);
 
-      root.style.setProperty("--spot-1", toRgba(pairA));
-      root.style.setProperty("--spot-2", toRgba(pairB));
-      root.style.setProperty("--spot-3", toRgba(pairA2));
-      root.style.setProperty("--spot-4", toRgba(pairB2));
+      // Secondary spots: one stays blue-dominant longer, one introduces white earlier
+      const pairA2 = mix(DEEP, WHITE, t * 0.5 * (1 - topBias * 0.4));
+      const pairB2 = mix(BLUE, WHITE, t * 0.9);
+
+      // Boost blue alpha slightly while parked at the top
+      const boost = (c) => ({
+        ...c,
+        a: Math.min(0.45, c.a * blueStrength),
+      });
+
+      root.style.setProperty("--spot-1", toRgba(boost(pairA)));
+      root.style.setProperty("--spot-2", toRgba(boost(pairB)));
+      root.style.setProperty("--spot-3", toRgba(boost(pairA2)));
+      root.style.setProperty("--spot-4", toRgba(boost(pairB2)));
 
       ticking = false;
     }
