@@ -11,6 +11,7 @@
   --amp-ink: #000000;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --t: 0.32s;
+  --show-t: 0.62s;
   --spot-1: rgba(18, 48, 120, 0.38);
   --spot-2: rgba(10, 32, 85, 0.34);
   --spot-3: rgba(12, 36, 90, 0.32);
@@ -450,12 +451,12 @@ a:hover {
   margin: 0;
   border-bottom: 1px solid var(--line);
   transition:
-    background var(--t) var(--ease),
-    border-color var(--t) var(--ease),
-    padding var(--t) var(--ease),
-    margin var(--t) var(--ease),
-    gap var(--t) var(--ease),
-    grid-template-columns var(--t) var(--ease);
+    background var(--show-t) var(--ease),
+    border-color var(--show-t) var(--ease),
+    padding var(--show-t) var(--ease),
+    margin var(--show-t) var(--ease),
+    gap var(--show-t) var(--ease),
+    grid-template-columns var(--show-t) var(--ease);
 }
 
 .show-item:not(.is-pinned) {
@@ -487,13 +488,13 @@ a:hover {
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  transition: font-size var(--t) var(--ease);
+  transition: font-size var(--show-t) var(--ease);
 }
 
 .show-venue {
   font-size: 20px;
   color: var(--ink);
-  transition: font-size var(--t) var(--ease);
+  transition: font-size var(--show-t) var(--ease);
 }
 
 .show-title {
@@ -524,11 +525,11 @@ a:hover {
   transform: translateY(-6px);
   pointer-events: none;
   transition:
-    max-height 0.4s var(--ease),
-    opacity 0.28s var(--ease),
-    margin 0.4s var(--ease),
-    transform 0.4s var(--ease),
-    font-size var(--t) var(--ease);
+    max-height var(--show-t) var(--ease),
+    opacity 0.48s var(--ease),
+    margin var(--show-t) var(--ease),
+    transform var(--show-t) var(--ease),
+    font-size var(--show-t) var(--ease);
 }
 
 .show-item.is-featured .show-extra,
@@ -639,7 +640,7 @@ a:hover {
   color: var(--amp);
   object-fit: cover;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.58);
-  transition: box-shadow var(--t) var(--ease), border-color var(--t) var(--ease);
+  transition: box-shadow var(--show-t) var(--ease), border-color var(--show-t) var(--ease), transform var(--show-t) var(--ease);
 }
 
 .show-flyer.tone-red {
@@ -670,7 +671,7 @@ a:hover {
   font-weight: 500;
   font-size: 10px;
   color: var(--ink);
-  transition: font-size var(--t) var(--ease);
+  transition: font-size var(--show-t) var(--ease);
 }
 
 .show-item.is-featured .show-flyer strong {
