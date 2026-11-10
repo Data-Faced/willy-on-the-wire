@@ -285,6 +285,12 @@ button.btn {
   border-color: var(--amp);
 }
 
+.btn-primary:hover {
+  background: #000;
+  color: var(--amp);
+  border-color: var(--amp);
+}
+
 .btn-ghost {
   color: var(--ink);
   border-color: var(--ink);
