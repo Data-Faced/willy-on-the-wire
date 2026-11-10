@@ -1,4 +1,4 @@
-import { Bebas_Neue, Karla } from "next/font/google";
+import { Oswald, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import "./band.css";
 import "./mobile.css";
@@ -6,13 +6,13 @@ import "./shows.css";
 import "./booking.css";
 import SpotlightController from "./SpotlightController";
 
-const display = Bebas_Neue({
-  weight: "400",
+const display = Oswald({
+  weight: ["500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-display",
 });
 
-const body = Karla({
+const body = Source_Sans_3({
   subsets: ["latin"],
   variable: "--font-body",
 });
