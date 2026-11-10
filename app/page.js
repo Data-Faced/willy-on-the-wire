@@ -138,7 +138,7 @@ export default function HomePage() {
           <p className="eyebrow">Rock {'\u00b7'} Blues {'\u00b7'} Soul {'\u00b7'} Funk</p>
           <h1>Willy on the Wire</h1>
           <p className="lede">
-            A Bozeman live band built for good times. We play rock, blues, soul, and funk that gets the room moving.
+            Montana’s soundtrack for a good time. A Bozeman live band playing rock, blues, soul, and funk that gets the room moving.
           </p>
           <div className="actions">
             <a className="btn btn-primary" href="#booking">
