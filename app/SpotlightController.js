@@ -2,9 +2,9 @@
 
 import { useEffect } from "react";
 
-const BLUE = { r: 18, g: 48, b: 120, a: 0.42 };
-const WHITE = { r: 255, g: 255, b: 255, a: 0.18 };
-const DEEP = { r: 10, g: 32, b: 85, a: 0.36 };
+const BLUE = { r: 16, g: 42, b: 110, a: 0.52 };
+const WHITE = { r: 220, g: 230, b: 255, a: 0.10 };
+const DEEP = { r: 8, g: 28, b: 78, a: 0.48 };
 
 function lerp(a, b, t) {
   return a + (b - a) * t;
@@ -40,27 +40,20 @@ export default function SpotlightController() {
       );
       const progress = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
 
-      // Slow wave across the page
-      const wave = Math.sin(progress * Math.PI * 1.3);
+      const wave = Math.sin(progress * Math.PI * 1.2);
       const t = ease((wave + 1) / 2);
 
-      // Strong blue bias near the top / hero
-      const topBias = Math.max(0, 1 - progress * 1.8);
+      const topBias = Math.max(0, 1 - progress * 1.6);
+      const midBoost = 1 + Math.sin(progress * Math.PI) * 0.2;
 
-      // Keep the middle from going too dark — boost alpha around the middle of the page
-      const midBoost = 1 + Math.sin(progress * Math.PI) * 0.35;
-
-      // Pair A: blue-leaning at top, eases toward white
-      const pairA = mix(BLUE, WHITE, t * (1 - topBias * 0.5));
-      // Pair B: deeper blue at top, eases toward white later
-      const pairB = mix(DEEP, WHITE, t * 0.7 + (1 - topBias) * 0.2);
-
-      const pairA2 = mix(DEEP, WHITE, t * 0.45 * (1 - topBias * 0.3));
-      const pairB2 = mix(BLUE, WHITE, t * 0.8);
+      const pairA = mix(BLUE, WHITE, t * 0.35 * (1 - topBias * 0.4));
+      const pairB = mix(DEEP, WHITE, t * 0.45);
+      const pairA2 = mix(DEEP, BLUE, t * 0.3);
+      const pairB2 = mix(BLUE, WHITE, t * 0.5);
 
       const boost = (c) => ({
         ...c,
-        a: Math.min(0.55, c.a * midBoost * (0.75 + topBias * 0.4)),
+        a: Math.min(0.62, c.a * midBoost * (0.85 + topBias * 0.25)),
       });
 
       root.style.setProperty("--spot-1", toRgba(boost(pairA)));
