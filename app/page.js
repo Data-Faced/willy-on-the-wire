@@ -179,7 +179,7 @@ export default function HomePage() {
           <div className="band-block">
             <h2>Who we are</h2>
             <p>
-              Willy on the Wire is a live band from Bozeman, Montana. We play rock, blues, soul, and funk with our own spin on the classics. Every set is built for the venue and the crowd in the room.
+              Willy on the Wire is a live band from Bozeman, Montana. We play rock, blues, soul, and funk with our own spin on the classics. Every set is built for the venue and the crowd at hand.
             </p>
             <p>
               We’re regulars at Bozeman live music staples like The Filling Station, The Eagles Club, and Tune Up under the Armory. You can also catch us a little further out of town at places like Bozeman Hot Springs, Tips Up, and Big Sky Resort.
