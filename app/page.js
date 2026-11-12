@@ -138,7 +138,7 @@ export default function HomePage() {
           <p className="eyebrow">Rock {'\u00b7'} Blues {'\u00b7'} Soul {'\u00b7'} Funk</p>
           <h1>Willy on the Wire</h1>
           <p className="lede">
-            Montana’s soundtrack for a good time. A Bozeman live band playing rock, blues, soul, and funk that gets the room moving.
+            Montana’s soundtrack for a good time. A Bozeman live band playing rock, blues, soul, and funk that gets the people going!
           </p>
           <div className="actions">
             <a className="btn btn-primary" href="#booking">
@@ -179,19 +179,19 @@ export default function HomePage() {
           <div className="band-block">
             <h2>Who we are</h2>
             <p>
-              Willy on the Wire is a live band from Bozeman, Montana. We play rock, blues, soul, and funk with our own spin on the classics. Every set is built to get the room moving.
+              Willy on the Wire is a live band from Bozeman, Montana. We play rock, blues, soul, and funk with our own spin on the classics. Every set is built for the venue and the crowd in the room.
             </p>
             <p>
-              You will find us at The Haufbrau on a Thursday, the Eagles Club on a late weekend, and Tune Up under the Armory. We also play Chico Hot Springs when the valley heats up, and Big Sky when the plaza or the hall calls.
+              We’re regulars at Bozeman live music staples like The Filling Station, The Eagles Club, and Tune Up under the Armory. You can also catch us a little further out of town at places like Bozeman Hot Springs, Tips Up, and Big Sky Resort.
             </p>
           </div>
           <div className="band-block">
             <h2>What we offer</h2>
             <p>
-              We book as a solo, duo, trio, or four-piece. That covers a Bozeman bar night, a Big Sky lodge, a festival stage, or a private party.
+              Willy on the Wire is built to give you the show you’re looking for—whether that’s a 3-piece acoustic set for background music, a full 4-piece for a night at the bar, or a stacked lineup to rock a festival stage.
             </p>
             <p>
-              Our wedding packages handle the ceremony, cocktail hour, and the dance floor. Send the booking form and we will put the right lineup together for your night.
+              Our wedding packages cover the ceremony, cocktail hour, and the dance floor. Fill out the booking form below and we’ll work with you to plan the best night possible.
             </p>
           </div>
         </div>
