@@ -24,6 +24,30 @@ const FILLER_FLYER = "/filling-station-flyer-default.png";
 
 export const SHOWS = [
   {
+    date: "2027-02-13",
+    label: "Sat Feb 13, 2027",
+    venue: "Montana Jack",
+    title: "Live at Big Sky Resort",
+    city: "Big Sky, MT",
+    time: "6PM-9PM",
+    flyer: BIG_SKY_FLYER,
+    maps: MAPS.montanaJack,
+    blurb:
+      "We return to Montana Jack at Big Sky Resort. Après sets of rock, blues, soul, and funk from 6 to 9 at the base of the mountain.",
+  },
+  {
+    date: "2027-01-15",
+    label: "Fri Jan 15, 2027",
+    venue: "Montana Jack",
+    title: "Live at Big Sky Resort",
+    city: "Big Sky, MT",
+    time: "6PM-9PM",
+    flyer: BIG_SKY_FLYER,
+    maps: MAPS.montanaJack,
+    blurb:
+      "We play Montana Jack at Big Sky Resort. Après sets of rock, blues, soul, and funk from 6 to 9 at the base of the mountain.",
+  },
+  {
     date: "2026-12-31",
     label: "Thu Dec 31, 2026",
     venue: "Big Sky Resort",
