@@ -188,7 +188,7 @@ export default function HomePage() {
           <div className="band-block">
             <h2>What we offer</h2>
             <p>
-              Willy on the Wire is built to give you the show you’re looking for—whether that’s a 3-piece acoustic set for background music, a full 4-piece for a night at the bar, or a stacked lineup to rock a festival stage.
+              Willy on the Wire is built to give you the show you’re looking for—whether that’s a 3-piece acoustic set for background music, a full 4-piece for a night on the dance floor, or a stacked lineup to rock a festival stage.
             </p>
             <p>
               Our wedding packages cover the ceremony, cocktail hour, and the dance floor. Fill out the booking form below and we’ll work with you to plan the best night possible.
