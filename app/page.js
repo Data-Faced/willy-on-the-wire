@@ -207,10 +207,10 @@ export default function HomePage() {
         <div className="booking-intro">
           <h2>Booking Willy on the Wire</h2>
           <p>
-            Book Willy on the Wire for a music venue, community event, private party, or wedding. Tell us what you have in mind, or let us help shape the night.
+            Book Willy on the Wire for your music venue, community event, private party, or wedding! Tell us what you have in mind, or trust our expert opinion to help shape the night.
           </p>
           <p>
-            We handle everything from small acoustic sets to a full four-piece rock band. Wedding packages cover the ceremony, cocktail hour, and reception. Fill out the form and we will get back to you soon. You can also email{" "}
+            We handle everything from small acoustic sets to a full four-piece rock band and beyond! Wedding packages cover everything as needed including the ceremony, cocktail hour, and reception. Complete the form below and we will get back to you as soon as possible. You can also email{" "}
             <a href={`mailto:${BOOKING_EMAIL}`}>{BOOKING_EMAIL}</a> or DM{" "}
             <a href={INSTAGRAM}>@willyonthewire</a> on Instagram.
           </p>
