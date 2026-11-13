@@ -19,6 +19,11 @@ const MAPS = {
 };
 
 const BIG_SKY_FLYER = "/big-sky-flyer-default.png";
+const BIG_SKY_NAVY = "/big-sky-flyer-navy.png";
+const BIG_SKY_FOREST = "/big-sky-flyer-forest.png";
+const BIG_SKY_BURGUNDY = "/big-sky-flyer-burgundy.png";
+const TUNE_UP_NAVY = "/tune-up-flyer-navy.png";
+const TUNE_UP_SLATE = "/tune-up-flyer-slate.png";
 const EAGLES_FLYER = "/eagles-flyer-default.png";
 const FILLER_FLYER = "/filling-station-flyer-default.png";
 
@@ -29,7 +34,7 @@ export const SHOWS = [
     venue: "Big Sky Resort",
     city: "Big Sky, MT",
     time: "6PM-9PM",
-    flyer: BIG_SKY_FLYER,
+    flyer: BIG_SKY_NAVY,
     maps: MAPS.montanaJack,
     blurb:
       "We return to Montana Jack at Big Sky Resort. Après sets of rock, blues, soul, and funk from 6 to 9 at the base of the mountain.",
@@ -40,7 +45,7 @@ export const SHOWS = [
     venue: "Big Sky Resort",
     city: "Big Sky, MT",
     time: "6PM-9PM",
-    flyer: BIG_SKY_FLYER,
+    flyer: BIG_SKY_FOREST,
     maps: MAPS.montanaJack,
     blurb:
       "We play Montana Jack at Big Sky Resort. Après sets of rock, blues, soul, and funk from 6 to 9 at the base of the mountain.",
@@ -52,7 +57,7 @@ export const SHOWS = [
     title: "New Year's Eve",
     city: "Big Sky, MT",
     time: "9PM-12AM",
-    flyer: BIG_SKY_FLYER,
+    flyer: BIG_SKY_BURGUNDY,
     maps: MAPS.montanaJack,
     blurb:
       "We play New Year's Eve at Montana Jack inside Big Sky Resort. Ring in the year from 9PM to midnight with rock, blues, soul, and funk.",
@@ -64,7 +69,7 @@ export const SHOWS = [
     city: "Bozeman, MT",
     time: "9PM-11PM",
     doors: "Doors 8PM",
-    flyer: "/tune-up-flyer-placeholder.jpg",
+    flyer: TUNE_UP_NAVY,
     maps: MAPS.tuneUp,
     blurb:
       "We play Halloween night at Tune Up, under the Armory Hotel in Bozeman. Expect classic grooves and a packed basement floor.",
@@ -123,7 +128,7 @@ export const SHOWS = [
     venue: "Tune Up",
     city: "Bozeman, MT",
     time: "9PM-11PM",
-    flyer: "/tune-up-flyer-1.png",
+    flyer: TUNE_UP_SLATE,
     maps: MAPS.tuneUp,
     instagram: "https://www.instagram.com/p/Dc1j0OVTpC7/",
     blurb:
@@ -135,7 +140,7 @@ export const SHOWS = [
     venue: "Mountain Village Plaza",
     city: "Big Sky, MT",
     time: "3PM-6PM",
-    flyer: BIG_SKY_FLYER,
+    flyer: BIG_SKY_NAVY,
     maps: MAPS.plaza,
     blurb:
       "We play an afternoon set in the plaza at Big Sky. It is open air, with a set that works in the sun.",
@@ -166,7 +171,7 @@ export const SHOWS = [
     venue: "Mountain Village Plaza",
     city: "Big Sky, MT",
     time: "3PM-6PM",
-    flyer: BIG_SKY_FLYER,
+    flyer: BIG_SKY_FOREST,
     maps: MAPS.plaza,
     blurb: "We play Friday afternoon in the plaza at Big Sky Resort.",
   },
@@ -344,7 +349,7 @@ export const SHOWS = [
     title: "Valentine's Weekend",
     city: "Big Sky, MT",
     time: "6PM-9PM",
-    flyer: BIG_SKY_FLYER,
+    flyer: BIG_SKY_BURGUNDY,
     maps: MAPS.vista,
     instagram: "https://www.instagram.com/p/DUjtEjmgj1J/",
     blurb:
@@ -357,7 +362,7 @@ export const SHOWS = [
     title: "Valentine's Weekend",
     city: "Big Sky, MT",
     time: "6PM-9PM",
-    flyer: BIG_SKY_FLYER,
+    flyer: BIG_SKY_BURGUNDY,
     maps: MAPS.vista,
     instagram: "https://www.instagram.com/p/DUjtEjmgj1J/",
     blurb: "We play Friday at Vista Hall. These are back-to-back nights at Big Sky Resort, from 6 to 9.",
@@ -367,7 +372,7 @@ export const SHOWS = [
     label: "Fri Feb 6, 2026",
     venue: "Vista Hall",
     city: "Big Sky, MT",
-    flyer: BIG_SKY_FLYER,
+    flyer: BIG_SKY_NAVY,
     maps: MAPS.vista,
     blurb: "We play Vista Hall at Big Sky Resort. The time is still to confirm.",
   },
