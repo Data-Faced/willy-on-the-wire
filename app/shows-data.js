@@ -26,8 +26,7 @@ export const SHOWS = [
   {
     date: "2027-02-13",
     label: "Sat Feb 13, 2027",
-    venue: "Montana Jack",
-    title: "Live at Big Sky Resort",
+    venue: "Big Sky Resort",
     city: "Big Sky, MT",
     time: "6PM-9PM",
     flyer: BIG_SKY_FLYER,
@@ -38,8 +37,7 @@ export const SHOWS = [
   {
     date: "2027-01-15",
     label: "Fri Jan 15, 2027",
-    venue: "Montana Jack",
-    title: "Live at Big Sky Resort",
+    venue: "Big Sky Resort",
     city: "Big Sky, MT",
     time: "6PM-9PM",
     flyer: BIG_SKY_FLYER,
