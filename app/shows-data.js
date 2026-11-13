@@ -22,8 +22,10 @@ const BIG_SKY_FLYER = "/big-sky-flyer-default.png";
 const BIG_SKY_NAVY = "/big-sky-flyer-navy.png";
 const BIG_SKY_FOREST = "/big-sky-flyer-forest.png";
 const BIG_SKY_BURGUNDY = "/big-sky-flyer-burgundy.png";
+const BIG_SKY_PURPLE = "/big-sky-flyer-purple.png";
 const TUNE_UP_NAVY = "/tune-up-flyer-navy.png";
 const TUNE_UP_SLATE = "/tune-up-flyer-slate.png";
+const TUNE_UP_PURPLE = "/tune-up-flyer-purple.png";
 const EAGLES_FLYER = "/eagles-flyer-default.png";
 const FILLER_FLYER = "/filling-station-flyer-default.png";
 
@@ -128,7 +130,7 @@ export const SHOWS = [
     venue: "Tune Up",
     city: "Bozeman, MT",
     time: "9PM-11PM",
-    flyer: TUNE_UP_SLATE,
+    flyer: TUNE_UP_PURPLE,
     maps: MAPS.tuneUp,
     instagram: "https://www.instagram.com/p/Dc1j0OVTpC7/",
     blurb:
@@ -372,7 +374,7 @@ export const SHOWS = [
     label: "Fri Feb 6, 2026",
     venue: "Vista Hall",
     city: "Big Sky, MT",
-    flyer: BIG_SKY_NAVY,
+    flyer: BIG_SKY_PURPLE,
     maps: MAPS.vista,
     blurb: "We play Vista Hall at Big Sky Resort. The time is still to confirm.",
   },
