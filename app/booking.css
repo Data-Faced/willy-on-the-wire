@@ -48,16 +48,13 @@
 
 #booking .booking-photo {
   display: block;
+  position: relative;
   height: auto;
   aspect-ratio: 3 / 4;
   width: 100vw;
   max-width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background-image: url("/booking-bg-mobile.png");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 #booking .booking-copy {
