@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ShowsList from "./ShowsList";
 import BookingForm from "./BookingForm";
 
@@ -124,10 +125,13 @@ export default function HomePage() {
       />
       <header className="site-header">
         <a className="brand" href="/">
-          <img
+          <Image
             className="logo"
             src="/wotw-logo-large.png"
             alt="Willy on the Wire, a Bozeman live band"
+            width={200}
+            height={56}
+            priority
           />
         </a>
         <p className="eyebrow">Bozeman, Montana</p>
@@ -195,12 +199,28 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-        <div className="band-photo" aria-hidden="true" />
+        <div className="band-photo" aria-hidden="true">
+          <Image
+            src="/band-bg.png"
+            alt=""
+            fill
+            sizes="100vw"
+            style={{ objectFit: "cover", objectPosition: "left center" }}
+          />
+        </div>
       </section>
 
       <section id="shows">
         <ShowsList shows={SHOWS} />
-        <div className="shows-photo" aria-hidden="true" />
+        <div className="shows-photo" aria-hidden="true">
+          <Image
+            src="/shows-bg.png"
+            alt=""
+            fill
+            sizes="100vw"
+            style={{ objectFit: "cover", objectPosition: "right bottom" }}
+          />
+        </div>
       </section>
 
       <section id="booking">
@@ -219,16 +239,26 @@ export default function HomePage() {
           <div className="booking-copy">
             <BookingForm />
           </div>
-          <div className="booking-photo" aria-hidden="true" />
+          <div className="booking-photo" aria-hidden="true">
+            <Image
+              src="/booking-bg-mobile.png"
+              alt=""
+              fill
+              sizes="100vw"
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
+          </div>
         </div>
       </section>
 
       <footer className="site-footer">
         <a className="footer-brand" href="/">
-          <img
+          <Image
             className="footer-logo"
             src="/wotw-logo-large.png"
             alt="Willy on the Wire"
+            width={120}
+            height={36}
           />
         </a>
         <p>
