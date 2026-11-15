@@ -19,15 +19,12 @@ h2 {
 
 #about .band-photo {
   display: block;
+  position: relative;
   height: 700px;
   width: 100vw;
   max-width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background-image: url("/band-bg.png");
-  background-position: left center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 #about .band-copy {
