@@ -10,11 +10,13 @@ const display = Oswald({
   weight: ["500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-display",
+  display: "swap",
 });
 
 const body = Source_Sans_3({
   subsets: ["latin"],
   variable: "--font-body",
+  display: "swap",
 });
 
 const SITE = "https://willyonthewire.com";
@@ -225,6 +227,10 @@ const jsonLd = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+        <link rel="preconnect" href="https://i.ytimg.com" />
+      </head>
       <body>
         <script
           type="application/ld+json"
