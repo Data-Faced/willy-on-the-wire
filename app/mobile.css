@@ -80,7 +80,7 @@ main {
   }
 
   .show-tabs {
-    gap: 8px;
+    column-gap: 0;
   }
 
   .socials svg {
