@@ -3,7 +3,7 @@ h2 {
 }
 
 .show-tabs button.is-active {
-  font-size: 36px;
+  font-size: 48px;
 }
 
 #about {
@@ -64,7 +64,7 @@ h2 {
   }
 
   .show-tabs button.is-active {
-    font-size: 26px;
+    font-size: 32px;
   }
 }
 
@@ -81,7 +81,7 @@ h2 {
   }
 
   .show-tabs button.is-active {
-    font-size: 36px;
+    font-size: 48px;
   }
 
   #about {

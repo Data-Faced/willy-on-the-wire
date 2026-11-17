@@ -48,13 +48,13 @@
   }
 
   #shows .show-tabs button {
-    font-size: 14px;
+    font-size: 12px;
     padding: 2px 4px;
     letter-spacing: 0.01em;
   }
 
   #shows .show-tabs button.is-active {
-    font-size: 22px;
+    font-size: 26px;
   }
 }
 
