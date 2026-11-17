@@ -440,11 +440,14 @@ a:hover {
 }
 
 .show-tabs button.is-active {
-  font-size: 32px;
+  font-size: 40px;
+  letter-spacing: 0.02em;
   color: var(--ink);
   border-color: transparent;
   justify-self: start;
   text-align: left;
+  min-width: 0;
+  white-space: nowrap;
 }
 
 .show-tab-triangle {
@@ -967,7 +970,7 @@ a:hover {
   }
 
   .show-tabs button.is-active {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   #shows {
