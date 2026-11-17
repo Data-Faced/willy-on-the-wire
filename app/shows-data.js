@@ -235,6 +235,29 @@ export const SHOWS = [
     blurb: "This is opening night of the Chico weekend. We play two nights in Paradise Valley.",
   },
   {
+    date: "2026-07-11",
+    label: "Sat July 11, 2026",
+    venue: "Tips Up",
+    city: "Big Sky, MT",
+    time: "9PM-12AM",
+    flyer: TIPS_UP_FLYER,
+    maps: MAPS.tipsUp,
+    blurb:
+      "We play Saturday night at Tips Up in Big Sky. Rock, blues, soul, and funk from 9PM to midnight.",
+  },
+  {
+    date: "2026-07-10",
+    label: "Fri July 10, 2026",
+    venue: "Mountain Village Plaza",
+    city: "Big Sky, MT",
+    time: "3PM-6PM",
+    flyer: BIG_SKY_NAVY,
+    maps: MAPS.plaza,
+    blurb:
+      "We play an afternoon set in the plaza at Big Sky. It is open air, with a set that works in the sun.",
+  },
+
+  {
     date: "2026-06-27",
     label: "Sat June 27, 2026",
     venue: "Eagles Club",
