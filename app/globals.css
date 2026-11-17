@@ -400,8 +400,9 @@ a:hover {
 .show-tabs {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   flex-wrap: nowrap;
-  gap: 10px;
+  gap: 12px;
   margin: 0;
   flex-shrink: 0;
   padding: 10px 22px 8px 10px;
@@ -413,7 +414,7 @@ a:hover {
   border: 1px solid transparent;
   padding: 4px 10px;
   font-family: var(--font-display), Impact, sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #6f6f6f;
@@ -424,14 +425,14 @@ a:hover {
 }
 
 .show-tabs button:not(.is-active) {
-  border-color: transparent;
+  border-color: var(--amp);
   color: var(--soft);
 }
 
 .show-tabs button.is-active {
-  font-size: 22px;
+  font-size: 28px;
   color: var(--ink);
-  border-color: var(--amp);
+  border-color: transparent;
 }
 
 .show-tab-triangle {
@@ -439,6 +440,7 @@ a:hover {
   height: 0;
   border-style: solid;
   flex-shrink: 0;
+  margin: 0;
 }
 
 .show-tab-triangle.points-left {
@@ -952,7 +954,7 @@ a:hover {
   }
 
   .show-tabs button.is-active {
-    font-size: 18px;
+    font-size: 24px;
   }
 
   #shows {
