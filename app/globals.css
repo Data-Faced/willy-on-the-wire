@@ -424,14 +424,14 @@ a:hover {
 }
 
 .show-tabs button:not(.is-active) {
-  border-color: var(--amp);
+  border-color: transparent;
   color: var(--soft);
 }
 
 .show-tabs button.is-active {
   font-size: 22px;
   color: var(--ink);
-  border-color: transparent;
+  border-color: var(--amp);
 }
 
 .show-tab-triangle {
