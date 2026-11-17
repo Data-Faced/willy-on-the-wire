@@ -32,6 +32,94 @@ const TIPS_UP_FLYER = "/tips-up-flyer-default.png";
 
 export const SHOWS = [
   {
+    date: "2027-12-18",
+    label: "Sat Dec 18, 2027",
+    venue: "Tune Up",
+    city: "Bozeman, MT",
+    time: "9PM-11PM",
+    flyer: TUNE_UP_NAVY,
+    maps: MAPS.tuneUp,
+    blurb:
+      "We close out the year at Tune Up under the Armory in Bozeman. Rock, blues, soul, and funk from 9 to 11.",
+  },
+  {
+    date: "2027-11-12",
+    label: "Fri Nov 12, 2027",
+    venue: "Tune Up",
+    city: "Bozeman, MT",
+    time: "9PM-11PM",
+    flyer: TUNE_UP_SLATE,
+    maps: MAPS.tuneUp,
+    blurb:
+      "Friday night at Tune Up under the Armory in Bozeman. Classic grooves and a packed basement from 9 to 11.",
+  },
+  {
+    date: "2027-10-30",
+    label: "Sat Oct 30, 2027",
+    venue: "Tune Up",
+    city: "Bozeman, MT",
+    time: "9PM-11PM",
+    flyer: TUNE_UP_PURPLE,
+    maps: MAPS.tuneUp,
+    blurb:
+      "Halloween weekend at Tune Up under the Armory in Bozeman. Rock, blues, soul, and funk from 9 to 11.",
+  },
+  {
+    date: "2027-09-11",
+    label: "Sat Sept 11, 2027",
+    venue: "Tune Up",
+    city: "Bozeman, MT",
+    time: "9PM-11PM",
+    flyer: TUNE_UP_NAVY,
+    maps: MAPS.tuneUp,
+    blurb:
+      "Saturday night at Tune Up under the Armory in Bozeman. Rock, blues, soul, and funk from 9 to 11.",
+  },
+  {
+    date: "2027-08-14",
+    label: "Sat Aug 14, 2027",
+    venue: "Tune Up",
+    city: "Bozeman, MT",
+    time: "9PM-11PM",
+    flyer: TUNE_UP_SLATE,
+    maps: MAPS.tuneUp,
+    blurb:
+      "Saturday night at Tune Up under the Armory in Bozeman. Rock, blues, soul, and funk from 9 to 11.",
+  },
+  {
+    date: "2027-07-30",
+    label: "Fri July 30, 2027",
+    venue: "Tune Up",
+    city: "Bozeman, MT",
+    time: "9PM-11PM",
+    flyer: TUNE_UP_PURPLE,
+    maps: MAPS.tuneUp,
+    blurb:
+      "Friday night at Tune Up under the Armory in Bozeman. Rock, blues, soul, and funk from 9 to 11.",
+  },
+  {
+    date: "2027-06-12",
+    label: "Sat June 12, 2027",
+    venue: "Tune Up",
+    city: "Bozeman, MT",
+    time: "9PM-11PM",
+    flyer: TUNE_UP_NAVY,
+    maps: MAPS.tuneUp,
+    blurb:
+      "Saturday night at Tune Up under the Armory in Bozeman. Rock, blues, soul, and funk from 9 to 11.",
+  },
+  {
+    date: "2027-05-08",
+    label: "Sat May 8, 2027",
+    venue: "Tune Up",
+    city: "Bozeman, MT",
+    time: "9PM-11PM",
+    flyer: TUNE_UP_SLATE,
+    maps: MAPS.tuneUp,
+    blurb:
+      "Saturday night at Tune Up under the Armory in Bozeman. Rock, blues, soul, and funk from 9 to 11.",
+  },
+  {
     date: "2027-02-13",
     label: "Sat Feb 13, 2027",
     venue: "Big Sky Resort",
