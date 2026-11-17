@@ -400,13 +400,15 @@ a:hover {
 .show-tabs {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-wrap: nowrap;
   gap: 12px;
   margin: 0;
+  width: 100%;
   flex-shrink: 0;
   padding: 10px 22px 8px 10px;
   background: none;
+  box-sizing: border-box;
 }
 
 .show-tabs button {

@@ -417,24 +417,24 @@ export default function ShowsList({ shows }) {
         <button
           type="button"
           role="tab"
-          aria-selected={view === "upcoming"}
-          className={view === "upcoming" ? "is-active" : ""}
-          onClick={() => changeView("upcoming")}
+          aria-selected={true}
+          className="is-active"
+          onClick={() => changeView(view)}
         >
-          Upcoming Shows
+          {view === "upcoming" ? "Upcoming Shows" : "Past Shows"}
         </button>
         <span
-          className={`show-tab-triangle ${view === "upcoming" ? "points-right" : "points-left"}`}
+          className="show-tab-triangle points-right"
           aria-hidden="true"
         />
         <button
           type="button"
           role="tab"
-          aria-selected={view === "past"}
-          className={view === "past" ? "is-active" : ""}
-          onClick={() => changeView("past")}
+          aria-selected={false}
+          className=""
+          onClick={() => changeView(view === "upcoming" ? "past" : "upcoming")}
         >
-          Past Shows
+          {view === "upcoming" ? "Past Shows" : "Upcoming Shows"}
         </button>
       </div>
 
