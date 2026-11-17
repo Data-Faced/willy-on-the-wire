@@ -399,9 +399,9 @@ a:hover {
 
 .show-tabs {
   display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 18px;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
   margin: 0;
   flex-shrink: 0;
   padding: 10px 22px 8px 10px;
@@ -410,20 +410,45 @@ a:hover {
 
 .show-tabs button {
   background: none;
-  border: 0;
-  padding: 0;
+  border: 1px solid transparent;
+  padding: 4px 10px;
   font-family: var(--font-display), Impact, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #6f6f6f;
   cursor: pointer;
-  transition: color var(--t) var(--ease), font-size var(--t) var(--ease);
+  border-radius: 2px;
+  white-space: nowrap;
+  transition: color var(--t) var(--ease), font-size var(--t) var(--ease), border-color var(--t) var(--ease);
+}
+
+.show-tabs button:not(.is-active) {
+  border-color: var(--amp);
+  color: var(--soft);
 }
 
 .show-tabs button.is-active {
-  font-size: 28px;
+  font-size: 22px;
   color: var(--ink);
+  border-color: transparent;
+}
+
+.show-tab-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  flex-shrink: 0;
+}
+
+.show-tab-triangle.points-left {
+  border-width: 6px 8px 6px 0;
+  border-color: transparent var(--amp) transparent transparent;
+}
+
+.show-tab-triangle.points-right {
+  border-width: 6px 0 6px 8px;
+  border-color: transparent transparent transparent var(--amp);
 }
 
 .shows {
@@ -927,7 +952,7 @@ a:hover {
   }
 
   .show-tabs button.is-active {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   #shows {

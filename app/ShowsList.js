@@ -423,6 +423,10 @@ export default function ShowsList({ shows }) {
         >
           Upcoming Shows
         </button>
+        <span
+          className={`show-tab-triangle ${view === "upcoming" ? "points-left" : "points-right"}`}
+          aria-hidden="true"
+        />
         <button
           type="button"
           role="tab"

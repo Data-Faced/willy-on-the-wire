@@ -59,9 +59,12 @@ h2 {
 }
 
 @media (max-width: 767px) {
-  h2,
-  .show-tabs button.is-active {
+  h2 {
     font-size: 32px;
+  }
+
+  .show-tabs button.is-active {
+    font-size: 18px;
   }
 }
 
@@ -73,9 +76,12 @@ h2 {
 }
 
 @media (min-width: 900px) {
-  h2,
-  .show-tabs button.is-active {
+  h2 {
     font-size: 48px;
+  }
+
+  .show-tabs button.is-active {
+    font-size: 22px;
   }
 
   #about {
