@@ -28,6 +28,7 @@ const TUNE_UP_SLATE = "/tune-up-flyer-slate.png";
 const TUNE_UP_PURPLE = "/tune-up-flyer-purple.png";
 const EAGLES_FLYER = "/eagles-flyer-default.png";
 const FILLER_FLYER = "/filling-station-flyer-default.png";
+const TIPS_UP_FLYER = "/tips-up-flyer-default.png";
 
 export const SHOWS = [
   {
@@ -40,6 +41,17 @@ export const SHOWS = [
     maps: MAPS.montanaJack,
     blurb:
       "We return to Montana Jack at Big Sky Resort. Après sets of rock, blues, soul, and funk from 6 to 9 at the base of the mountain.",
+  },
+  {
+    date: "2027-02-06",
+    label: "Sat Feb 6, 2027",
+    venue: "Tips Up",
+    city: "Big Sky, MT",
+    time: "9PM-12AM",
+    flyer: TIPS_UP_FLYER,
+    maps: MAPS.tipsUp,
+    blurb:
+      "We play Saturday night at Tips Up in Big Sky. Rock, blues, soul, and funk from 9PM to midnight.",
   },
   {
     date: "2027-01-15",
