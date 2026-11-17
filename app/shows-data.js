@@ -151,13 +151,13 @@ export const SHOWS = [
   {
     date: "2026-09-04",
     label: "Fri Sept 4, 2026",
-    venue: "Mountain Village Plaza",
+    venue: "Big Sky Resort",
     city: "Big Sky, MT",
     time: "3PM-6PM",
     flyer: BIG_SKY_NAVY,
     maps: MAPS.plaza,
     blurb:
-      "We play an afternoon set in the plaza at Big Sky. It is open air, with a set that works in the sun.",
+      "We play an afternoon set in the Mountain Village Plaza at Big Sky Resort. It is open air, with a set that works in the sun.",
   },
   {
     date: "2026-08-21",
@@ -182,12 +182,12 @@ export const SHOWS = [
   {
     date: "2026-08-14",
     label: "Fri Aug 14, 2026",
-    venue: "Mountain Village Plaza",
+    venue: "Big Sky Resort",
     city: "Big Sky, MT",
     time: "3PM-6PM",
     flyer: BIG_SKY_FOREST,
     maps: MAPS.plaza,
-    blurb: "We play Friday afternoon in the plaza at Big Sky Resort.",
+    blurb: "We play Friday afternoon in the Mountain Village Plaza at Big Sky Resort.",
   },
   {
     date: "2026-08-08",
@@ -248,13 +248,13 @@ export const SHOWS = [
   {
     date: "2026-07-10",
     label: "Fri July 10, 2026",
-    venue: "Mountain Village Plaza",
+    venue: "Big Sky Resort",
     city: "Big Sky, MT",
     time: "3PM-6PM",
     flyer: BIG_SKY_NAVY,
     maps: MAPS.plaza,
     blurb:
-      "We play an afternoon set in the plaza at Big Sky. It is open air, with a set that works in the sun.",
+      "We play an afternoon set in the Mountain Village Plaza at Big Sky Resort. It is open air, with a set that works in the sun.",
   },
 
   {
