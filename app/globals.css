@@ -416,7 +416,7 @@ a:hover {
   border: 1px solid transparent;
   padding: 4px 10px;
   font-family: var(--font-display), Impact, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #6f6f6f;
@@ -440,7 +440,7 @@ a:hover {
 }
 
 .show-tabs button.is-active {
-  font-size: 48px;
+  font-size: 32px;
   color: var(--ink);
   border-color: transparent;
   justify-self: start;
@@ -967,7 +967,7 @@ a:hover {
   }
 
   .show-tabs button.is-active {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   #shows {

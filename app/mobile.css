@@ -70,11 +70,11 @@ main {
   }
 
   .show-tabs button.is-active {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   .show-tabs button {
-    font-size: 13px;
+    font-size: 12px;
     padding: 3px 5px;
     letter-spacing: 0.02em;
   }
