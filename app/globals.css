@@ -429,6 +429,12 @@ a:hover {
   color: var(--soft);
 }
 
+.show-tabs button:not(.is-active):hover {
+  background: var(--amp);
+  color: var(--amp-ink);
+  border-color: var(--amp);
+}
+
 .show-tabs button.is-active {
   font-size: 28px;
   color: var(--ink);
