@@ -6,6 +6,21 @@ import "./shows.css";
 import "./booking.css";
 import SpotlightController from "./SpotlightController";
 
+import { headers } from "next/headers";
+
+const PRODUCTION_HOSTS = new Set([
+  "willyonthewire.com",
+  "www.willyonthewire.com",
+]);
+
+function isStagingHost(host) {
+  if (!host) return false;
+  const hostname = host.split(":")[0].toLowerCase();
+  if (PRODUCTION_HOSTS.has(hostname)) return false;
+  return hostname.includes("staging") || hostname.endsWith(".vercel.app");
+}
+
+
 const display = Oswald({
   weight: ["500", "600", "700"],
   subsets: ["latin"],
@@ -24,7 +39,7 @@ const TITLE = "Willy on the Wire | Live band in Bozeman, Montana";
 const DESCRIPTION =
   "Book Willy on the Wire, a Bozeman live band playing rock, blues, soul, and funk. Solo through four-piece for bars, private events, and weddings across Montana.";
 
-export const metadata = {
+const baseMetadata = {
   metadataBase: new URL(SITE),
   title: {
     default: TITLE,
@@ -94,6 +109,27 @@ export const metadata = {
     ICBM: "45.6770, -111.0429",
   },
 };
+
+export async function generateMetadata() {
+  const headerList = await headers();
+  const host = headerList.get("host") || "";
+  const staging = isStagingHost(host);
+
+  return {
+    ...baseMetadata,
+    robots: staging
+      ? {
+          index: false,
+          follow: false,
+          nocache: true,
+          googleBot: {
+            index: false,
+            follow: false,
+          },
+        }
+      : baseMetadata.robots,
+  };
+}
 
 const jsonLd = {
   "@context": "https://schema.org",

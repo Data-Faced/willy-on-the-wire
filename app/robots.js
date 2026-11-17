@@ -1,12 +1,35 @@
-export default function robots() {
-  const allowAll = {
-    userAgent: "*",
-    allow: "/",
-  };
+import { headers } from "next/headers";
+
+const PRODUCTION_HOSTS = new Set([
+  "willyonthewire.com",
+  "www.willyonthewire.com",
+]);
+
+function isStagingHost(host) {
+  if (!host) return false;
+  const hostname = host.split(":")[0].toLowerCase();
+  if (PRODUCTION_HOSTS.has(hostname)) return false;
+  return hostname.includes("staging") || hostname.endsWith(".vercel.app");
+}
+
+export default async function robots() {
+  const headerList = await headers();
+  const host = headerList.get("host") || "";
+  const staging = isStagingHost(host);
+
+  if (staging) {
+    return {
+      rules: {
+        userAgent: "*",
+        disallow: "/",
+      },
+      host: `https://${host.split(":")[0]}`,
+    };
+  }
 
   return {
     rules: [
-      allowAll,
+      { userAgent: "*", allow: "/" },
       { userAgent: "Googlebot", allow: "/" },
       { userAgent: "Bingbot", allow: "/" },
       { userAgent: "GPTBot", allow: "/" },
