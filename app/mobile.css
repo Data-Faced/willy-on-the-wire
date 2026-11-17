@@ -70,12 +70,17 @@ main {
   }
 
   .show-tabs button.is-active {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .show-tabs button {
-    font-size: 13px;
-    padding: 3px 7px;
+    font-size: 15px;
+    padding: 3px 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .show-tabs {
+    gap: 8px;
   }
 
   .socials svg {
